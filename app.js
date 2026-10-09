@@ -84,6 +84,10 @@
   const botonEnvio = (e) => e.submitLink
     ? `<a class="boton-pdf boton-enlace" href="${esc(e.submitLink)}" target="_blank" rel="noopener">Submit deliverable ${e.number}</a>`
     : '<span class="pendiente">The submission link will be published here</span>';
+  // After the session: recording (when published) and slides
+  const botonesDespues = (x) => `<p class="despues"><span class="despues-tit">Could not attend?</span> ${x.recording
+    ? `<a class="boton-pdf boton-enlace" href="${esc(x.recording)}" target="_blank" rel="noopener">Watch the recording</a>`
+    : '<span class="pendiente">The recording will be published here after the session</span>'}${x.slides ? ` <a class="boton-sec boton-enlace" href="${esc(x.slides)}" target="_blank" rel="noopener">Slides (PDF)</a>` : ''}</p>`;
   function fichaSesion(semana) {
     const x = (C.sessions || []).find((y) => y.week === semana);
     return x ? `<div class="sesion-aviso"><b>Joint session: ${esc(x.title)}</b> · ${esc(x.duration)} · ${esc(x.when)} <a href="#sessions">Details</a> ${botonSesion(x)}</div>` : '';
@@ -196,7 +200,7 @@
       <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · ${esc(x.when)}</p><p>${botonSesion(x)}</p></div>
       <p><b>Goal:</b> ${esc(x.goal)}</p>
       <table class="agenda">${x.agenda.map((p) => `<tr><td>${p.min ? p.min + ' min' : ''}</td><td>${esc(p.item)}</td></tr>`).join('')}</table>
-      <p class="entrega-sub">Before the session:</p><ul>${x.prepare.map((p) => `<li>${esc(p)}</li>`).join('')}</ul></article>`;
+      <p class="entrega-sub">Before the session:</p><ul>${x.prepare.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>${botonesDespues(x)}</article>`;
   }).join('');
 
   // ---------- Projects and resources ----------

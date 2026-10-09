@@ -94,17 +94,18 @@ window.COIL_CONTENT = {
   // Joint online sessions (Microsoft Teams) with students and teachers of the three universities.
   // poll: link to the vote on the date and time (e.g. Microsoft Forms), shown until the meeting link is published.
   // link: the Teams meeting link, pasted here by the teachers ('' = not published yet).
+  // recording: link to the recording, pasted after the session ('' = not yet). slides: PDF of the session slides.
   // when: day and time, to be confirmed by the teaching team.
-  sessionsIntro: 'There are four joint online sessions with all students and teachers, on Microsoft Teams, of 45 minutes at most. The rest of the time you work with your team: meet at least once a week, and ask your home teacher whenever you need help.',
+  sessionsIntro: 'There are four joint online sessions with all students and teachers, on Microsoft Teams, of 45 minutes at most. If you cannot attend, the recording and the slides of every session are published here afterwards. The rest of the time you work with your team: meet at least once a week, and ask your home teacher whenever you need help.',
   sessionRules: [
     'The link to each session is published on this website (Sessions section and Home page). You do not need an account of another university: open the link and join from the browser or the Teams app.',
     'Join on time, with your camera on if possible, and use your real name.',
     'The language of all sessions is English.',
-    'Break-out rooms are never recorded. Plenary parts are recorded only if announced at the start of the session.',
-    'If you cannot attend a session, tell your home teacher and your team in advance. The final presentation (week 9) is compulsory to receive the extra points.',
+    'The plenary parts of every session are recorded, and the recording and the slides are published on this website (Sessions section) for students who could not attend. Break-out rooms are never recorded.',
+    'If you cannot attend a session, tell your home teacher and your team in advance, and watch the recording before the next team meeting. The final presentation (week 9) is the exception: it is compulsory to receive the extra points.',
   ],
   sessions: [
-    {week: 1, title: 'Kick-off', duration: '45 minutes', when: 'Date and time to be confirmed', poll: '', link: '',
+    {week: 1, recording: '', slides: 'docs/slides/COIL_1_kickoff.pdf', title: 'Kick-off', duration: '45 minutes', when: 'Date and time to be confirmed', poll: '', link: '',
       goal: 'Meet the people you will work with, understand how the COIL works and hold your first team meeting.',
       prepare: ['Read the student guide and the schedule.', 'Think of one surprising fact or figure about the economy or society of your country.'],
       agenda: [
@@ -113,7 +114,7 @@ window.COIL_CONTENT = {
         {min: 25, item: 'First team meeting in break-out rooms (teams announced by the teachers, with students from the three universities): introduce yourself with your fact about your country, choose a communication channel and a weekly meeting time.'},
         {min: 5, item: 'Questions and closing.'},
       ]},
-    {week: 3, title: 'Data workshop', duration: '45 minutes', when: 'Date and time to be confirmed', poll: '', link: '',
+    {week: 3, recording: '', slides: 'docs/slides/COIL_2_data_workshop.pdf', title: 'Data workshop', duration: '45 minutes', when: 'Date and time to be confirmed', poll: '', link: '',
       goal: 'Be able to load and document the COIL data in your tool (Python, R, Gretl or Power BI) before the analysis starts.',
       prepare: ['Download the COIL dataset from the Data section.', 'Install your tool and open the CSV once.', 'Bring your team\'s research question.'],
       agenda: [
@@ -122,7 +123,7 @@ window.COIL_CONTENT = {
         {min: 5, item: 'How to write the data dictionary and handle missing values.'},
         {min: 15, item: 'Questions from the teams.'},
       ]},
-    {week: 5, title: 'Mid-point clinic', duration: '45 minutes', when: 'Date and time to be confirmed', poll: '', link: '',
+    {week: 5, recording: '', slides: 'docs/slides/COIL_3_midpoint_clinic.pdf', title: 'Mid-point clinic', duration: '45 minutes', when: 'Date and time to be confirmed', poll: '', link: '',
       goal: 'Check how every team is doing and solve problems with the methods before deliverable 2 (week 6).',
       prepare: ['One slide per team: question, data, first result and the main problem you have.'],
       agenda: [
@@ -130,7 +131,7 @@ window.COIL_CONTENT = {
         {min: 20, item: 'Methods clinic in break-out rooms: regression, classification, PCA and clustering. Teachers rotate between teams.'},
         {min: 5, item: 'Wrap-up: what to submit in deliverable 2.'},
       ]},
-    {week: 9, title: 'Final presentations', duration: '45 minutes (a second 45-minute session the same week if there are more than five teams)', when: 'Date and time to be confirmed', poll: '', link: '',
+    {week: 9, recording: '', slides: 'docs/slides/COIL_4_final_presentations.pdf', title: 'Final presentations', duration: '45 minutes (a second 45-minute session the same week if there are more than five teams)', when: 'Date and time to be confirmed', poll: '', link: '',
       goal: 'Present your project to students and teachers of the three universities. Compulsory to receive the extra points.',
       prepare: ['Submit the final dashboard and the slides with the Submit button on this website before the session.', 'Rehearse: 5 minutes per team, every member presents a part.'],
       agenda: [
@@ -270,7 +271,9 @@ window.COIL_CONTENT = {
     {q: 'What if we cannot meet a deadline?',
       a: 'Tell your team and your home teacher before the deadline, not after.'},
     {q: 'Are the joint sessions compulsory?',
-      a: 'The final presentation (week 9) is required to receive the extra points. If you cannot attend another session, tell your home teacher and your team in advance.'},
+      a: 'The final presentation (week 9) is required to receive the extra points. The other three are strongly recommended. If you cannot attend one, tell your home teacher and your team in advance.'},
+    {q: 'I cannot attend a session. Will I miss it?',
+      a: 'No. Every session is recorded and the recording and the slides are published in the Sessions section of this website, usually within two days. Watch it before your next team meeting. Break-out rooms are not recorded, so ask your team what they agreed.'},
     {q: 'Where do I find the session links?',
       a: 'On this website: Sessions section and Home page. Before the date is fixed you will find a vote on the date and time there. You do not need an account of another university to join.'},
     {q: 'Who grades me?',
