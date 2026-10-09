@@ -87,17 +87,24 @@ window.COIL_CONTENT = {
           'Final individual reflection (300–400 words): what did you learn about data analysis, about working internationally and about yourself?']}},
   ],
 
-  // Why join: shown on the home page and in the PDF
-  benefits: [
-    {title: 'Extra points on your grade', text: 'Up to 1 extra point (out of 10) at the University of Seville, and up to 10 extra points (out of 100) at the Technical University of Košice and the University of Montenegro, for students who complete the final presentation.'},
-    {title: 'Certificate of participation', text: 'Students who complete the COIL receive a certificate of participation in a Ulysseus European University COIL, which you can add to your CV and LinkedIn.'},
-    {title: 'An international experience without travelling', text: 'Work for nine weeks with students from Spain, Slovakia and Montenegro, from your own classroom.'},
-    {title: 'A real project for your portfolio', text: 'You will analyse real European data and build a dashboard you can show to future employers. The best projects are published on this website.'},
-    {title: 'Skills employers ask for', text: 'Data analysis with Python, R or Gretl, dashboards, teamwork in international and online teams, and presenting in English.'},
-    {title: 'A head start for your final project', text: 'You can develop your COIL project further in your bachelor\'s thesis (Trabajo Fin de Grado or equivalent), in agreement with your supervisor: you will already have the question, the data and the first analyses.'},
-    {title: 'A step towards international internships', text: 'An international project, teamwork in English and contacts in three countries are a strong point when you apply for internships abroad, such as Erasmus+ traineeships.'},
-    {title: 'Your Ulysseus network', text: 'Meet students and teachers from other Ulysseus universities: a first step towards an Erasmus exchange or further European projects.'},
-  ],
+  // Why join: intro, two highlights and a grid of benefits (icon: grade, certificate, globe, portfolio, skills, thesis, internship, network)
+  benefits: {
+    intro: 'Nine weeks, three universities, one real data project. This is what you get.',
+    points: [
+      {value: '+1', scale: '/ 10', where: 'University of Seville'},
+      {value: '+10', scale: '/ 100', where: 'Technical University of Košice · University of Montenegro'},
+    ],
+    pointsNote: 'Extra points on your course grade for students who complete the final presentation.',
+    certificate: 'Certificate of participation in a Ulysseus European University COIL, signed by three European universities: Seville, Košice and Montenegro. Add it to your CV and LinkedIn.',
+    items: [
+      {icon: 'globe', title: 'International, from home', text: 'Nine weeks working with students from Spain, Slovakia and Montenegro, without travelling.'},
+      {icon: 'portfolio', title: 'A real project for your portfolio', text: 'Real European data and a dashboard you can show to employers. The best ones are published here.'},
+      {icon: 'skills', title: 'Skills employers ask for', text: 'Data analysis in Python, R or Gretl, dashboards, international teamwork and presenting in English.'},
+      {icon: 'thesis', title: 'A head start for your thesis', text: 'Develop your COIL project further in your bachelor\'s thesis (TFG), in agreement with your supervisor.'},
+      {icon: 'internship', title: 'A step towards internships abroad', text: 'An international project and contacts in three countries strengthen applications such as Erasmus+ traineeships.'},
+      {icon: 'network', title: 'Your Ulysseus network', text: 'Meet students and teachers from other Ulysseus universities: a first step towards an exchange.'},
+    ],
+  },
 
   // Example projects: ideas that work with the COIL dataset (teams may propose their own)
   examples: [

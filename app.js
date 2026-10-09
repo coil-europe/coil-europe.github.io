@@ -122,7 +122,24 @@
       <p><b>Methods:</b> ${esc(x.methods)}</p></article>`).join('');
   $('plantillas').innerHTML = C.templates.map((t) => `<details class="tema"><summary>${esc(t.title)}</summary>
       <ul>${t.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></details>`).join('');
-  $('beneficios').innerHTML = C.benefits.map((b) => `<article class="beneficio"><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p></article>`).join('');
+  // simple line icons (24x24, stroke)
+  const ICONOS = {
+    certificate: '<circle cx="12" cy="9" r="5"/><path d="M9 13.5 7.5 21l4.5-2.5 4.5 2.5L15 13.5"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/>',
+    portfolio: '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 13l3-3 3 2 4-4M8 21h8M12 17v4"/>',
+    skills: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+    thesis: '<path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5M8 13h8M8 17h6"/>',
+    internship: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
+    network: '<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M11 7.3 6.2 15.8M13 7.3l4.8 8.5M7.5 18h9"/>',
+  };
+  const icono = (k) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONOS[k] || ''}</svg>`;
+  const B = C.benefits;
+  $('lead-beneficios').textContent = B.intro;
+  $('cifras').innerHTML = B.points.map((p) => `<div class="cifra"><span class="valor">${esc(p.value)}</span><span class="escala">${esc(p.scale)}</span><span class="donde">${esc(p.where)}</span></div>`).join('');
+  $('nota-puntos').textContent = B.pointsNote;
+  $('texto-certificado').textContent = B.certificate;
+  document.querySelector('.certificado .icono-grande').innerHTML = icono('certificate');
+  $('beneficios').innerHTML = B.items.map((b) => `<article class="beneficio"><div class="icono">${icono(b.icon)}</div><div><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p></div></article>`).join('');
 
   // ---------- Home: what is due this week ----------
   {

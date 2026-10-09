@@ -184,3 +184,31 @@ nav a.activo { background: var(--ulysseus); color: #fff; }
 .contacto img { width: 64px; height: 44px; object-fit: contain; flex: none; }
 
 .docente .bio { font-size: .82rem; color: var(--suave); margin: 4px 0 8px; line-height: 1.4; }
+
+/* ---- Why join (redesign) ---- */
+#benefits h2, .lead-beneficios { text-align: center; }
+.lead-beneficios { font-size: 1.2rem; color: var(--suave); margin: 0 auto 24px; max-width: 640px; }
+.destacados { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; margin-bottom: 22px; }
+.destacado { border-radius: 16px; padding: 22px 24px; }
+.destacado-tit { font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 10px; }
+.puntos { background: var(--ulysseus); color: #fff; }
+.puntos .nota { color: #d9d6ea; margin: 12px 0 0; }
+.cifras { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cifra { display: flex; flex-direction: column; }
+.cifra .valor { font-size: 3rem; font-weight: 800; line-height: 1; color: #fff; }
+.cifra .escala { font-size: 1.1rem; font-weight: 600; color: #f5a3a3; margin-top: 2px; }
+.cifra .donde { font-size: .88rem; color: #d9d6ea; margin-top: 6px; }
+.certificado { background: #fdeeee; display: flex; gap: 18px; align-items: center; }
+.certificado .destacado-tit { color: var(--coral); }
+.certificado p { margin: 0; }
+.icono-grande { flex: none; width: 64px; height: 64px; border-radius: 50%; background: var(--coral); color: #fff; display: grid; place-items: center; }
+.icono-grande svg { width: 36px; height: 36px; }
+.beneficios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 0; }
+.beneficio { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid var(--linea); border-top: 1px solid var(--linea); border-radius: 12px; padding: 16px; }
+.beneficio .icono { flex: none; width: 42px; height: 42px; border-radius: 10px; background: var(--fondo-2); color: var(--ulysseus); display: grid; place-items: center; }
+.beneficio .icono svg { width: 24px; height: 24px; }
+.beneficio h3 { margin: 0 0 4px; font-size: 1rem; }
+.beneficio p { margin: 0; font-size: .9rem; color: var(--suave); }
+.centrado { justify-content: center; margin-top: 24px; }
+@media (max-width: 900px) { .destacados { grid-template-columns: 1fr; } .beneficios { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .beneficios { grid-template-columns: 1fr; } .cifras { grid-template-columns: 1fr; } }
