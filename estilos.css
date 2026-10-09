@@ -1,0 +1,86 @@
+:root {
+  --tinta: #1f1d2b; --suave: #5d5a6e; --linea: #e3e1ea; --fondo: #ffffff; --fondo-2: #f6f5fa;
+  --ulysseus: #312a63; --coral: #e55a5a;
+  --esp: #c8102e; --svk: #0b4ea2; --mne: #c99a00; --ue: #6b6880;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--tinta); background: var(--fondo); }
+img { max-width: 100%; }
+a { color: var(--ulysseus); }
+h1, h2, h3, h4 { line-height: 1.2; color: var(--ulysseus); }
+h2 { font-size: 1.7rem; margin: 0 0 .6rem; }
+h3 { font-size: 1.15rem; margin: 1.6rem 0 .5rem; }
+h4 { margin: .4rem 0; }
+.envoltura { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.bloque { padding: 48px 16px; border-top: 1px solid var(--linea); }
+.nota { color: var(--suave); font-size: .92rem; }
+.sin-vinetas { list-style: none; padding: 0; }
+
+.cabecera { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--linea); backdrop-filter: blur(6px); }
+.cabecera-fila { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+.logo-ulysseus img { height: 40px; display: block; }
+nav { display: flex; gap: 4px; flex-wrap: wrap; }
+nav a { text-decoration: none; padding: 6px 10px; border-radius: 6px; font-weight: 500; }
+nav a:hover { background: var(--fondo-2); }
+
+.portada { background: linear-gradient(180deg, var(--fondo-2), #fff); padding: 56px 0 40px; }
+.etiqueta { color: var(--coral); font-weight: 600; letter-spacing: .02em; margin: 0 0 8px; }
+.portada h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 8px; }
+.subtitulo { font-size: 1.2rem; color: var(--suave); margin: 0 0 8px; }
+.datos-curso { font-weight: 500; }
+.aviso { display: inline-block; font-size: .78rem; background: #fff3d6; color: #7a5600; border-radius: 10px; padding: 1px 8px; margin-left: 4px; }
+.universidades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+.uni { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; color: var(--tinta);
+  background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 18px 12px; text-align: center; }
+.uni img { height: 90px; object-fit: contain; }
+.uni span { font-size: .85rem; color: var(--suave); }
+
+.dos-columnas { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+
+.semanas { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.semana { display: grid; grid-template-columns: 120px 1fr; gap: 16px; border: 1px solid var(--linea); border-radius: 10px; padding: 14px 16px; background: #fff; }
+.semana.actual { border-color: var(--coral); box-shadow: 0 0 0 2px rgba(229,90,90,.15); }
+.semana .cuando { font-weight: 600; color: var(--ulysseus); }
+.semana .cuando small { display: block; font-weight: 400; color: var(--suave); }
+.fase { display: inline-block; font-size: .75rem; font-weight: 600; color: #fff; background: var(--ulysseus); border-radius: 10px; padding: 1px 8px; margin-bottom: 4px; }
+.semana h3 { margin: 2px 0 4px; font-size: 1.05rem; }
+.semana p { margin: 2px 0; }
+.entregable { color: var(--suave); font-size: .92rem; }
+.entregable b { color: var(--tinta); }
+
+.explorador { background: var(--fondo-2); border-radius: 12px; padding: 16px; margin-top: 16px; }
+.explorador label { font-weight: 600; margin-right: 8px; }
+.explorador select { font: inherit; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--linea); max-width: 100%; }
+.ficha { color: var(--suave); font-size: .9rem; margin: 8px 0 0; }
+.graficos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+.graficos figure { margin: 0; background: #fff; border-radius: 10px; padding: 12px; border: 1px solid var(--linea); }
+figcaption { font-size: .9rem; font-weight: 600; margin-bottom: 6px; }
+svg text { font: 11px system-ui, sans-serif; fill: var(--suave); }
+.leyenda { display: flex; gap: 14px; flex-wrap: wrap; font-size: .85rem; margin-top: 6px; }
+.leyenda i { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin-right: 4px; }
+
+.descargas li { margin: 4px 0; }
+.tabla-desplazable { overflow-x: auto; }
+.cobertura { border-collapse: collapse; width: 100%; font-size: .9rem; }
+.cobertura th, .cobertura td { border-bottom: 1px solid var(--linea); padding: 6px 8px; text-align: left; }
+.cobertura td.n { text-align: center; font-variant-numeric: tabular-nums; }
+.cobertura td.vacio { background: #fde8e8; color: #9b1c1c; }
+.cobertura td.parcial { background: #fff6dc; }
+pre { background: #1f1d2b; color: #f3f2f8; padding: 14px; border-radius: 10px; overflow-x: auto; font-size: .85rem; }
+
+.proyectos { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.proyecto { border: 1px solid var(--linea); border-radius: 12px; overflow: hidden; background: #fff; }
+.proyecto img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--fondo-2); }
+.proyecto div { padding: 12px 14px; }
+.vacio-proyectos { color: var(--suave); background: var(--fondo-2); border-radius: 12px; padding: 20px; }
+
+.pie { background: var(--ulysseus); color: #e9e7f3; margin-top: 24px; }
+.pie-fila { display: flex; gap: 24px; align-items: center; padding-top: 24px; padding-bottom: 24px; font-size: .85rem; }
+.pie-logo { height: 44px; background: #fff; border-radius: 8px; padding: 6px 10px; }
+
+@media (max-width: 760px) {
+  .dos-columnas, .graficos { grid-template-columns: 1fr; }
+  .universidades { grid-template-columns: 1fr; }
+  .semana { grid-template-columns: 1fr; gap: 4px; }
+  .pie-fila { flex-direction: column; align-items: flex-start; }
+}
