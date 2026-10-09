@@ -206,7 +206,7 @@
     const proxSes = (C.sessions || []).find((x) => fin(C.schedule.find((y) => y.week === x.week)) >= hoy);
     $('esta-semana').innerHTML = `<p class="etiqueta">${empezado ? 'This week' : 'Coming up'} · Week ${s.week}: ${esc(s.title)}</p>
       ${prox ? `<p class="esta-entrega">Next deliverable: <strong>${esc(prox.deliverable.name)}</strong> · ${esc(prox.deliverable.who)} · due <strong>${esc(vence(prox))}</strong> ${botonEnvio(prox.deliverable)}</p>` : ''}
-      ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}), on two different days: choose one with your team</p>${franjas(proxSes)}` : ''}
+      ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}), given twice on two different days</p>${franjas(proxSes)}` : ''}
       <p class="accesos"><a class="boton-pdf" href="#submit">Submit your work</a> <a class="boton-sec" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
       <a class="boton-sec" href="#benefits">Extra points and certificate</a> <a class="boton-sec" href="#faq">FAQ: do I need to code?</a></p>`;
   }
@@ -254,7 +254,7 @@
         <div><h3>${esc(p.team)}</h3><p class="nota">${esc((p.universities || []).join(' · '))}</p><p>${esc(p.topic)}</p>
         ${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">Open dashboard</a>` : ''}</div></article>`).join('')
     : '';
-  if (!C.projects.length) $('team-projects').remove();
+  if (!C.projects.length) $('team-projects').hidden = true;
   const idGrupo = (g) => 'faq-' + g.toLowerCase().replace(/[^a-z]+/g, '-');
   const ICONOS_FAQ = {
     start: '<path d="M5 12h14M13 6l6 6-6 6"/>',

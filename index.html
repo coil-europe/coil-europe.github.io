@@ -9,7 +9,7 @@
 <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta name="theme-color" content="#312a63">
-<link rel="stylesheet" href="estilos.css?v=8">
+<link rel="stylesheet" href="estilos.css?v=9">
 </head>
 <body>
 <header class="cabecera">
@@ -17,7 +17,7 @@
     <a href="https://ulysseus.eu" class="logo-ulysseus" aria-label="Ulysseus European University"><img src="img/ulysseus.svg" alt="Ulysseus European University"></a>
     <button class="boton-menu" id="boton-menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav aria-label="Sections" id="menu">
-      <a href="#home">Home</a><a href="#schedule">Schedule</a><a href="#sessions">Sessions</a><a href="#submit">Submit</a><a href="#guide">Guide</a><a href="#data">Data</a><a href="#resources">Resources</a><a href="#team">Team</a>
+      <a href="#home">Home</a><a href="#schedule">Schedule</a><a href="#sessions">Sessions</a><a href="#submit">Submit</a><a href="#guide">Guide</a><a href="#projects">Projects</a><a href="#data">Data</a><a href="#resources">Resources</a><a href="#team">Team</a>
     </nav>
   </div>
 </header>
@@ -64,12 +64,6 @@
     <div class="beneficios" id="beneficios"></div>
   </section>
 
-  <section id="team-projects" class="envoltura bloque vista" data-vista="home">
-    <p class="kicker">Results</p>
-    <h2>Team projects</h2>
-    <div id="proyectos" class="proyectos"></div>
-  </section>
-
   <section id="team" class="envoltura bloque vista" data-vista="team">
     <p class="kicker">Who we are</p>
     <h2>Teaching team</h2>
@@ -100,7 +94,7 @@
     <h3>How submission works</h3>
     <ul id="reglas-envio"></ul>
     <h3>Templates</h3>
-    <p class="nota">Use them for deliverable 1 (topic proposal and team charter) and to document your data in week 3.</p>
+    <p class="nota">Use them for deliverable 1 (topic proposal and team charter) and for the data dictionary (week 3, part of deliverable 2).</p>
     <div class="guia" id="plantillas"></div>
   </section>
 
@@ -126,7 +120,7 @@
     <div class="guia" id="guia"></div>
 
     <h3>Choosing a topic</h3>
-    <p class="nota">Six example projects, with their indicators and methods, are in <a href="#projects">Project ideas</a>, in the Data section. You can choose one, adapt it or propose your own question.</p>
+    <p class="nota">Six example projects, with their indicators and methods, are in the <a href="#projects">Projects</a> section. You can choose one, adapt it or propose your own question.</p>
 
   </section>
 
@@ -143,6 +137,18 @@
       </aside>
       <div class="faq" id="lista-faq"></div>
     </div>
+  </section>
+
+  <section id="projects" class="envoltura bloque vista" data-vista="projects">
+    <p class="kicker">Examples and results</p>
+    <h2>Projects</h2>
+    <div id="team-projects">
+      <h3>Final team projects</h3>
+      <div id="proyectos" class="proyectos"></div>
+    </div>
+    <h3>Example projects</h3>
+    <p class="nota">Six project ideas proposed by the teachers, all feasible with the COIL dataset, with their question, indicators and methods. Your team can choose one, adapt it, or propose its own question in deliverable 1.</p>
+    <div class="ejemplos" id="ejemplos-proyectos"></div>
   </section>
 
   <section id="data" class="envoltura bloque vista" data-vista="data">
@@ -193,13 +199,6 @@
     <p class="nota">Sources: World Bank Open Data (CC BY 4.0) and IMF DataMapper. Please cite the source of each indicator in your work.</p>
   </section>
 
-  <section id="projects" class="envoltura bloque vista" data-vista="data">
-    <p class="kicker">Choose a topic</p>
-    <h2>Project ideas</h2>
-    <p class="nota">Project ideas proposed by the teachers, all feasible with the COIL dataset. Your team can choose one of them, adapt it, or propose its own question in deliverable 1.</p>
-    <div class="ejemplos" id="ejemplos-proyectos"></div>
-  </section>
-
   <section id="resources" class="envoltura bloque vista" data-vista="resources">
     <p class="kicker">Slides, code and templates</p>
     <h2>Resources</h2>
@@ -218,8 +217,8 @@
   </div>
 </footer>
 
-<script src="data/data.js?v=8"></script>
-<script src="content.js?v=8"></script>
-<script src="app.js?v=8"></script>
+<script src="data/data.js?v=9"></script>
+<script src="content.js?v=9"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>
