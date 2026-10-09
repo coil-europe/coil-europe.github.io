@@ -225,3 +225,6 @@ nav a.activo { background: var(--ulysseus); color: #fff; }
 .sesion ul { font-size: .9rem; margin: 2px 0 0; padding-left: 18px; }
 .sesion-aviso { background: #eef2ff; border-radius: 8px; padding: 8px 10px; font-size: .88rem; margin-top: 8px; }
 @media (max-width: 800px) { .sesiones { grid-template-columns: 1fr; } }
+
+/* projects: empty notice spans the whole grid */
+.vacio-proyectos { grid-column: 1 / -1; }

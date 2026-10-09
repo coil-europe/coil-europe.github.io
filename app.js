@@ -120,10 +120,12 @@
       + `<td>${esc(s.deliverable.who)}</td><td>${esc(s.deliverable.format)}</td></tr>`).join('') + '</tbody>';
   $('regla-entrega').innerHTML = `There are <strong>three deliverables</strong>. Each one is due on <strong>${esc(C.deadline)}</strong> of its week and is submitted in ${esc(C.submission)}. Click on a week in the schedule to see exactly what it must include. The other weeks are working weeks.`;
   const nombreInd = Object.fromEntries((window.COIL_DATA ? window.COIL_DATA.indicators : []).map((i) => [i.code, i.name]));
-  $('ejemplos').innerHTML = C.examples.map((x) => `<article class="ejemplo"><h3>${esc(x.title)}</h3>
+  const fichasEjemplos = C.examples.map((x) => `<article class="ejemplo"><h3>${esc(x.title)}</h3>
       <p class="pregunta">${esc(x.question)}</p>
       <p><b>Indicators:</b> ${x.indicators.map((k) => `${esc(nombreInd[k] || k)} <code>${esc(k)}</code>`).join(' · ')}</p>
       <p><b>Methods:</b> ${esc(x.methods)}</p></article>`).join('');
+  $('ejemplos').innerHTML = fichasEjemplos;
+  $('ejemplos-proyectos').innerHTML = fichasEjemplos;
   $('plantillas').innerHTML = C.templates.map((t) => `<details class="tema"><summary>${esc(t.title)}</summary>
       <ul>${t.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></details>`).join('');
   // simple line icons (24x24, stroke)
@@ -186,7 +188,7 @@
     ? C.projects.map((p) => `<article class="proyecto">${p.image ? `<img src="${esc(p.image)}" alt="">` : ''}
         <div><h3>${esc(p.team)}</h3><p class="nota">${esc((p.universities || []).join(' · '))}</p><p>${esc(p.topic)}</p>
         ${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">Open dashboard</a>` : ''}</div></article>`).join('')
-    : '<p class="vacio-proyectos">Team projects will be published here after the joint online presentation.</p>';
+    : '<p class="vacio-proyectos">The final team projects will be published here after the joint online presentation (week 9).</p>';
   $('recursos').innerHTML = C.resources.map((r) => `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></li>`).join('');
 
   // ---------- Data ----------
