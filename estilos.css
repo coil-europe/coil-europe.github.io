@@ -464,3 +464,12 @@ code { font-size: .86em; background: var(--fondo-2); padding: 1px 5px; border-ra
   .cobertura th, .cobertura td { padding: 6px 5px; }
 }
 @media (prefers-reduced-motion: reduce) { .boton-menu span { transition: none; } }
+
+/* ---- two time slots per session ---- */
+.franjas { list-style: none; margin: 6px 0 8px; padding: 0; display: grid; gap: 6px; font-size: .92rem; }
+.franjas li { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; background: var(--fondo-2); border-radius: 10px; padding: 7px 10px; }
+.franjas b { color: var(--ulysseus); }
+.franjas .boton-enlace { margin-left: auto; }
+.sesion .franjas { padding: 0; font-size: .92rem; }
+.sesion-aviso .franjas li { background: #fff; }
+.esta-semana .franjas { max-width: 560px; }

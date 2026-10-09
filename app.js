@@ -77,10 +77,18 @@
   const vence = (s) => { const d = new Date(s.start + 'T00:00:00'); d.setDate(d.getDate() + 6);
     return d.toLocaleDateString('en-GB', {weekday: 'long', day: 'numeric', month: 'long'}) + ', 23:59 CET'; };
   // Session and submission links: a button when published, a note when not yet.
-  const botonSesion = (x) => x.link
-    ? `<a class="boton-pdf boton-enlace" href="${esc(x.link)}" target="_blank" rel="noopener">Join the session</a>`
-    : x.poll ? `<a class="boton-sec boton-enlace" href="${esc(x.poll)}" target="_blank" rel="noopener">Vote for the date and time</a>`
-    : '<span class="pendiente">The link will be published here before the session</span>';
+  // Every session has two slots (different days and times), each with its own Teams link.
+  const franjas = (x) => {
+    const ss = x.slots || [];
+    const alguno = ss.some((h) => h.link);
+    const filas = ss.map((h) => `<li><b>${esc(h.label)}</b> · ${esc(h.when)} ${h.link
+      ? `<a class="boton-pdf boton-enlace" href="${esc(h.link)}" target="_blank" rel="noopener">Join ${esc(h.label)}</a>`
+      : alguno ? '<span class="pendiente">Link coming soon</span>' : ''}</li>`).join('');
+    const aviso = alguno ? ''
+      : x.poll ? `<a class="boton-sec boton-enlace" href="${esc(x.poll)}" target="_blank" rel="noopener">Vote for the dates and times</a>`
+      : '<span class="pendiente">The links will be published here before the session</span>';
+    return `<ul class="franjas">${filas}</ul>${aviso}`;
+  };
   const botonEnvio = (e) => e.submitLink
     ? `<a class="boton-pdf boton-enlace" href="${esc(e.submitLink)}" target="_blank" rel="noopener">Submit deliverable ${e.number}</a>`
     : '<span class="pendiente">The submission link will be published here</span>';
@@ -90,7 +98,7 @@
     : '<span class="pendiente">The recording will be published here after the session</span>'}${x.slides ? ` <a class="boton-sec boton-enlace" href="${esc(x.slides)}" target="_blank" rel="noopener">Slides (PDF)</a>` : ''}</p>`;
   function fichaSesion(semana) {
     const x = (C.sessions || []).find((y) => y.week === semana);
-    return x ? `<div class="sesion-aviso"><b>Joint session: ${esc(x.title)}</b> · ${esc(x.duration)} · ${esc(x.when)} <a href="#sessions">Details</a> ${botonSesion(x)}</div>` : '';
+    return x ? `<div class="sesion-aviso"><b>Joint session: ${esc(x.title)}</b> · ${esc(x.duration)}, on two different days <a href="#sessions">Details</a> ${franjas(x)}</div>` : '';
   }
   function fichaEntrega(s) {
     const e = s.deliverable;
@@ -173,7 +181,7 @@
     const proxSes = (C.sessions || []).find((x) => fin(C.schedule.find((y) => y.week === x.week)) >= hoy);
     $('esta-semana').innerHTML = `<p class="etiqueta">${empezado ? 'This week' : 'Coming up'} · Week ${s.week}: ${esc(s.title)}</p>
       ${prox ? `<p class="esta-entrega">Next deliverable: <strong>${esc(prox.deliverable.name)}</strong> · ${esc(prox.deliverable.who)} · due <strong>${esc(vence(prox))}</strong> ${botonEnvio(prox.deliverable)}</p>` : ''}
-      ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}) · ${esc(proxSes.when)} ${botonSesion(proxSes)}</p>` : ''}
+      ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}), on two different days: choose one with your team</p>${franjas(proxSes)}` : ''}
       <p class="accesos"><a class="boton-pdf" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
       <a class="boton-sec" href="#benefits">Why join?</a> <a class="boton-sec" href="#faq">FAQ: do I need to code?</a></p>`;
   }
@@ -206,7 +214,7 @@
     const sem = C.schedule.find((s) => s.week === x.week);
     const ini = new Date(sem.start + 'T00:00:00'); const fin = new Date(ini); fin.setDate(ini.getDate() + 6);
     return `<article class="sesion"><div class="sesion-cab"><span class="sesion-sem">Week ${x.week} · ${fmt(ini)} – ${fmt(fin)}</span>
-      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · ${esc(x.when)}</p><p>${botonSesion(x)}</p></div>
+      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · given twice, on two different days and times, same content</p>${franjas(x)}</div>
       <p><b>Goal:</b> ${esc(x.goal)}</p>
       <table class="agenda">${x.agenda.map((p) => `<tr><td>${p.min ? p.min + ' min' : ''}</td><td>${esc(p.item)}</td></tr>`).join('')}</table>
       <p class="entrega-sub">Before the session:</p><ul>${x.prepare.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>${botonesDespues(x)}</article>`;
