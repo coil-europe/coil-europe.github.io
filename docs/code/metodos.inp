@@ -1,0 +1,40 @@
+# COIL methods module: the Gretl steps shown in the slides, in order.
+# Open this script in Gretl (File > Script files > User file) from the folder
+# that contains coil_indicators_gretl.csv, then run it block by block.
+
+open coil_indicators_gretl.csv
+setobs iso3 year --panel-vars
+smpl iso3 != "EUU" --restrict
+series log_gdp = log(NY_GDP_PCAP_PP_KD)
+
+# 0. Data workshop: youth unemployment in the three COIL countries
+smpl iso3 == "ESP" || iso3 == "SVK" || iso3 == "MNE" --restrict --replace
+panplot SL_UEM_1524_ZS --overlay
+smpl full
+smpl iso3 != "EUU" --restrict
+
+# 1. Correlation (2023)
+smpl year == 2023 --restrict
+corr IT_NET_USER_ZS NY_GDP_PCAP_PP_KD
+smpl full
+smpl iso3 != "EUU" --restrict
+
+# 2. Linear regression (2022)
+smpl year == 2022 --restrict
+ols SL_UEM_1524_ZS const SE_TER_ENRR log_gdp
+
+# 4. Classification: logistic regression (2022, same sample)
+series high = SL_TLF_CACT_FE_ZS > median(SL_TLF_CACT_FE_ZS)
+logit high const SP_DYN_TFRT_IN log_gdp
+
+# 5. PCA (2022), correlation matrix = standardised variables
+pca NY_GDP_PCAP_PP_KD NV_SRV_TOTL_ZS IT_NET_USER_ZS SP_POP_65UP_TO_ZS SL_UEM_TOTL_ZS SP_DYN_LE00_IN
+smpl full
+smpl iso3 != "EUU" --restrict
+
+# 3. Panel regression with country fixed effects and a time trend (2010-2023)
+smpl year <= 2023 --restrict
+series trend = year - 2010
+panel SH_XPD_CHEX_GD_ZS const SP_POP_65UP_TO_ZS trend --fixed-effects --robust
+
+# 6. k-means clustering is not built into Gretl: do this step in Python, R or Power BI.

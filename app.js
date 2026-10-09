@@ -205,6 +205,9 @@
         <div><h3>${esc(p.team)}</h3><p class="nota">${esc((p.universities || []).join(' · '))}</p><p>${esc(p.topic)}</p>
         ${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">Open dashboard</a>` : ''}</div></article>`).join('')
     : '<p class="vacio-proyectos">The final team projects will be published here after the joint online presentation (week 9).</p>';
+  $('materiales').innerHTML = (C.materials || []).map((g) => `<div class="material-grupo"><h3>${esc(g.group)}</h3>
+    ${g.items.map((it) => `<div class="material"><p>${esc(it.title)}</p><p class="material-enlaces">${it.files.map(([l, f], i) =>
+      `<a class="${i ? 'boton-sec' : 'boton-pdf'} boton-enlace" href="${esc(f)}" ${f.endsWith('.pdf') ? 'target="_blank" rel="noopener"' : 'download'}>${esc(l)}</a>`).join(' ')}</p></div>`).join('')}</div>`).join('');
   $('recursos').innerHTML = C.resources.map((r) => `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></li>`).join('');
 
   // ---------- Data ----------

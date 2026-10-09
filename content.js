@@ -251,6 +251,26 @@ window.COIL_CONTENT = {
   // {team, universities: ['US','TUKE','UoM'], topic, link, image}
   projects: [],
 
+  // Course materials, built with presentaciones/construir.js (slides) and presentaciones/codigo (code).
+  // files: [label, path]; the first file is the main one.
+  materials: [
+    {group: 'Joint sessions', items: [
+      {title: 'Kick-off (week 1)', files: [['PDF', 'docs/slides/COIL_1_kickoff.pdf'], ['PowerPoint', 'docs/slides/COIL_1_kickoff.pptx']]},
+      {title: 'Data workshop (week 3)', files: [['PDF', 'docs/slides/COIL_2_data_workshop.pdf'], ['PowerPoint', 'docs/slides/COIL_2_data_workshop.pptx']]},
+      {title: 'Mid-point clinic (week 5)', files: [['PDF', 'docs/slides/COIL_3_midpoint_clinic.pdf'], ['PowerPoint', 'docs/slides/COIL_3_midpoint_clinic.pptx']]},
+      {title: 'Final presentations (week 9)', files: [['PDF', 'docs/slides/COIL_4_final_presentations.pdf'], ['PowerPoint', 'docs/slides/COIL_4_final_presentations.pptx']]},
+    ]},
+    {group: 'Methods module (study material)', items: [
+      {title: 'Correlation, regression, panel data, classification, PCA, clustering and missing values, with COIL data. Menus first; code optional.',
+        files: [['PDF', 'docs/slides/COIL_methods_module.pdf'], ['PowerPoint', 'docs/slides/COIL_methods_module.pptx']]},
+      {title: 'Code that reproduces every number in the module (put it next to coil_indicators_gretl.csv)',
+        files: [['Python', 'docs/code/metodos.py'], ['R', 'docs/code/metodos.R'], ['Gretl', 'docs/code/metodos.inp']]},
+    ]},
+    {group: 'Templates for your slides', items: [
+      {title: 'Lightning-update slide (week 5) and the six final slides (week 9)', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
+    ]},
+  ],
+
   resources: [
     {title: 'Ulysseus COIL Handbook: A Practical Guide for Educators',
       url: 'https://ulysseus.eu/wp-content/uploads/2025/02/Ulysseus-COIL-Handbook-for-teachers-1.pdf'},

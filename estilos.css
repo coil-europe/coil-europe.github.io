@@ -257,3 +257,12 @@ nav a.activo { background: var(--ulysseus); color: #fff; }
 .boton-enlace { display: inline-block; padding: 5px 12px; font-size: .88rem; margin-left: 4px; }
 .pendiente { display: inline-block; font-size: .82rem; color: var(--suave); background: var(--fondo-2); border: 1px dashed var(--linea);
   border-radius: 999px; padding: 3px 10px; margin-left: 4px; }
+
+/* ---- course materials ---- */
+.materiales { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 12px 0 8px; }
+.material-grupo { background: #fff; border: 1px solid var(--linea); border-radius: 14px; padding: 14px 16px; }
+.material-grupo h3 { margin: 0 0 8px; font-size: 1.02rem; }
+.material { padding: 8px 0; border-top: 1px solid var(--linea); }
+.material:first-of-type { border-top: 0; }
+.material p { margin: 0 0 6px; font-size: .92rem; }
+.material-enlaces .boton-enlace { margin: 0 4px 4px 0; }
