@@ -4,7 +4,8 @@
 window.COIL_CONTENT = {
   title: 'Comparing Europe with Data',
   subtitle: 'A Ulysseus COIL on comparative socio-economic data analysis',
-  course: 'Advanced Data Analysis and Visualization (3 ECTS)',
+  // The COIL is part of these courses (each student follows one of them at their home university)
+  course: 'Econometrics · Advanced Data Analysis and Visualization',
   period: '12 October – 11 December 2026',
   provisional: true,
 
@@ -197,7 +198,7 @@ window.COIL_CONTENT = {
   guide: [
     {title: 'What is this COIL and what will you do?',
       text: ['A COIL (Collaborative Online International Learning) connects your course with courses at two partner universities of the Ulysseus alliance. For nine weeks you will work online in an international team with students from Seville, Košice and Podgorica.',
-        'Together you will choose a socio-economic question, analyse real data from European countries with the methods of the course, build a dashboard and present your results to everybody in a joint online session. The COIL is part of your own course: you receive credits and are graded by your home university.']},
+        'Together you will choose a socio-economic question, analyse real data from European countries with the methods of your course (Econometrics or Advanced Data Analysis and Visualization), build a dashboard and present your results to everybody in a joint online session. The COIL is part of your own course: you receive credits and are graded by your home university.']},
     {title: 'Before you start: checklist',
       items: ['Read this guide and the schedule.',
         'Make sure you can use Python, R or Gretl, and Power BI if your course uses it.',
@@ -256,6 +257,8 @@ window.COIL_CONTENT = {
   faq: [
     {q: 'Do I need to know how to code?',
       a: 'No. Everything in the COIL can be done with menus in Power BI or Gretl. Python and R are optional, for students whose course already uses them. The methods module (Resources) shows the menus first for every method, and the code only as an extra.'},
+    {q: 'Which course is the COIL part of?',
+      a: 'Econometrics or Advanced Data Analysis and Visualization, depending on your university and degree. The COIL is part of that course: you receive its credits and you are graded by your home teacher.'},
     {q: 'Which tool should I use?',
       a: 'The one you use in your course: Python, R, Gretl or Power BI. Students in the same team can use different tools, but agree on one for the final notebook and the dashboard.'},
     {q: 'Is my English good enough?',
