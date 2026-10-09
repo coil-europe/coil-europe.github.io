@@ -26,9 +26,17 @@
         : `<div class="foto iniciales" style="background:${colorUni[t.university] || 'var(--ulysseus)'}" aria-hidden="true">${esc(iniciales(t.name))}</div>`}
       <h3>${esc(t.name)}</h3>
       <p class="uni-docente">${esc(t.university)}</p>
-      ${t.role ? `<p class="nota">${esc(t.role)}</p>` : ''}
+      ${t.bio ? `<p class="bio">${esc(t.bio)}</p>` : ''}
       ${t.email ? `<a href="mailto:${esc(t.email)}">${esc(t.email)}</a>` : ''}
     </article>`).join('');
+
+  $('intro-equipo').textContent = C.teamIntro || '';
+  $('como-trabajamos').innerHTML = (C.teamWork || []).map((t) => `<li>${esc(t)}</li>`).join('');
+  $('contactos').innerHTML = C.universities.map((u) => {
+    const ts = C.teachers.filter((t) => t.university === u.name);
+    return `<div class="contacto"><img src="${esc(u.logo)}" alt=""><div><strong>${esc(u.name)}</strong>
+      ${ts.map((t) => `<br>${esc(t.name)}${t.email ? ` · <a href="mailto:${esc(t.email)}">${esc(t.email)}</a>` : ''}`).join('')}</div></div>`;
+  }).join('');
 
   // ---------- Schedule ----------
   // Month calendars (Monday first); each COIL week is coloured by phase and can be clicked to see its details.
@@ -70,7 +78,13 @@
     return d.toLocaleDateString('en-GB', {weekday: 'long', day: 'numeric', month: 'long'}) + ', 23:59 CET'; };
   function fichaEntrega(s) {
     const e = s.deliverable;
-    return `<div class="entrega"><p class="entrega-titulo">Deliverable: ${esc(e.name)}</p>
+    if (!e) {
+      const sig = C.schedule.find((x) => x.deliverable && x.week > s.week);
+      return `<div class="entrega sin"><p class="entrega-titulo">No deliverable this week</p>
+        <p><b>By the end of the week:</b> ${esc(s.goal || '')}</p>
+        ${sig ? `<p class="nota">Next deliverable: <strong>${esc(sig.deliverable.name)}</strong>, due ${esc(vence(sig))} (week ${sig.week}).</p>` : ''}</div>`;
+    }
+    return `<div class="entrega"><p class="entrega-titulo">Deliverable ${e.number}: ${esc(e.name)}</p>${e.note ? `<p class="nota">${esc(e.note)}</p>` : ''}
       <dl><dt>Due</dt><dd><strong>${esc(vence(s))}</strong></dd><dt>Who</dt><dd>${esc(e.who)}</dd>
       <dt>Format</dt><dd>${esc(e.format)}</dd><dt>Submit in</dt><dd>${esc(C.submission)}</dd></dl>
       <p class="entrega-sub">It must include:</p><ul>${e.include.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
@@ -97,10 +111,10 @@
       ${(g.text || []).map((p) => `<p>${esc(p)}</p>`).join('')}
       ${g.items ? `<ul>${g.items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul>` : ''}
     </details>`).join('');
-  $('tabla-entregas').innerHTML = '<thead><tr><th>Week</th><th>Due</th><th>Deliverable</th><th>Who</th><th>Format</th></tr></thead><tbody>'
-    + C.schedule.map((s) => `<tr><td>${s.week}</td><td>${esc(vence(s).replace(', 23:59 CET', ''))}</td><td><strong>${esc(s.deliverable.name)}</strong></td>`
+  $('tabla-entregas').innerHTML = '<thead><tr><th>#</th><th>Week</th><th>Due</th><th>Deliverable</th><th>Who</th><th>Format</th></tr></thead><tbody>'
+    + C.schedule.filter((s) => s.deliverable).map((s) => `<tr><td>${s.deliverable.number}</td><td>${s.week}</td><td>${esc(vence(s).replace(', 23:59 CET', ''))}</td><td><strong>${esc(s.deliverable.name)}</strong></td>`
       + `<td>${esc(s.deliverable.who)}</td><td>${esc(s.deliverable.format)}</td></tr>`).join('') + '</tbody>';
-  $('regla-entrega').innerHTML = `Every deliverable is due on <strong>${esc(C.deadline)}</strong> of its week and is submitted in ${esc(C.submission)}. Click on a week in the schedule to see exactly what it must include.`;
+  $('regla-entrega').innerHTML = `There are <strong>three deliverables</strong>. Each one is due on <strong>${esc(C.deadline)}</strong> of its week and is submitted in ${esc(C.submission)}. Click on a week in the schedule to see exactly what it must include. The other weeks are working weeks.`;
   const nombreInd = Object.fromEntries((window.COIL_DATA ? window.COIL_DATA.indicators : []).map((i) => [i.code, i.name]));
   $('ejemplos').innerHTML = C.examples.map((x) => `<article class="ejemplo"><h3>${esc(x.title)}</h3>
       <p class="pregunta">${esc(x.question)}</p>
@@ -114,8 +128,10 @@
   {
     const s = enCurso || C.schedule.find((x) => new Date(x.start + 'T00:00:00') > hoy) || C.schedule[C.schedule.length - 1];
     const empezado = !!enCurso;
+    const fin = (x) => { const d = new Date(x.start + 'T00:00:00'); d.setDate(d.getDate() + 6); d.setHours(23, 59); return d; };
+    const prox = C.schedule.find((x) => x.deliverable && fin(x) >= hoy);
     $('esta-semana').innerHTML = `<p class="etiqueta">${empezado ? 'This week' : 'Coming up'} · Week ${s.week}: ${esc(s.title)}</p>
-      <p class="esta-entrega">Deliverable: <strong>${esc(s.deliverable.name)}</strong> · ${esc(s.deliverable.who)} · due <strong>${esc(vence(s))}</strong></p>
+      ${prox ? `<p class="esta-entrega">Next deliverable: <strong>${esc(prox.deliverable.name)}</strong> · ${esc(prox.deliverable.who)} · due <strong>${esc(vence(prox))}</strong></p>` : ''}
       <p class="accesos"><a class="boton-pdf" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
       <a class="boton-sec" href="#benefits">Why join?</a></p>`;
   }

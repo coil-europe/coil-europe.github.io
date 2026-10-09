@@ -53,7 +53,12 @@
 
   <section id="team" class="envoltura bloque vista" data-vista="team">
     <h2>Teaching team</h2>
+    <p class="intro-equipo" id="intro-equipo"></p>
     <div class="equipo" id="teachers"></div>
+    <div class="dos-columnas equipo-info">
+      <div><h3>Who to contact</h3><p class="nota">Write first to the teacher of your own university.</p><div id="contactos"></div></div>
+      <div><h3>How we work with you</h3><ul id="como-trabajamos"></ul></div>
+    </div>
   </section>
 
   <section id="schedule" class="envoltura bloque vista" data-vista="schedule">
@@ -104,6 +109,7 @@
     <ul class="descargas">
       <li><a href="data/coil_indicators_long.csv" download>coil_indicators_long.csv</a> — one row per country, year and indicator (best for Python and R)</li>
       <li><a href="data/coil_indicators_wide.csv" download>coil_indicators_wide.csv</a> — one row per country and year (best for Power BI and Excel)</li>
+      <li><a href="data/coil_indicators_gretl.csv" download>coil_indicators_gretl.csv</a> — the same table ready for Gretl (dots in the codes replaced by underscores)</li>
       <li><a href="data/coverage.csv" download>coverage.csv</a> — how many years of data each country has for each indicator</li>
     </ul>
 
@@ -112,6 +118,19 @@
     <div class="tabla-desplazable"><table class="cobertura" id="cobertura"></table></div>
 
     <h3>Getting started</h3>
+    <div class="dos-columnas">
+      <div>
+        <h4>Gretl</h4>
+<pre><code>open coil_indicators_gretl.csv
+# youth unemployment vs tertiary enrolment
+# and GDP per capita (all countries and years)
+ols SL_UEM_1524_ZS const SE_TER_ENRR NY_GDP_PCAP_PP_KD</code></pre>
+      </div>
+      <div>
+        <h4>Power BI / Excel</h4>
+        <p>Use <code>coil_indicators_wide.csv</code>: one row per country and year, one column per indicator. In Power BI: <em>Get data → Text/CSV</em>.</p>
+      </div>
+    </div>
     <div class="dos-columnas">
       <div>
         <h4>Python (pandas)</h4>
