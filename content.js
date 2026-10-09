@@ -95,7 +95,7 @@ window.COIL_CONTENT = {
         'Correlation is not causation: be careful with your conclusions.']},
     {title: 'Deliverables and assessment',
       text: ['There is one deliverable each week (see the schedule). Each university grades its own students.',
-        'The COIL gives you additional points on top of your course grade: up to 1 extra point (out of 10) at the University of Seville, and up to 10 extra points (out of 100) at the Technical University of Košice and the University of Montenegro. Your teachers will explain how these points are awarded.'],
+        'The COIL gives you additional points on top of your course grade: up to 1 extra point (out of 10) at the University of Seville, and up to 10 extra points (out of 100) at the Technical University of Košice and the University of Montenegro. The extra points are awarded to students who complete the final presentation of the project in week 9.'],
       items: ['Submit deliverables on time through the channel indicated by your teacher.',
         'Final dashboard: an interactive link, or a PDF or screenshots if Power BI publishing is not allowed in your university account.',
         'The final team projects will be shown in the Projects section of this website (team name and topic only, no personal data).']},
