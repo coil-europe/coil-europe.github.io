@@ -19,7 +19,7 @@ window.COIL_CONTENT = {
     {name: 'Daniel Ruiz Romera', university: 'Universidad de Sevilla', email: 'druiz8@us.es'},
     {name: 'Alena Mojsejová', university: 'Technical University of Košice'},
     {name: 'Dana Paľová', university: 'Technical University of Košice'},
-    {name: 'Bojan', university: 'University of Montenegro'},
+    {name: 'Bojan Pejović', university: 'University of Montenegro'},
   ],
 
   outcomes: [
