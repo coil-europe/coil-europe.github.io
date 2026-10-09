@@ -208,7 +208,14 @@
         <div><h3>${esc(p.team)}</h3><p class="nota">${esc((p.universities || []).join(' · '))}</p><p>${esc(p.topic)}</p>
         ${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">Open dashboard</a>` : ''}</div></article>`).join('')
     : '<p class="vacio-proyectos">The final team projects will be published here after the joint online presentation (week 9).</p>';
-  $('lista-faq').innerHTML = (C.faq || []).map((f, i) => `<details class="pregunta-faq"${i === 0 ? ' open' : ''}><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('');
+  const idGrupo = (g) => 'faq-' + g.toLowerCase().replace(/[^a-z]+/g, '-');
+  $('lista-faq').innerHTML = `<nav class="faq-indice" aria-label="FAQ topics">${(C.faq || []).map((g) => `<a href="#${idGrupo(g.group)}">${esc(g.group)} <span>${g.items.length}</span></a>`).join('')}</nav>`
+    + (C.faq || []).map((g, gi) => `<div class="faq-grupo" id="${idGrupo(g.group)}"><h3>${esc(g.group)}</h3>
+      ${g.items.map((f, i) => `<details class="pregunta-faq"${gi === 0 && i === 0 ? ' open' : ''}><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</div>`).join('');
+  // index links scroll inside the FAQ view instead of switching views
+  document.querySelectorAll('.faq-indice a').forEach((l) => l.addEventListener('click', (e) => {
+    e.preventDefault(); document.querySelector(l.getAttribute('href')).scrollIntoView({behavior: 'smooth', block: 'start'});
+  }));
   $('materiales').innerHTML = (C.materials || []).map((g) => `<div class="material-grupo"><h3>${esc(g.group)}</h3>
     ${g.items.map((it) => `<div class="material"><p>${esc(it.title)}</p><p class="material-enlaces">${it.files.map(([l, f], i) =>
       `<a class="${i ? 'boton-sec' : 'boton-pdf'} boton-enlace" href="${esc(f)}" ${f.endsWith('.pdf') ? 'target="_blank" rel="noopener"' : 'download'}>${esc(l)}</a>`).join(' ')}</p></div>`).join('')}</div>`).join('');

@@ -372,3 +372,11 @@ code { font-size: .86em; background: var(--fondo-2); padding: 1px 5px; border-ra
   .uni img { height: 44px; }
   .uni span { display: none; }
 }
+
+/* ---- FAQ groups ---- */
+.faq-indice { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 8px; }
+.faq-indice a { text-decoration: none; background: #fff; border: 1px solid var(--linea); border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: .9rem; color: var(--ulysseus); }
+.faq-indice a:hover { border-color: var(--coral); }
+.faq-indice span { display: inline-block; min-width: 20px; margin-left: 4px; padding: 0 6px; border-radius: 999px; background: var(--fondo-2); color: var(--suave); font-size: .78rem; text-align: center; }
+.faq-grupo { display: grid; gap: 10px; scroll-margin-top: 84px; }
+.faq-grupo h3 { font-family: var(--serif); font-size: 1.3rem; margin: 18px 0 2px; }
