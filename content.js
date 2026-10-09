@@ -264,7 +264,7 @@ window.COIL_CONTENT = {
       {title: 'Correlation, regression, panel data, classification, PCA, clustering and missing values, with COIL data. Menus first; code optional.',
         files: [['PDF', 'docs/slides/COIL_methods_module.pdf'], ['PowerPoint', 'docs/slides/COIL_methods_module.pptx']]},
       {title: 'Code that reproduces every number in the module (put it next to coil_indicators_gretl.csv)',
-        files: [['Python', 'docs/code/metodos.py'], ['R', 'docs/code/metodos.R'], ['Gretl', 'docs/code/metodos.inp']]},
+        files: [['Python', 'docs/code/methods.py'], ['R', 'docs/code/methods.R'], ['Gretl', 'docs/code/methods.inp']]},
     ]},
     {group: 'Templates for your slides', items: [
       {title: 'Lightning-update slide (week 5) and the six final slides (week 9)', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
