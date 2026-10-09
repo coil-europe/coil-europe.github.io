@@ -251,6 +251,44 @@ window.COIL_CONTENT = {
   // {team, universities: ['US','TUKE','UoM'], topic, link, image}
   projects: [],
 
+  // Frequently asked questions: {q, a}. Keep the answers consistent with the rest of this file.
+  faq: [
+    {q: 'Do I need to know how to code?',
+      a: 'No. Everything in the COIL can be done with menus in Power BI or Gretl. Python and R are optional, for students whose course already uses them. The methods module (Resources) shows the menus first for every method, and the code only as an extra.'},
+    {q: 'Which tool should I use?',
+      a: 'The one you use in your course: Python, R, Gretl or Power BI. Students in the same team can use different tools, but agree on one for the final notebook and the dashboard.'},
+    {q: 'Is my English good enough?',
+      a: 'English is the working language of the COIL, but you do not need perfect English: clear and simple is enough. You may use AI tools to improve your English if you declare it.'},
+    {q: 'Who decides the teams?',
+      a: 'The teachers, so that every team has students from the three universities. Teams are announced in the kick-off session (week 1).'},
+    {q: 'Can we choose our own topic?',
+      a: 'Yes. You can take one of the proposed projects (Projects section), adapt it, or propose your own question in deliverable 1, as long as it can be answered with data from several countries.'},
+    {q: 'Can we use data that are not in the COIL dataset?',
+      a: 'Yes, if you cite the source and describe every variable in your data dictionary (code, unit, source and years).'},
+    {q: 'How and when do we submit?',
+      a: 'With the Submit button of each deliverable on this website. Each deliverable is due on Sunday at 23:59 CET of its week: week 2, week 6 and week 9.'},
+    {q: 'What if we cannot meet a deadline?',
+      a: 'Tell your team and your home teacher before the deadline, not after.'},
+    {q: 'Are the joint sessions compulsory?',
+      a: 'The final presentation (week 9) is required to receive the extra points. If you cannot attend another session, tell your home teacher and your team in advance.'},
+    {q: 'Where do I find the session links?',
+      a: 'On this website: Sessions section and Home page. Before the date is fixed you will find a vote on the date and time there. You do not need an account of another university to join.'},
+    {q: 'Who grades me?',
+      a: 'Your teacher at your home university, following the rules of your own course.'},
+    {q: 'How do I get the extra points and the certificate?',
+      a: 'The extra points (+1 out of 10 at the University of Seville; +10 out of 100 at the Technical University of Košice and the University of Montenegro) go to students who complete the final presentation. You also receive a certificate of participation signed by the three universities.'},
+    {q: 'Can I use ChatGPT or other AI tools?',
+      a: 'Yes, on two conditions: you declare in every deliverable which tool you used and for what, and you check everything it produces. All figures must come from the data, never from the AI.'},
+    {q: 'What if a team member does not contribute?',
+      a: 'Your team charter says what you do in that case. Apply it, and if the problem continues, tell your home teacher early.'},
+    {q: 'Power BI does not let me publish my dashboard. What now?',
+      a: 'Submit a PDF export or screenshots, an interactive HTML file made with Python or R, or the Gretl charts in one PDF. Any of these is fine (see Resources).'},
+    {q: 'We are in different countries. What about time zones?',
+      a: 'Spain, Slovakia and Montenegro are all in the same time zone (CET), so meetings are easy to schedule.'},
+    {q: 'I have another question.',
+      a: 'Ask your home teacher (see Team). For the joint activities or the dataset, any teacher of the COIL can help you.'},
+  ],
+
   // Course materials, built with presentaciones/construir.js (slides) and presentaciones/codigo (code).
   // files: [label, path]; the first file is the main one.
   materials: [
