@@ -380,3 +380,37 @@ code { font-size: .86em; background: var(--fondo-2); padding: 1px 5px; border-ra
 .faq-indice span { display: inline-block; min-width: 20px; margin-left: 4px; padding: 0 6px; border-radius: 999px; background: var(--fondo-2); color: var(--suave); font-size: .78rem; text-align: center; }
 .faq-grupo { display: grid; gap: 10px; scroll-margin-top: 84px; }
 .faq-grupo h3 { font-family: var(--serif); font-size: 1.3rem; margin: 18px 0 2px; }
+
+/* ---- FAQ layout (replaces the simple list) ---- */
+.faq-layout { display: grid; grid-template-columns: 260px 1fr; gap: 32px; align-items: start; margin-top: 16px; }
+.faq-lateral { position: sticky; top: 84px; display: grid; gap: 16px; }
+.faq-indice { display: grid; gap: 4px; margin: 0; }
+.faq-indice a { display: flex; align-items: center; gap: 10px; border: 0; border-radius: 10px; background: transparent; padding: 9px 12px; font-size: .95rem; }
+.faq-indice a:hover { background: #fff; box-shadow: var(--sombra); }
+.faq-indice a.activo { background: var(--ulysseus); color: #fff; }
+.faq-indice a.activo .faq-n { background: rgba(255,255,255,.18); color: #fff; }
+.faq-indice a.activo .faq-ico { color: #f5a3a3; }
+.faq-n { margin-left: auto; min-width: 22px; padding: 0 7px; border-radius: 999px; background: var(--fondo-2); color: var(--suave); font-size: .78rem; text-align: center; }
+.faq-ico { display: inline-grid; place-items: center; width: 22px; height: 22px; color: var(--coral); flex: none; }
+.faq-ico svg { width: 100%; height: 100%; }
+.faq-ico.grande { width: 44px; height: 44px; border-radius: 12px; background: var(--fondo-2); color: var(--ulysseus); padding: 10px; }
+.faq-contacto { background: #fff; border-left: 4px solid var(--coral); border-radius: 12px; padding: 14px 16px; box-shadow: var(--sombra); font-size: .92rem; }
+.faq-contacto p { margin: 0; }
+.faq-contacto .kicker { margin-bottom: 4px; }
+.faq { max-width: none; margin: 0; gap: 28px; }
+.faq-grupo { display: grid; gap: 10px; scroll-margin-top: 84px; }
+.faq-cab { display: flex; gap: 14px; align-items: center; margin-bottom: 4px; }
+.faq-cab h3 { font-family: var(--serif); font-size: 1.35rem; margin: 0; }
+.faq-cab p { margin: 2px 0 0; color: var(--suave); font-size: .92rem; }
+@media (max-width: 900px) {
+  .faq-layout { grid-template-columns: 1fr; gap: 16px; }
+  .faq-lateral { position: static; }
+  .faq-indice { display: flex; flex-wrap: wrap; gap: 8px; }
+  .faq-indice a { background: #fff; border: 1px solid var(--linea); border-radius: 999px; padding: 6px 12px; font-size: .88rem; }
+  .faq-indice .faq-ico { width: 18px; height: 18px; }
+  .faq-contacto { display: none; }
+}
+/* FAQ index: override the earlier chip styles */
+.faq-indice a .faq-ico { background: none; padding: 0; min-width: 0; margin: 0; border-radius: 0; width: 20px; height: 20px; }
+.faq-indice a .faq-n { margin-left: auto; }
+.faq-indice a.activo { box-shadow: none; }

@@ -209,13 +209,29 @@
         ${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">Open dashboard</a>` : ''}</div></article>`).join('')
     : '<p class="vacio-proyectos">The final team projects will be published here after the joint online presentation (week 9).</p>';
   const idGrupo = (g) => 'faq-' + g.toLowerCase().replace(/[^a-z]+/g, '-');
-  $('lista-faq').innerHTML = `<nav class="faq-indice" aria-label="FAQ topics">${(C.faq || []).map((g) => `<a href="#${idGrupo(g.group)}">${esc(g.group)} <span>${g.items.length}</span></a>`).join('')}</nav>`
-    + (C.faq || []).map((g, gi) => `<div class="faq-grupo" id="${idGrupo(g.group)}"><h3>${esc(g.group)}</h3>
-      ${g.items.map((f, i) => `<details class="pregunta-faq"${gi === 0 && i === 0 ? ' open' : ''}><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</div>`).join('');
-  // index links scroll inside the FAQ view instead of switching views
-  document.querySelectorAll('.faq-indice a').forEach((l) => l.addEventListener('click', (e) => {
+  const ICONOS_FAQ = {
+    start: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    team: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 2 6 5"/>',
+    video: '<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/>',
+    check: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 12l3 3 5-6"/>',
+    help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17h.01"/>',
+  };
+  const iconoFaq = (k) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONOS_FAQ[k] || ICONOS_FAQ.help}</svg>`;
+  $('faq-indice').innerHTML = (C.faq || []).map((g) => `<a href="#${idGrupo(g.group)}"><span class="faq-ico">${iconoFaq(g.icon)}</span>${esc(g.group)}<span class="faq-n">${g.items.length}</span></a>`).join('');
+  $('lista-faq').innerHTML = (C.faq || []).map((g, gi) => `<section class="faq-grupo" id="${idGrupo(g.group)}">
+      <header class="faq-cab"><span class="faq-ico grande">${iconoFaq(g.icon)}</span><div><h3>${esc(g.group)}</h3>${g.intro ? `<p>${esc(g.intro)}</p>` : ''}</div></header>
+      ${g.items.map((f, i) => `<details class="pregunta-faq"${gi === 0 && i === 0 ? ' open' : ''}><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</section>`).join('');
+  // index links scroll inside the FAQ view instead of switching views; highlight the group in view
+  const enlacesFaq = [...document.querySelectorAll('#faq-indice a')];
+  enlacesFaq.forEach((l) => l.addEventListener('click', (e) => {
     e.preventDefault(); document.querySelector(l.getAttribute('href')).scrollIntoView({behavior: 'smooth', block: 'start'});
   }));
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((ents) => ents.forEach((en) => {
+      if (en.isIntersecting) enlacesFaq.forEach((l) => l.classList.toggle('activo', l.getAttribute('href') === '#' + en.target.id));
+    }), {rootMargin: '-30% 0px -60% 0px'});
+    document.querySelectorAll('.faq-grupo').forEach((s) => obs.observe(s));
+  }
   $('materiales').innerHTML = (C.materials || []).map((g) => `<div class="material-grupo"><h3>${esc(g.group)}</h3>
     ${g.items.map((it) => `<div class="material"><p>${esc(it.title)}</p><p class="material-enlaces">${it.files.map(([l, f], i) =>
       `<a class="${i ? 'boton-sec' : 'boton-pdf'} boton-enlace" href="${esc(f)}" ${f.endsWith('.pdf') ? 'target="_blank" rel="noopener"' : 'download'}>${esc(l)}</a>`).join(' ')}</p></div>`).join('')}</div>`).join('');

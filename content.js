@@ -253,9 +253,9 @@ window.COIL_CONTENT = {
   // {team, universities: ['US','TUKE','UoM'], topic, link, image}
   projects: [],
 
-  // Frequently asked questions, in groups: {group, items: [{q, a}]}. Keep the answers consistent with the rest of this file.
+  // Frequently asked questions, in groups: {group, icon, intro, items: [{q, a}]}. icon: start, team, video, check, help. Keep the answers consistent with the rest of this file.
   faq: [
-    {group: 'Getting started', items: [
+    {group: 'Getting started', icon: 'start', intro: 'What you need before you start: skills, course, tools and English.', items: [
       {q: 'Do I need to know how to code?',
         a: 'No. Everything in the COIL can be done with menus in Power BI or Gretl. Python and R are optional, for students whose course already uses them. The methods module (Resources) shows the menus first for every method, and the code only as an extra.'},
       {q: 'Which course is the COIL part of?',
@@ -265,7 +265,7 @@ window.COIL_CONTENT = {
       {q: 'Is my English good enough?',
         a: 'English is the working language of the COIL, but you do not need perfect English: clear and simple is enough. You may use AI tools to improve your English if you declare it.'},
     ]},
-    {group: 'Teams and topics', items: [
+    {group: 'Teams and topics', icon: 'team', intro: 'How teams are formed, how to choose your question and how to work together.', items: [
       {q: 'Who decides the teams?',
         a: 'The teachers, so that every team has students from the three universities. Teams are announced in the kick-off session (week 1).'},
       {q: 'Can we choose our own topic?',
@@ -277,7 +277,7 @@ window.COIL_CONTENT = {
       {q: 'We are in different countries. What about time zones?',
         a: 'Spain, Slovakia and Montenegro are all in the same time zone (CET), so meetings are easy to schedule.'},
     ]},
-    {group: 'Joint sessions', items: [
+    {group: 'Joint sessions', icon: 'video', intro: 'The four online sessions: attendance, links and recordings.', items: [
       {q: 'Are the joint sessions compulsory?',
         a: 'The final presentation (week 9) is required to receive the extra points. The other three are strongly recommended. If you cannot attend one, tell your home teacher and your team in advance.'},
       {q: 'I cannot attend a session. Will I miss it?',
@@ -285,7 +285,7 @@ window.COIL_CONTENT = {
       {q: 'Where do I find the session links?',
         a: 'On this website: Sessions section and Home page. Before the date is fixed you will find a vote on the date and time there. You do not need an account of another university to join.'},
     ]},
-    {group: 'Deliverables and grades', items: [
+    {group: 'Deliverables and grades', icon: 'check', intro: 'How and when to submit, grades, extra points and the certificate.', items: [
       {q: 'How and when do we submit?',
         a: 'With the Submit button of each deliverable on this website. Each deliverable is due on Sunday at 23:59 CET of its week: week 2, week 6 and week 9.'},
       {q: 'What if we cannot meet a deadline?',
@@ -297,7 +297,7 @@ window.COIL_CONTENT = {
       {q: 'How do I get the extra points and the certificate?',
         a: 'The extra points (+1 out of 10 at the University of Seville; +10 out of 100 at the Technical University of Košice and the University of Montenegro) go to students who complete the final presentation. You also receive a certificate of participation signed by the three universities.'},
     ]},
-    {group: 'AI tools and help', items: [
+    {group: 'AI tools and help', icon: 'help', intro: 'Using AI tools, and where to ask anything else.', items: [
       {q: 'Can I use ChatGPT or other AI tools?',
         a: 'Yes, on two conditions: you declare in every deliverable which tool you used and for what, and you check everything it produces. All figures must come from the data, never from the AI.'},
       {q: 'I have another question.',
