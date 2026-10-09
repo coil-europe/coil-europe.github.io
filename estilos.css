@@ -279,3 +279,96 @@ nav a.activo { background: var(--ulysseus); color: #fff; }
 /* ---- recordings ---- */
 .despues { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--linea); font-size: .9rem; }
 .despues-tit { font-weight: 700; color: var(--ulysseus); margin-right: 4px; }
+
+/* =================================================================
+   Design pass (shared look with the slides)
+   ================================================================= */
+:root { --serif: Georgia, "Times New Roman", serif; --lav: #d9d6ea; --sombra: 0 1px 2px rgba(49,42,99,.06), 0 10px 28px -16px rgba(49,42,99,.35); }
+body { display: flex; flex-direction: column; min-height: 100vh; background: #fcfcfe; }
+main { flex: 1; }
+h1, h2, .destacado-tit + .cifras .valor { font-family: var(--serif); letter-spacing: -.01em; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.25rem); margin-bottom: .8rem; }
+h3 { color: var(--ulysseus); }
+.kicker { margin: 0 0 6px; font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--coral); }
+#benefits .kicker, #team .kicker { text-align: center; }
+section[id] { scroll-margin-top: 84px; }
+.vista.bloque { padding-top: 40px; }
+a { text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; border-radius: 6px; }
+
+/* header */
+.cabecera { box-shadow: 0 1px 0 var(--linea); border-bottom: 0; }
+nav a { color: var(--ulysseus); font-size: .95rem; transition: background .15s ease, color .15s ease; }
+nav a.activo { background: var(--ulysseus); color: #fff; box-shadow: inset 0 -3px 0 var(--coral); }
+
+/* hero: same language as the slide covers */
+.portada { position: relative; overflow: hidden; background: var(--ulysseus); color: #fff; padding: 64px 0 56px; }
+.portada::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: var(--coral); }
+.portada .circulo { position: absolute; border-radius: 50%; pointer-events: none; }
+.portada .c1 { width: 520px; height: 520px; right: -140px; top: -220px; background: rgba(255,255,255,.06); }
+.portada .c2 { width: 340px; height: 340px; right: 60px; bottom: -180px; background: rgba(229,90,90,.18); }
+.portada .envoltura { position: relative; }
+.portada .etiqueta { color: #f5a3a3; text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 700; }
+.portada h1 { color: #fff; font-size: clamp(2.3rem, 6vw, 3.8rem); margin: 6px 0 10px; }
+.portada .subtitulo { color: var(--lav); font-size: 1.25rem; max-width: 640px; }
+.portada .datos-curso { color: #fff; opacity: .95; }
+.portada .aviso { background: rgba(255,243,214,.95); }
+.universidades { margin-top: 32px; }
+.uni { border: 0; border-radius: 14px; box-shadow: 0 12px 30px -18px rgba(0,0,0,.6); transition: transform .2s ease; }
+.uni:hover { transform: translateY(-3px); }
+
+/* "this week" card on the home page */
+.esta-semana { border: 0; border-left: 6px solid var(--coral); border-radius: 14px; box-shadow: var(--sombra); padding: 20px 24px; }
+.esta-semana .etiqueta { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 700; }
+
+/* buttons */
+.boton-pdf, .boton-sec { border-radius: 999px; padding: 8px 16px; transition: background .15s ease, color .15s ease, transform .15s ease; }
+.boton-pdf:hover { transform: translateY(-1px); }
+.boton-sec { background: #fff; }
+.boton-enlace { padding: 5px 13px; }
+
+/* cards: one radius, one shadow */
+.tema, .pregunta-faq, .sesion, .material-grupo, .docente, .beneficio, .detalle-semana, .uni, .ejemplo { border-radius: 14px; }
+.sesion, .material-grupo, .docente, .detalle-semana { box-shadow: var(--sombra); border-color: transparent; }
+.tema, .pregunta-faq { border-color: var(--linea); transition: box-shadow .2s ease; }
+.tema[open], .pregunta-faq[open] { box-shadow: var(--sombra); border-color: transparent; }
+.tema summary, .pregunta-faq summary { font-size: 1.02rem; }
+.sesion-cab h3, .docente h3, .material-grupo h3 { font-family: var(--serif); }
+.sesion-cab h3 { font-size: 1.35rem; }
+.regla { border-radius: 10px; }
+
+/* why join: big numbers in serif, like the slides */
+.cifra .valor { font-family: var(--serif); font-size: 3.4rem; }
+.destacado { border-radius: 18px; }
+
+/* data: getting started */
+.arranque { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0 16px; }
+.arranque-caja { background: #fff; border-radius: 14px; padding: 16px 18px; box-shadow: var(--sombra); }
+.arranque-caja h4 { font-family: var(--serif); font-size: 1.15rem; margin: 0 0 6px; color: var(--ulysseus); }
+.arranque-caja p { margin: 0; font-size: .92rem; }
+.arranque-caja .kicker { margin-bottom: 4px; }
+.arranque-caja.destacada { background: var(--ulysseus); color: #fff; }
+.arranque-caja.destacada h4, .arranque-caja.destacada a { color: #fff; }
+.arranque-caja.destacada .kicker { color: #f5a3a3; }
+code { font-size: .86em; background: var(--fondo-2); padding: 1px 5px; border-radius: 4px; }
+.arranque-caja.destacada code { background: rgba(255,255,255,.12); }
+
+/* footer */
+.pie { margin-top: 48px; }
+.pie-fila { padding-top: 28px; padding-bottom: 28px; }
+
+@media (max-width: 900px) { .arranque { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .portada { padding: 40px 0 36px; }
+  .portada .c1 { width: 320px; height: 320px; right: -160px; top: -120px; }
+  .portada .c2 { display: none; }
+  nav { gap: 2px; }
+  nav a { padding: 5px 8px; font-size: .9rem; }
+}
+@media (prefers-reduced-motion: reduce) { .uni, .boton-pdf, .tema, .pregunta-faq { transition: none; } .uni:hover, .boton-pdf:hover { transform: none; } }
+@media (max-width: 760px) {
+  .universidades { grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 20px; }
+  .uni { padding: 10px 6px; gap: 4px; font-size: .74rem; line-height: 1.25; }
+  .uni img { height: 44px; }
+  .uni span { display: none; }
+}

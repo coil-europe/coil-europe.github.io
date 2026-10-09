@@ -19,6 +19,7 @@
 
 <main>
   <section id="home" class="portada vista" data-vista="home">
+    <span class="circulo c1" aria-hidden="true"></span><span class="circulo c2" aria-hidden="true"></span>
     <div class="envoltura">
       <p class="etiqueta">Ulysseus COIL · Collaborative Online International Learning</p>
       <h1 id="titulo"></h1>
@@ -35,6 +36,7 @@
   <section class="envoltura bloque vista" data-vista="home" aria-labelledby="about-h">
     <div class="dos-columnas">
       <div>
+        <p class="kicker">In short</p>
         <h2 id="about-h">About this COIL</h2>
         <p>Students from three universities work together in <strong>international teams</strong> to compare socio-economic challenges across European countries. Each team chooses a question about the economy, society or public policy, analyses real data with the methods of the course (correlation, regression, classification, dimensionality reduction and clustering), builds a dashboard and presents the results to everybody in a joint online session.</p>
         <p>The COIL is part of each university's own course: students receive ECTS and are graded by their home university.</p>
@@ -47,6 +49,7 @@
   </section>
 
   <section id="benefits" class="envoltura bloque vista" data-vista="benefits">
+    <p class="kicker">What you get</p>
     <h2>Why join?</h2>
     <p class="lead-beneficios" id="lead-beneficios"></p>
     <div class="destacados">
@@ -58,6 +61,7 @@
   </section>
 
   <section id="team" class="envoltura bloque vista" data-vista="team">
+    <p class="kicker">Who we are</p>
     <h2>Teaching team</h2>
     <p class="intro-equipo" id="intro-equipo"></p>
     <div class="equipo" id="teachers"></div>
@@ -68,8 +72,9 @@
   </section>
 
   <section id="schedule" class="envoltura bloque vista" data-vista="schedule">
+    <p class="kicker">Nine weeks</p>
     <h2>Schedule</h2>
-    <p class="nota">Nine weeks, one deliverable per week. Click on a week to see its activities and deliverable.</p>
+    <p class="nota">Nine weeks and three deliverables. Click on a week to see what to do and what to submit.</p>
     <div class="leyenda-fases" id="leyenda-fases"></div>
     <div class="calendario-y-detalle">
       <div class="calendario" id="calendario"></div>
@@ -78,6 +83,7 @@
   </section>
 
   <section id="sessions" class="envoltura bloque vista" data-vista="sessions">
+    <p class="kicker">Online · 45 minutes</p>
     <h2>Joint sessions</h2>
     <p class="nota" id="intro-sesiones"></p>
     <div class="sesiones" id="sesiones"></div>
@@ -86,6 +92,7 @@
   </section>
 
   <section id="guide" class="envoltura bloque vista" data-vista="guide">
+    <p class="kicker">How it works</p>
     <h2>Student guide</h2>
     <p class="nota">Everything you need to know to work in the COIL. Click on a topic to open it.</p>
     <p><a class="boton-pdf" href="docs/COIL_student_guide.pdf" download>Download the guide as PDF</a></p>
@@ -97,15 +104,15 @@
     <h3>Guide</h3>
     <div class="guia" id="guia"></div>
 
-    <h3>Example projects</h3>
-    <p class="nota">Ideas that work with the COIL dataset. You can choose one of them or propose your own question.</p>
-    <div class="ejemplos" id="ejemplos"></div>
+    <h3>Choosing a topic</h3>
+    <p class="nota">Six example projects, with their indicators and methods, are in the <a href="#projects">Projects</a> section. You can choose one, adapt it or propose your own question.</p>
 
     <h3>Templates</h3>
     <div class="guia" id="plantillas"></div>
   </section>
 
   <section id="data" class="envoltura bloque vista" data-vista="data">
+    <p class="kicker">The dataset</p>
     <h2>Data</h2>
     <p>Ready-to-use indicators for <strong id="n-paises"></strong> European countries (EU-27 and the Western Balkan candidates), <span id="rango-anios"></span>, so that teams can spend their time analysing rather than searching for data. <strong>Spain, Slovakia and Montenegro</strong> are highlighted; the other countries give enough observations for regression and clustering. Last update: <span id="actualizado"></span>.</p>
 
@@ -132,44 +139,28 @@
     <div class="tabla-desplazable"><table class="cobertura" id="cobertura"></table></div>
 
     <h3>Getting started</h3>
-    <div class="dos-columnas">
-      <div>
-        <h4>Gretl</h4>
-<pre><code>open coil_indicators_gretl.csv
-# youth unemployment vs tertiary enrolment
-# and GDP per capita (all countries and years)
-ols SL_UEM_1524_ZS const SE_TER_ENRR NY_GDP_PCAP_PP_KD</code></pre>
+    <div class="arranque">
+      <div class="arranque-caja">
+        <p class="kicker">No code needed</p>
+        <h4>Power BI or Gretl</h4>
+        <p>Power BI: <em>Get data → Text/CSV</em> and open <code>coil_indicators_wide.csv</code>. Gretl: <em>File → Open data → User file</em> and open <code>coil_indicators_gretl.csv</code>.</p>
       </div>
-      <div>
-        <h4>Power BI / Excel</h4>
-        <p>Use <code>coil_indicators_wide.csv</code>: one row per country and year, one column per indicator. In Power BI: <em>Get data → Text/CSV</em>.</p>
+      <div class="arranque-caja">
+        <p class="kicker">With code, optional</p>
+        <h4>Python or R</h4>
+        <p>Open <code>coil_indicators_gretl.csv</code> with pandas or <code>read.csv</code>. Ready-to-run scripts are in <a href="#resources">Resources</a>.</p>
       </div>
-    </div>
-    <div class="dos-columnas">
-      <div>
-        <h4>Python (pandas)</h4>
-<pre><code>import pandas as pd
-
-df = pd.read_csv("coil_indicators_long.csv")
-home = df[df.iso3.isin(["ESP", "SVK", "MNE"])]
-unemp = home[home.indicator == "SL.UEM.TOTL.ZS"]
-unemp.pivot(index="year", columns="country", values="value")</code></pre>
-      </div>
-      <div>
-        <h4>R (tidyverse)</h4>
-<pre><code>library(tidyverse)
-
-df &lt;- read_csv("coil_indicators_long.csv")
-df |&gt;
-  filter(iso3 %in% c("ESP", "SVK", "MNE"),
-         indicator == "SL.UEM.TOTL.ZS") |&gt;
-  ggplot(aes(year, value, colour = country)) + geom_line()</code></pre>
+      <div class="arranque-caja destacada">
+        <p class="kicker">Step by step</p>
+        <h4>Methods module</h4>
+        <p>Every method with a worked example on these data, menus first. <a href="docs/slides/COIL_methods_module.pdf" target="_blank" rel="noopener">Open the PDF</a></p>
       </div>
     </div>
     <p class="nota">Sources: World Bank Open Data (CC BY 4.0) and IMF DataMapper. Please cite the source of each indicator in your work.</p>
   </section>
 
   <section id="projects" class="envoltura bloque vista" data-vista="projects">
+    <p class="kicker">Ideas and results</p>
     <h2>Projects</h2>
     <div id="proyectos" class="proyectos"></div>
 
@@ -179,11 +170,13 @@ df |&gt;
   </section>
 
   <section id="faq" class="envoltura bloque vista" data-vista="faq">
+    <p class="kicker">Before you start</p>
     <h2>Frequently asked questions</h2>
     <div class="faq" id="lista-faq"></div>
   </section>
 
   <section id="resources" class="envoltura bloque vista" data-vista="resources">
+    <p class="kicker">Slides, code and templates</p>
     <h2>Resources</h2>
     <div class="materiales" id="materiales"></div>
     <h3>Useful links</h3>

@@ -142,7 +142,6 @@
         <p class="ejemplo-etq">Methods</p><p>${esc(x.methods)}</p>
         ${x.credit ? `<p class="credito">Photo: <a href="${esc(x.credit.url)}" target="_blank" rel="noopener">${esc(x.credit.author)}</a>, ${esc(x.credit.license)}, via Wikimedia Commons</p>` : ''}
       </div></article>`).join('');
-  $('ejemplos').innerHTML = fichasEjemplos;
   $('ejemplos-proyectos').innerHTML = fichasEjemplos;
   $('plantillas').innerHTML = C.templates.map((t) => `<details class="tema"><summary>${esc(t.title)}</summary>
       <ul>${t.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></details>`).join('');
