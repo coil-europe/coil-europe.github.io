@@ -14,9 +14,11 @@ window.COIL_CONTENT = {
     {name: 'University of Montenegro', country: 'Montenegro', logo: 'img/uom.svg', url: 'https://www.ucg.ac.me'},
   ],
 
-  // Add the rest of the teaching team here: {name, university, email}
+  // Teaching team: {name, university, email}. Partners' e-mails are left out until they agree to publish them.
   teachers: [
     {name: 'Daniel Ruiz Romera', university: 'Universidad de Sevilla', email: 'druiz8@us.es'},
+    {name: 'Alena Mojsejová', university: 'Technical University of Košice'},
+    {name: 'Bojan', university: 'University of Montenegro'},
   ],
 
   outcomes: [
