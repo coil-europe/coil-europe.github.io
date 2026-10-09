@@ -80,6 +80,13 @@
   const enCurso = semanaDe.get(clave(hoy));
   verSemana(enCurso ? enCurso.week : (hoy < primero ? 1 : C.schedule.length));
 
+  // ---------- Student guide ----------
+  $('guia').innerHTML = (C.guide || []).map((g, i) => `<details class="tema"${i === 0 ? ' open' : ''}>
+      <summary>${esc(g.title)}</summary>
+      ${(g.text || []).map((p) => `<p>${esc(p)}</p>`).join('')}
+      ${g.items ? `<ul>${g.items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul>` : ''}
+    </details>`).join('');
+
   // ---------- Projects and resources ----------
   $('proyectos').innerHTML = C.projects.length
     ? C.projects.map((p) => `<article class="proyecto">${p.image ? `<img src="${esc(p.image)}" alt="">` : ''}

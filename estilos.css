@@ -125,3 +125,12 @@ pre { background: #1f1d2b; color: #f3f2f8; padding: 14px; border-radius: 10px; o
 .nav-semana { display: flex; justify-content: space-between; margin-top: 12px; }
 .nav-semana button { font: inherit; font-size: .85rem; border: 1px solid var(--linea); background: #fff; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
 @media (max-width: 900px) { .calendario-y-detalle { grid-template-columns: 1fr; } .detalle-semana { position: static; } }
+
+/* ---- student guide ---- */
+.guia { display: grid; gap: 10px; margin-top: 12px; }
+.tema { border: 1px solid var(--linea); border-radius: 10px; background: #fff; padding: 0 16px; }
+.tema summary { cursor: pointer; font-weight: 600; color: var(--ulysseus); padding: 14px 24px 14px 0; list-style: none; position: relative; }
+.tema summary::-webkit-details-marker { display: none; }
+.tema summary::after { content: '+'; position: absolute; right: 0; top: 10px; font-size: 1.3rem; color: var(--coral); }
+.tema[open] summary::after { content: '–'; }
+.tema[open] { padding-bottom: 12px; }
