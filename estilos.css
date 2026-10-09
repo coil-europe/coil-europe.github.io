@@ -85,8 +85,13 @@ pre { background: #1f1d2b; color: #f3f2f8; padding: 14px; border-radius: 10px; o
   .pie-fila { flex-direction: column; align-items: flex-start; }
 }
 
-.equipo { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 12px; }
-.docente { border: 1px solid var(--linea); border-radius: 12px; padding: 20px 16px; text-align: center; background: #fff; }
+#team h2 { text-align: center; }
+.equipo { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 16px auto 0; }
+.docente { flex: 0 0 186px; border: 1px solid var(--linea); border-radius: 12px; padding: 20px 12px; text-align: center; background: #fff;
+  border-top: 4px solid var(--color-uni, var(--ulysseus)); }
+/* if the five cards do not fit in one row, split 3 + 2 (never 4 + 1) */
+@media (max-width: 1040px) { .equipo { max-width: 620px; } }
+@media (max-width: 680px) { .equipo { max-width: 100%; } .docente { flex: 0 1 260px; } }
 .docente .foto { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; margin: 0 auto 12px; display: block; }
 .docente .iniciales { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2rem; font-weight: 700; letter-spacing: .03em; }
 .docente h3 { margin: 0 0 4px; font-size: 1.05rem; }

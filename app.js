@@ -21,12 +21,11 @@
   const colorUni = {'Universidad de Sevilla': 'var(--esp)', 'Technical University of Košice': 'var(--svk)', 'University of Montenegro': 'var(--mne)'};
   // first name + first surname (with two given names, the surname is the second-to-last word)
   const iniciales = (n) => { const w = n.trim().split(/\s+/); const s = w.length >= 4 ? w[w.length - 2] : (w[1] || ''); return (w[0][0] + (s[0] || '')).toUpperCase(); };
-  const logoUni = Object.fromEntries(C.universities.map((u) => [u.name, u.logo]));
-  $('teachers').innerHTML = C.teachers.map((t) => `<article class="docente">
+  $('teachers').innerHTML = C.teachers.map((t) => `<article class="docente" style="--color-uni:${colorUni[t.university] || 'var(--ulysseus)'}">
       ${t.photo ? `<img class="foto" src="${esc(t.photo)}" alt="${esc(t.name)}">`
         : `<div class="foto iniciales" style="background:${colorUni[t.university] || 'var(--ulysseus)'}" aria-hidden="true">${esc(iniciales(t.name))}</div>`}
       <h3>${esc(t.name)}</h3>
-      <p class="uni-docente">${logoUni[t.university] ? `<img src="${esc(logoUni[t.university])}" alt="">` : ''}${esc(t.university)}</p>
+      <p class="uni-docente">${esc(t.university)}</p>
       ${t.role ? `<p class="nota">${esc(t.role)}</p>` : ''}
       ${t.email ? `<a href="mailto:${esc(t.email)}">${esc(t.email)}</a>` : ''}
     </article>`).join('');
