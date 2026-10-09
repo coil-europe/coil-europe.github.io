@@ -162,3 +162,16 @@ pre { background: #1f1d2b; color: #f3f2f8; padding: 14px; border-radius: 10px; o
 .beneficio p { margin: 0; }
 @media (max-width: 900px) { .beneficios { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .beneficios { grid-template-columns: 1fr; } }
+
+/* ---- one view at a time ---- */
+.vista[hidden] { display: none !important; }
+nav a.activo { background: var(--ulysseus); color: #fff; }
+.vista.bloque { border-top: 0; min-height: 60vh; }
+.vista[data-vista="home"].bloque { min-height: 0; padding-top: 24px; padding-bottom: 24px; }
+.esta-semana { border: 2px solid var(--coral); border-radius: 14px; padding: 18px 20px; background: #fff; }
+.esta-entrega { font-size: 1.05rem; margin: 6px 0 12px; }
+.accesos { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; }
+.boton-sec { display: inline-block; border: 1px solid var(--ulysseus); color: var(--ulysseus); text-decoration: none; padding: 7px 14px; border-radius: 8px; font-weight: 600; font-size: .92rem; }
+.boton-sec:hover { background: var(--fondo-2); }
+.beneficios { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1000px) { .beneficios { grid-template-columns: 1fr 1fr; } }

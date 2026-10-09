@@ -18,7 +18,7 @@
 </header>
 
 <main>
-  <section id="home" class="portada">
+  <section id="home" class="portada vista" data-vista="home">
     <div class="envoltura">
       <p class="etiqueta">Ulysseus COIL · Collaborative Online International Learning</p>
       <h1 id="titulo"></h1>
@@ -28,7 +28,11 @@
     </div>
   </section>
 
-  <section class="envoltura bloque" aria-labelledby="about-h">
+  <section class="envoltura bloque vista" data-vista="home">
+    <div class="esta-semana" id="esta-semana"></div>
+  </section>
+
+  <section class="envoltura bloque vista" data-vista="home" aria-labelledby="about-h">
     <div class="dos-columnas">
       <div>
         <h2 id="about-h">About this COIL</h2>
@@ -42,17 +46,17 @@
     </div>
   </section>
 
-  <section id="benefits" class="envoltura bloque">
+  <section id="benefits" class="envoltura bloque vista" data-vista="benefits">
     <h2>Why join?</h2>
     <div class="beneficios" id="beneficios"></div>
   </section>
 
-  <section id="team" class="envoltura bloque">
+  <section id="team" class="envoltura bloque vista" data-vista="team">
     <h2>Teaching team</h2>
     <div class="equipo" id="teachers"></div>
   </section>
 
-  <section id="schedule" class="envoltura bloque">
+  <section id="schedule" class="envoltura bloque vista" data-vista="schedule">
     <h2>Schedule</h2>
     <p class="nota">Nine weeks, one deliverable per week. Click on a week to see its activities and deliverable.</p>
     <div class="leyenda-fases" id="leyenda-fases"></div>
@@ -62,7 +66,7 @@
     </div>
   </section>
 
-  <section id="guide" class="envoltura bloque">
+  <section id="guide" class="envoltura bloque vista" data-vista="guide">
     <h2>Student guide</h2>
     <p class="nota">Everything you need to know to work in the COIL. Click on a topic to open it.</p>
     <p><a class="boton-pdf" href="docs/COIL_student_guide.pdf" download>Download the guide as PDF</a></p>
@@ -82,7 +86,7 @@
     <div class="guia" id="plantillas"></div>
   </section>
 
-  <section id="data" class="envoltura bloque">
+  <section id="data" class="envoltura bloque vista" data-vista="data">
     <h2>Data</h2>
     <p>Ready-to-use indicators for <strong id="n-paises"></strong> European countries (EU-27 and the Western Balkan candidates), <span id="rango-anios"></span>, so that teams can spend their time analysing rather than searching for data. <strong>Spain, Slovakia and Montenegro</strong> are highlighted; the other countries give enough observations for regression and clustering. Last update: <span id="actualizado"></span>.</p>
 
@@ -132,12 +136,12 @@ df |&gt;
     <p class="nota">Sources: World Bank Open Data (CC BY 4.0) and IMF DataMapper. Please cite the source of each indicator in your work.</p>
   </section>
 
-  <section id="projects" class="envoltura bloque">
+  <section id="projects" class="envoltura bloque vista" data-vista="projects">
     <h2>Projects</h2>
     <div id="proyectos" class="proyectos"></div>
   </section>
 
-  <section id="resources" class="envoltura bloque">
+  <section id="resources" class="envoltura bloque vista" data-vista="resources">
     <h2>Resources</h2>
     <ul id="recursos"></ul>
     <h3>Publishing your dashboard</h3>

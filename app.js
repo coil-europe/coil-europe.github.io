@@ -110,6 +110,27 @@
       <ul>${t.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></details>`).join('');
   $('beneficios').innerHTML = C.benefits.map((b) => `<article class="beneficio"><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p></article>`).join('');
 
+  // ---------- Home: what is due this week ----------
+  {
+    const s = enCurso || C.schedule.find((x) => new Date(x.start + 'T00:00:00') > hoy) || C.schedule[C.schedule.length - 1];
+    const empezado = !!enCurso;
+    $('esta-semana').innerHTML = `<p class="etiqueta">${empezado ? 'This week' : 'Coming up'} · Week ${s.week}: ${esc(s.title)}</p>
+      <p class="esta-entrega">Deliverable: <strong>${esc(s.deliverable.name)}</strong> · ${esc(s.deliverable.who)} · due <strong>${esc(vence(s))}</strong></p>
+      <p class="accesos"><a class="boton-pdf" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
+      <a class="boton-sec" href="#benefits">Why join?</a></p>`;
+  }
+
+  // ---------- One section at a time ----------
+  const vistas = new Set([...document.querySelectorAll('.vista')].map((s) => s.dataset.vista));
+  function mostrarVista() {
+    const v = vistas.has(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
+    document.querySelectorAll('.vista').forEach((s) => { s.hidden = s.dataset.vista !== v; });
+    document.querySelectorAll('nav a').forEach((l) => l.classList.toggle('activo', l.getAttribute('href') === '#' + v));
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', mostrarVista);
+  mostrarVista();
+
   // ---------- Projects and resources ----------
   $('proyectos').innerHTML = C.projects.length
     ? C.projects.map((p) => `<article class="proyecto">${p.image ? `<img src="${esc(p.image)}" alt="">` : ''}

@@ -104,6 +104,8 @@ window.COIL_CONTENT = {
     {title: 'An international experience without travelling', text: 'Work for nine weeks with students from Spain, Slovakia and Montenegro, from your own classroom.'},
     {title: 'A real project for your portfolio', text: 'You will analyse real European data and build a dashboard you can show to future employers. The best projects are published on this website.'},
     {title: 'Skills employers ask for', text: 'Data analysis with Python or R, dashboards, teamwork in international and online teams, and presenting in English.'},
+    {title: 'A head start for your final project', text: 'You can develop your COIL project further in your bachelor\'s thesis (Trabajo Fin de Grado or equivalent), in agreement with your supervisor: you will already have the question, the data and the first analyses.'},
+    {title: 'A step towards international internships', text: 'An international project, teamwork in English and contacts in three countries are a strong point when you apply for internships abroad, such as Erasmus+ traineeships.'},
     {title: 'Your Ulysseus network', text: 'Meet students and teachers from other Ulysseus universities: a first step towards an Erasmus exchange or further European projects.'},
   ],
 
