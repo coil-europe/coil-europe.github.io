@@ -42,8 +42,17 @@ window.COIL_CONTENT = {
 
   // Submission rules that apply to every week
   // submitLink (in each deliverable): upload link pasted by the teachers ('' = not published yet).
+  // files: how to name the uploaded files (shown in the Submit section).
   deadline: 'Sunday, 23:59 CET',
-  submission: 'this website: use the Submit button of the deliverable (Home, Guide and Schedule)',
+  submission: 'this website: go to the Submit section and use the button of the deliverable',
+  submitRules: [
+    'One member of the team uploads the team files. Each student uploads his or her own individual reflection (deliverable 3).',
+    'Name your files as shown in each deliverable, so that the teachers know which team they come from.',
+    'You do not need an account of the University of Seville: the button opens an upload page where you type your name and choose the files.',
+    'You will not see the files of other teams. After uploading, the page confirms that your files were received.',
+    'Uploaded files cannot be replaced. If you need to correct one, upload it again with v2 at the end of its name: the teachers grade the last version received before the deadline.',
+    'If you cannot meet a deadline, tell your team and your home teacher before it, not after.',
+  ],
 
   // One entry per week (Monday date). Only weeks 2, 6 and 9 have a deliverable, due on the Sunday of that week.
   // Weeks without a deliverable show "goal": what the team should have ready by the end of the week.
@@ -54,6 +63,7 @@ window.COIL_CONTENT = {
     {week: 2, start: '2026-10-19', phase: 'Orientation', title: 'International teams and topic selection',
       activities: 'Teams with students from the three universities. Agree on working rules, tools and meeting times. Choose a socio-economic or public-policy question.',
       deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDt84DgHo2jRYZyLjhr_0IxAc4R5Qqeec3cjK04vST_gck', number: 1, name: 'Team charter and topic proposal', who: 'Team', format: 'One PDF, maximum 2 pages (use the templates in the guide)',
+        files: ['Team X – Deliverable 1.pdf'],
         include: ['Team charter: team name, members and universities, roles, communication channel, weekly meeting time, how you take decisions, what you do if someone does not contribute.',
           'Topic proposal: research question, why it matters for Spain, Slovakia and Montenegro, 3–6 indicators from the COIL dataset (with their codes), countries and years, and the methods you expect to use.',
           'A short note on your use of AI tools (which tool, for what, and how you checked the result), or a sentence saying you did not use any.']}},
@@ -69,6 +79,7 @@ window.COIL_CONTENT = {
     {week: 6, start: '2026-11-16', phase: 'Methods', title: 'Dimensionality reduction and clustering',
       activities: 'Principal component analysis and clustering of countries: which European countries look alike, and where do Spain, Slovakia and Montenegro fall?',
       deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDz_jaMSNu4Tb8oQCcxRwlQAeClYW5ZI3mU-MKE7u8Fc_w', number: 2, name: 'Analysis notebook', who: 'Team', format: 'Python or R notebook (.ipynb, .Rmd or Quarto), or Gretl script (.inp) with its output, + exported HTML or PDF + your dataset (CSV or Excel)',
+        files: ['Team X – Deliverable 2 – Notebook (.ipynb, .Rmd, .qmd or .inp)', 'Team X – Deliverable 2 – Notebook (.html or .pdf)', 'Team X – Deliverable 2 – Data (.csv or .xlsx)'],
         include: ['Data: the dataset you analysed and a data dictionary (name, code, definition, unit, source and years of every variable), with missing values and how you handled them.',
           'Exploratory analysis: descriptive statistics and at least three charts, one comparing Spain, Slovakia and Montenegro with the rest of Europe.',
           'Regression or classification: model specification, results table and interpretation in plain English.',
@@ -85,6 +96,7 @@ window.COIL_CONTENT = {
       activities: 'All teams present to students and teachers from the three universities. Closing discussion.',
       deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDehibFuVQLTpNLiAGMQdceAQzV73bbAqfZzPBQzvZqPJ8', number: 3, name: 'Final dashboard, presentation and final reflection', who: 'Team (dashboard, slides and presentation) + individual (reflection)',
         format: 'Dashboard link or PDF + slides (maximum 6 slides, 5-minute presentation) + one-page PDF reflection',
+        files: ['Team X – Dashboard (PDF, or a text file with the link)', 'Team X – Slides (.pptx or .pdf)', 'Team X – Surname (individual reflection, PDF)'],
         note: 'Upload the dashboard and the slides before the joint presentation. The reflection is due on Sunday.',
         include: ['Final dashboard: your question, the data, three key findings and limitations, for a non-specialist audience.',
           'Slides and live presentation in the joint online session: every team member presents a part. This is required to receive the extra points.',

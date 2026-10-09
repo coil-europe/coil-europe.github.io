@@ -96,6 +96,31 @@
   const botonesDespues = (x) => `<p class="despues"><span class="despues-tit">Could not attend?</span> ${x.recording
     ? `<a class="boton-pdf boton-enlace" href="${esc(x.recording)}" target="_blank" rel="noopener">Watch the recording</a>`
     : '<span class="pendiente">The recording will be published here after the session</span>'}${x.slides ? ` <a class="boton-sec boton-enlace" href="${esc(x.slides)}" target="_blank" rel="noopener">Slides (PDF)</a>` : ''}</p>`;
+  // ---------- Submit section: one card per deliverable ----------
+  {
+    const dia = 864e5;
+    const estado = (s) => {
+      const fin = new Date(s.start + 'T23:59:00'); fin.setDate(fin.getDate() + 6);
+      const dias = Math.ceil((fin - new Date()) / dia);
+      if (dias < 0) return '<span class="estado cerrado">Deadline passed</span>';
+      if (dias === 0) return '<span class="estado urgente">Due today</span>';
+      if (dias <= 7) return `<span class="estado urgente">Due in ${dias} day${dias > 1 ? 's' : ''}</span>`;
+      return `<span class="estado">Due in ${dias} days</span>`;
+    };
+    $('plazo-envio').textContent = C.deadline;
+    $('reglas-envio').innerHTML = (C.submitRules || []).map((r) => `<li>${esc(r)}</li>`).join('');
+    $('envios').innerHTML = C.schedule.filter((s) => s.deliverable).map((s) => {
+      const e = s.deliverable;
+      return `<article class="envio"><div class="envio-cab"><span class="envio-num">${e.number}</span>
+        <div><p class="sesion-sem">Week ${s.week} · ${estado(s)}</p><h3>${esc(e.name)}</h3></div></div>
+        <p class="envio-plazo">Due <strong>${esc(vence(s))}</strong></p>${e.note ? `<p class="nota">${esc(e.note)}</p>` : ''}
+        <dl><dt>Who</dt><dd>${esc(e.who)}</dd><dt>Format</dt><dd>${esc(e.format)}</dd></dl>
+        ${e.files ? `<p class="entrega-sub">Name your files</p><ul class="nombres">${e.files.map((f) => `<li><code>${esc(f)}</code></li>`).join('')}</ul>` : ''}
+        <details class="envio-contenido"><summary>What it must include</summary><ul>${e.include.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></details>
+        <div class="envio-boton">${botonEnvio(e)}</div></article>`;
+    }).join('');
+  }
+
   function fichaSesion(semana) {
     const x = (C.sessions || []).find((y) => y.week === semana);
     return x ? `<div class="sesion-aviso"><b>Joint session: ${esc(x.title)}</b> · ${esc(x.duration)}, on two different days <a href="#sessions">Details</a> ${franjas(x)}</div>` : '';
@@ -182,7 +207,7 @@
     $('esta-semana').innerHTML = `<p class="etiqueta">${empezado ? 'This week' : 'Coming up'} · Week ${s.week}: ${esc(s.title)}</p>
       ${prox ? `<p class="esta-entrega">Next deliverable: <strong>${esc(prox.deliverable.name)}</strong> · ${esc(prox.deliverable.who)} · due <strong>${esc(vence(prox))}</strong> ${botonEnvio(prox.deliverable)}</p>` : ''}
       ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}), on two different days: choose one with your team</p>${franjas(proxSes)}` : ''}
-      <p class="accesos"><a class="boton-pdf" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
+      <p class="accesos"><a class="boton-pdf" href="#submit">Submit your work</a> <a class="boton-sec" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
       <a class="boton-sec" href="#benefits">Why join?</a> <a class="boton-sec" href="#faq">FAQ: do I need to code?</a></p>`;
   }
 
