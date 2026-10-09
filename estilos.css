@@ -414,3 +414,53 @@ code { font-size: .86em; background: var(--fondo-2); padding: 1px 5px; border-ra
 .faq-indice a .faq-ico { background: none; padding: 0; min-width: 0; margin: 0; border-radius: 0; width: 20px; height: 20px; }
 .faq-indice a .faq-n { margin-left: auto; }
 .faq-indice a.activo { box-shadow: none; }
+
+/* =================================================================
+   Mobile
+   ================================================================= */
+.boton-menu { display: none; }
+.cobertura td.n { white-space: nowrap; }
+.cobertura td.n small { display: block; font-size: .78rem; color: var(--suave); }
+.graficos figure { min-width: 0; }
+.graficos svg { display: block; width: 100%; height: auto; }
+@media (max-width: 760px) {
+  /* header: logo + hamburger; the sections open as a list under it */
+  .cabecera-fila { flex-wrap: nowrap; padding-top: 8px; padding-bottom: 8px; }
+  .logo-ulysseus img { height: 34px; }
+  .boton-menu { display: inline-flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 11px;
+    border: 1px solid var(--linea); border-radius: 10px; background: #fff; cursor: pointer; }
+  .boton-menu span { display: block; height: 2px; border-radius: 2px; background: var(--ulysseus); transition: transform .2s ease, opacity .2s ease; }
+  .menu-abierto .boton-menu span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-abierto .boton-menu span:nth-child(2) { opacity: 0; }
+  .menu-abierto .boton-menu span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .cabecera nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: #fff; padding: 8px 16px 14px;
+    box-shadow: 0 14px 24px -12px rgba(49,42,99,.35); border-top: 1px solid var(--linea);
+    grid-template-columns: 1fr 1fr; gap: 4px; max-height: calc(100vh - 60px); overflow-y: auto; }
+  .menu-abierto nav { display: grid; }
+  .cabecera nav a { padding: 11px 12px; font-size: 1rem; border-radius: 10px; }
+  section[id], .faq-grupo { scroll-margin-top: 72px; }
+
+  /* tighter spacing */
+  .bloque { padding: 32px 16px; }
+  .vista.bloque { padding-top: 28px; min-height: 0; }
+  .esta-semana { padding: 16px 16px; }
+  .destacado { padding: 18px; }
+  .cifra .valor { font-size: 2.8rem; }
+  .pie { margin-top: 32px; }
+
+  /* deliverables table becomes one card per deliverable */
+  .tabla-entregas thead { display: none; }
+  .tabla-entregas, .tabla-entregas tbody, .tabla-entregas tr, .tabla-entregas td { display: block; width: 100%; }
+  .tabla-entregas tr { background: #fff; border-radius: 14px; box-shadow: var(--sombra); padding: 10px 14px; margin-bottom: 12px; }
+  .tabla-entregas td { display: grid; grid-template-columns: 92px 1fr; gap: 8px; padding: 6px 0; }
+  .tabla-entregas td::before { content: attr(data-label); color: var(--suave); font-size: .85rem; }
+  .tabla-entregas tr td:last-child { border-bottom: 0; }
+  .tabla-entregas td .boton-enlace, .tabla-entregas td .pendiente { margin-left: 0; justify-self: start; }
+
+  /* bigger tap targets */
+  .nav-semana button { padding: 9px 14px; }
+  .boton-enlace { padding: 8px 14px; }
+  .cobertura { font-size: .85rem; }
+  .cobertura th, .cobertura td { padding: 6px 5px; }
+}
+@media (prefers-reduced-motion: reduce) { .boton-menu span { transition: none; } }

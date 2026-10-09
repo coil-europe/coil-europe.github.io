@@ -128,8 +128,8 @@
       ${g.items ? `<ul>${g.items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul>` : ''}
     </details>`).join('');
   $('tabla-entregas').innerHTML = '<thead><tr><th>#</th><th>Week</th><th>Due</th><th>Deliverable</th><th>Who</th><th>Format</th><th>Submit</th></tr></thead><tbody>'
-    + C.schedule.filter((s) => s.deliverable).map((s) => `<tr><td>${s.deliverable.number}</td><td>${s.week}</td><td>${esc(vence(s).replace(', 23:59 CET', ''))}</td><td><strong>${esc(s.deliverable.name)}</strong></td>`
-      + `<td>${esc(s.deliverable.who)}</td><td>${esc(s.deliverable.format)}</td><td>${botonEnvio(s.deliverable)}</td></tr>`).join('') + '</tbody>';
+    + C.schedule.filter((s) => s.deliverable).map((s) => `<tr><td data-label="#">${s.deliverable.number}</td><td data-label="Week">${s.week}</td><td data-label="Due">${esc(vence(s).replace(', 23:59 CET', ''))}</td><td data-label="Deliverable"><strong>${esc(s.deliverable.name)}</strong></td>`
+      + `<td data-label="Who">${esc(s.deliverable.who)}</td><td data-label="Format">${esc(s.deliverable.format)}</td><td data-label="Submit">${botonEnvio(s.deliverable)}</td></tr>`).join('') + '</tbody>';
   $('regla-entrega').innerHTML = `There are <strong>three deliverables</strong>. Each one is due on <strong>${esc(C.deadline)}</strong> of its week and is submitted on ${esc(C.submission)}. Click on a week in the schedule to see exactly what it must include. The other weeks are working weeks.`;
   const nombreInd = Object.fromEntries((window.COIL_DATA ? window.COIL_DATA.indicators : []).map((i) => [i.code, i.name]));
   const fichasEjemplos = C.examples.map((x, i) => `<article class="ejemplo">
@@ -185,7 +185,17 @@
     document.querySelectorAll('.vista').forEach((s) => { s.hidden = s.dataset.vista !== v; });
     document.querySelectorAll('nav a').forEach((l) => l.classList.toggle('activo', l.getAttribute('href') === '#' + v));
     window.scrollTo(0, 0);
+    abrirMenu(false);
   }
+  // mobile menu (hamburger button, only visible on narrow screens)
+  const botonMenu = $('boton-menu');
+  function abrirMenu(si) {
+    botonMenu.setAttribute('aria-expanded', si);
+    document.querySelector('.cabecera').classList.toggle('menu-abierto', si);
+  }
+  botonMenu.addEventListener('click', () => abrirMenu(botonMenu.getAttribute('aria-expanded') !== 'true'));
+  document.querySelectorAll('#menu a').forEach((l) => l.addEventListener('click', () => abrirMenu(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') abrirMenu(false); });
   window.addEventListener('hashchange', mostrarVista);
   mostrarVista();
 
@@ -258,8 +268,11 @@
   };
   const numero = (v) => (Math.abs(v) >= 1e6 ? (v / 1e6).toFixed(1) + 'M' : Math.abs(v) >= 1000 ? Math.round(v).toLocaleString('en-GB') : (+v.toFixed(1)).toString());
 
+  // charts are drawn at the real width of their box, so the labels keep their size on phones
+  const ancho = (id) => Math.round(Math.min(520, Math.max(280, $(id).clientWidth || window.innerWidth - 90)));
+
   function lineas(codigo) {
-    const W = 520, H = 280, m = {l: 48, r: 12, t: 12, b: 28};
+    const W = ancho('grafico-lineas'), H = Math.round(W * 0.54), m = {l: 48, r: 12, t: 12, b: 28};
     const serie = D.series[codigo] || {};
     const claves = ['ESP', 'SVK', 'MNE', 'EUU'].filter((p) => serie[p]);
     const svg = nodo('svg', {viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Line chart'});
@@ -303,7 +316,7 @@
     $('titulo-ranking').textContent = `All countries in ${anio || '—'}`;
     const filas = paises.map((p) => [p, (serie[p] || []).find((d) => d[0] === anio)]).filter((f) => f[1])
       .map(([p, d]) => [p, d[1]]).sort((a, b) => b[1] - a[1]);
-    const W = 520, fila = 15, m = {l: 150, r: 48}, H = filas.length * fila + 8;
+    const W = ancho('grafico-ranking'), fila = 15, m = {l: W < 400 ? 132 : 150, r: W < 400 ? 34 : 48}, H = filas.length * fila + 8;
     const svg = nodo('svg', {viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Ranking bar chart'});
     const min = Math.min(0, ...filas.map((f) => f[1])), max = Math.max(0, ...filas.map((f) => f[1]));
     const x = (v) => m.l + (v - min) / ((max - min) || 1) * (W - m.l - m.r);
@@ -329,6 +342,13 @@
   }
   $('indicador').addEventListener('change', mostrar);
   mostrar();
+  // redraw when the Data view is opened (it may have been hidden at load) or the screen is rotated
+  window.addEventListener('hashchange', () => { if (location.hash === '#data') mostrar(); });
+  let ultimoAncho = window.innerWidth, espera;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === ultimoAncho) return;
+    ultimoAncho = window.innerWidth; clearTimeout(espera); espera = setTimeout(mostrar, 200);
+  });
 
   // coverage table for the three COIL countries
   const cob = {};
@@ -339,6 +359,6 @@
       const c = cob[p + '|' + i.code];
       const n = c ? c.years : 0;
       const clase = n === 0 ? 'vacio' : n < total * 0.75 ? 'parcial' : '';
-      return `<td class="n ${clase}">${n === 0 ? 'no data' : `${n} yrs · to ${c.last}`}</td>`;
+      return `<td class="n ${clase}">${n === 0 ? 'no data' : `${n} yrs <small>to ${c.last}</small>`}</td>`;
     }).join('') + '</tr>').join('') + '</tbody>';
 })();
