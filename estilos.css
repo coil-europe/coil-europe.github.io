@@ -134,3 +134,6 @@ pre { background: #1f1d2b; color: #f3f2f8; padding: 14px; border-radius: 10px; o
 .tema summary::after { content: '+'; position: absolute; right: 0; top: 10px; font-size: 1.3rem; color: var(--coral); }
 .tema[open] summary::after { content: '–'; }
 .tema[open] { padding-bottom: 12px; }
+
+.boton-pdf { display: inline-block; background: var(--ulysseus); color: #fff; text-decoration: none; padding: 8px 14px; border-radius: 8px; font-weight: 600; font-size: .92rem; }
+.boton-pdf:hover { background: var(--coral); }
