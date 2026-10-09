@@ -172,7 +172,7 @@
       ${prox ? `<p class="esta-entrega">Next deliverable: <strong>${esc(prox.deliverable.name)}</strong> · ${esc(prox.deliverable.who)} · due <strong>${esc(vence(prox))}</strong> ${botonEnvio(prox.deliverable)}</p>` : ''}
       ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}) · ${esc(proxSes.when)} ${botonSesion(proxSes)}</p>` : ''}
       <p class="accesos"><a class="boton-pdf" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
-      <a class="boton-sec" href="#benefits">Why join?</a></p>`;
+      <a class="boton-sec" href="#benefits">Why join?</a> <a class="boton-sec" href="#faq">FAQ: do I need to code?</a></p>`;
   }
 
   // ---------- One section at a time ----------
