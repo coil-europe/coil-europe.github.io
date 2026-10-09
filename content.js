@@ -24,7 +24,7 @@ window.COIL_CONTENT = {
 
   // Teaching team: {name, university, email, photo: 'img/team/file.jpg', bio: one sentence (optional)}
   teachers: [
-    {name: 'Daniel Ruiz Romera', university: 'University of Seville', email: 'druiz8@us.es', bio: 'Researcher in innovation policy, entrepreneurship and public funding for firms.', photo: 'img/team/daniel-ruiz-romera.jpg'},
+    {name: 'Daniel Ruiz Romera', university: 'University of Seville', email: 'druiz8@us.es', bio: 'Department of Applied Economics II. Teaches econometrics; works on innovation policy, entrepreneurship and academic spin-offs, and EU funding for firms.', photo: 'img/team/daniel-ruiz-romera.jpg'},
     {name: 'Alena Mojsejová', university: 'Technical University of Košice', email: 'alena.mojsejova@tuke.sk', bio: 'Department of Applied Mathematics and Business Informatics, Faculty of Economics. Teaches probability, statistics and social statistics; works on income inequality and gender gaps.', photo: 'img/team/alena-mojsejova.jpg'},
     {name: 'Bojan Pejović', university: 'University of Montenegro', email: 'bojan.p@ucg.ac.me', bio: 'Faculty of Economics. Head of the Center for Statistical Analysis; teaches statistics and econometrics. PhD in Economics (University of Belgrade).', photo: 'img/team/bojan-pejovic.jpg'},
     {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk', bio: 'Department of Applied Mathematics and Business Informatics, Faculty of Economics. Teaches data analysis and visualisation, business informatics and AI in business; works on business intelligence, digital transformation and e-learning.', photo: 'img/team/dana-palova.jpg'},
