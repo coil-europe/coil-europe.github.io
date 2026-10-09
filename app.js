@@ -160,10 +160,10 @@
       ${(g.text || []).map((p) => `<p>${esc(p)}</p>`).join('')}
       ${g.items ? `<ul>${g.items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul>` : ''}
     </details>`).join('');
-  $('tabla-entregas').innerHTML = '<thead><tr><th>#</th><th>Week</th><th>Due</th><th>Deliverable</th><th>Who</th><th>Format</th><th>Submit</th></tr></thead><tbody>'
+  if ($('tabla-entregas')) $('tabla-entregas').innerHTML = '<thead><tr><th>#</th><th>Week</th><th>Due</th><th>Deliverable</th><th>Who</th><th>Format</th><th>Submit</th></tr></thead><tbody>'
     + C.schedule.filter((s) => s.deliverable).map((s) => `<tr><td data-label="#">${s.deliverable.number}</td><td data-label="Week">${s.week}</td><td data-label="Due">${esc(vence(s).replace(', 23:59 CET', ''))}</td><td data-label="Deliverable"><strong>${esc(s.deliverable.name)}</strong></td>`
       + `<td data-label="Who">${esc(s.deliverable.who)}</td><td data-label="Format">${esc(s.deliverable.format)}</td><td data-label="Submit">${botonEnvio(s.deliverable)}</td></tr>`).join('') + '</tbody>';
-  $('regla-entrega').innerHTML = `There are <strong>three deliverables</strong>. Each one is due on <strong>${esc(C.deadline)}</strong> of its week and is submitted on ${esc(C.submission)}. Click on a week in the schedule to see exactly what it must include. The other weeks are working weeks.`;
+  if ($('regla-entrega')) $('regla-entrega').innerHTML = `There are <strong>three deliverables</strong>. Each one is due on <strong>${esc(C.deadline)}</strong> of its week and is submitted on ${esc(C.submission)}. Click on a week in the schedule to see exactly what it must include. The other weeks are working weeks.`;
   const nombreInd = Object.fromEntries((window.COIL_DATA ? window.COIL_DATA.indicators : []).map((i) => [i.code, i.name]));
   const fichasEjemplos = C.examples.map((x, i) => `<article class="ejemplo">
       <figure class="ejemplo-foto">${x.image ? `<img src="${esc(x.image)}" alt="" loading="lazy">` : ''}
@@ -208,16 +208,19 @@
       ${prox ? `<p class="esta-entrega">Next deliverable: <strong>${esc(prox.deliverable.name)}</strong> · ${esc(prox.deliverable.who)} · due <strong>${esc(vence(prox))}</strong> ${botonEnvio(prox.deliverable)}</p>` : ''}
       ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}), on two different days: choose one with your team</p>${franjas(proxSes)}` : ''}
       <p class="accesos"><a class="boton-pdf" href="#submit">Submit your work</a> <a class="boton-sec" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
-      <a class="boton-sec" href="#benefits">Why join?</a> <a class="boton-sec" href="#faq">FAQ: do I need to code?</a></p>`;
+      <a class="boton-sec" href="#benefits">Extra points and certificate</a> <a class="boton-sec" href="#faq">FAQ: do I need to code?</a></p>`;
   }
 
   // ---------- One section at a time ----------
-  const vistas = new Set([...document.querySelectorAll('.vista')].map((s) => s.dataset.vista));
   function mostrarVista() {
-    const v = vistas.has(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
+    const h = decodeURIComponent(location.hash.slice(1));
+    const destino = h ? document.getElementById(h) : null;
+    const seccion = destino ? destino.closest('.vista') : null;
+    const v = seccion ? seccion.dataset.vista : 'home';
     document.querySelectorAll('.vista').forEach((s) => { s.hidden = s.dataset.vista !== v; });
     document.querySelectorAll('nav a').forEach((l) => l.classList.toggle('activo', l.getAttribute('href') === '#' + v));
-    window.scrollTo(0, 0);
+    if (destino && h !== v) requestAnimationFrame(() => destino.scrollIntoView({block: 'start'}));
+    else window.scrollTo(0, 0);
     abrirMenu(false);
   }
   // mobile menu (hamburger button, only visible on narrow screens)
@@ -250,7 +253,8 @@
     ? C.projects.map((p) => `<article class="proyecto">${p.image ? `<img src="${esc(p.image)}" alt="">` : ''}
         <div><h3>${esc(p.team)}</h3><p class="nota">${esc((p.universities || []).join(' · '))}</p><p>${esc(p.topic)}</p>
         ${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">Open dashboard</a>` : ''}</div></article>`).join('')
-    : '<p class="vacio-proyectos">The final team projects will be published here after the joint online presentation (week 9).</p>';
+    : '';
+  if (!C.projects.length) $('team-projects').remove();
   const idGrupo = (g) => 'faq-' + g.toLowerCase().replace(/[^a-z]+/g, '-');
   const ICONOS_FAQ = {
     start: '<path d="M5 12h14M13 6l6 6-6 6"/>',
@@ -376,7 +380,7 @@
   $('indicador').addEventListener('change', mostrar);
   mostrar();
   // redraw when the Data view is opened (it may have been hidden at load) or the screen is rotated
-  window.addEventListener('hashchange', () => { if (location.hash === '#data') mostrar(); });
+  window.addEventListener('hashchange', () => { if (!$('data').hidden) mostrar(); });
   let ultimoAncho = window.innerWidth, espera;
   window.addEventListener('resize', () => {
     if (window.innerWidth === ultimoAncho) return;

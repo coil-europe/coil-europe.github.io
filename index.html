@@ -9,7 +9,7 @@
 <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta name="theme-color" content="#312a63">
-<link rel="stylesheet" href="estilos.css?v=7">
+<link rel="stylesheet" href="estilos.css?v=8">
 </head>
 <body>
 <header class="cabecera">
@@ -17,7 +17,7 @@
     <a href="https://ulysseus.eu" class="logo-ulysseus" aria-label="Ulysseus European University"><img src="img/ulysseus.svg" alt="Ulysseus European University"></a>
     <button class="boton-menu" id="boton-menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav aria-label="Sections" id="menu">
-      <a href="#home">Home</a><a href="#benefits">Why join</a><a href="#faq">FAQ</a><a href="#guide">Guide</a><a href="#schedule">Schedule</a><a href="#submit">Submit</a><a href="#sessions">Sessions</a><a href="#projects">Projects</a><a href="#data">Data</a><a href="#resources">Resources</a><a href="#team">Team</a>
+      <a href="#home">Home</a><a href="#schedule">Schedule</a><a href="#sessions">Sessions</a><a href="#submit">Submit</a><a href="#guide">Guide</a><a href="#data">Data</a><a href="#resources">Resources</a><a href="#team">Team</a>
     </nav>
   </div>
 </header>
@@ -53,7 +53,7 @@
     </div>
   </section>
 
-  <section id="benefits" class="envoltura bloque vista" data-vista="benefits">
+  <section id="benefits" class="envoltura bloque vista" data-vista="home">
     <p class="kicker">What you get</p>
     <h2>Why join?</h2>
     <p class="lead-beneficios" id="lead-beneficios"></p>
@@ -62,7 +62,12 @@
       <article class="destacado certificado"><div class="icono-grande" aria-hidden="true"></div><div><p class="destacado-tit">Certificate</p><p id="texto-certificado"></p></div></article>
     </div>
     <div class="beneficios" id="beneficios"></div>
-    <p class="accesos centrado"><a class="boton-pdf" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a></p>
+  </section>
+
+  <section id="team-projects" class="envoltura bloque vista" data-vista="home">
+    <p class="kicker">Results</p>
+    <h2>Team projects</h2>
+    <div id="proyectos" class="proyectos"></div>
   </section>
 
   <section id="team" class="envoltura bloque vista" data-vista="team">
@@ -94,6 +99,9 @@
     <div class="envios" id="envios"></div>
     <h3>How submission works</h3>
     <ul id="reglas-envio"></ul>
+    <h3>Templates</h3>
+    <p class="nota">Use them for deliverable 1 (topic proposal and team charter) and to document your data in week 3.</p>
+    <div class="guia" id="plantillas"></div>
   </section>
 
   <section id="sessions" class="envoltura bloque vista" data-vista="sessions">
@@ -111,18 +119,30 @@
     <p class="nota">Everything you need to know to work in the COIL. Click on a topic to open it.</p>
     <p><a class="boton-pdf" href="docs/COIL_student_guide.pdf" download>Download the guide as PDF</a></p>
 
-    <h3>What to submit each week</h3>
-    <p class="regla" id="regla-entrega"></p>
-    <div class="tabla-desplazable"><table class="tabla-entregas" id="tabla-entregas"></table></div>
+
+    <p class="regla">The three deliverables, their deadlines, file names and upload buttons are in the <a href="#submit">Submit</a> section.</p>
 
     <h3>Guide</h3>
     <div class="guia" id="guia"></div>
 
     <h3>Choosing a topic</h3>
-    <p class="nota">Six example projects, with their indicators and methods, are in the <a href="#projects">Projects</a> section. You can choose one, adapt it or propose your own question.</p>
+    <p class="nota">Six example projects, with their indicators and methods, are in <a href="#projects">Project ideas</a>, in the Data section. You can choose one, adapt it or propose your own question.</p>
 
-    <h3>Templates</h3>
-    <div class="guia" id="plantillas"></div>
+  </section>
+
+  <section id="faq" class="envoltura bloque vista" data-vista="guide">
+    <p class="kicker">Quick answers</p>
+    <h2>Frequently asked questions</h2>
+    <div class="faq-layout">
+      <aside class="faq-lateral">
+        <nav class="faq-indice" id="faq-indice" aria-label="FAQ topics"></nav>
+        <div class="faq-contacto">
+          <p class="kicker">Can't find your answer?</p>
+          <p>Write to the teacher of your own university. Contacts are in <a href="#team">Team</a>.</p>
+        </div>
+      </aside>
+      <div class="faq" id="lista-faq"></div>
+    </div>
   </section>
 
   <section id="data" class="envoltura bloque vista" data-vista="data">
@@ -173,29 +193,11 @@
     <p class="nota">Sources: World Bank Open Data (CC BY 4.0) and IMF DataMapper. Please cite the source of each indicator in your work.</p>
   </section>
 
-  <section id="projects" class="envoltura bloque vista" data-vista="projects">
-    <p class="kicker">Ideas and results</p>
-    <h2>Projects</h2>
-    <div id="proyectos" class="proyectos"></div>
-
-    <h3>Proposed projects</h3>
+  <section id="projects" class="envoltura bloque vista" data-vista="data">
+    <p class="kicker">Choose a topic</p>
+    <h2>Project ideas</h2>
     <p class="nota">Project ideas proposed by the teachers, all feasible with the COIL dataset. Your team can choose one of them, adapt it, or propose its own question in deliverable 1.</p>
     <div class="ejemplos" id="ejemplos-proyectos"></div>
-  </section>
-
-  <section id="faq" class="envoltura bloque vista" data-vista="faq">
-    <p class="kicker">Before you start</p>
-    <h2>Frequently asked questions</h2>
-    <div class="faq-layout">
-      <aside class="faq-lateral">
-        <nav class="faq-indice" id="faq-indice" aria-label="FAQ topics"></nav>
-        <div class="faq-contacto">
-          <p class="kicker">Can't find your answer?</p>
-          <p>Write to the teacher of your own university. Contacts are in <a href="#team">Team</a>.</p>
-        </div>
-      </aside>
-      <div class="faq" id="lista-faq"></div>
-    </div>
   </section>
 
   <section id="resources" class="envoltura bloque vista" data-vista="resources">
@@ -216,8 +218,8 @@
   </div>
 </footer>
 
-<script src="data/data.js?v=7"></script>
-<script src="content.js?v=7"></script>
-<script src="app.js?v=7"></script>
+<script src="data/data.js?v=8"></script>
+<script src="content.js?v=8"></script>
+<script src="app.js?v=8"></script>
 </body>
 </html>
