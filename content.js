@@ -17,6 +17,7 @@ window.COIL_CONTENT = {
   // Teaching team: {name, university, email}
   teachers: [
     {name: 'Daniel Ruiz Romera', university: 'Universidad de Sevilla', email: 'druiz8@us.es'},
+    {name: 'Víctor Ernesto Pérez León', university: 'Universidad de Sevilla', email: 'vpleon@us.es'},
     {name: 'Alena Mojsejová', university: 'Technical University of Košice', email: 'alena.mojsejova@tuke.sk'},
     {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk'},
     {name: 'Bojan Pejović', university: 'University of Montenegro', email: 'bojan.p@ucg.ac.me'},
