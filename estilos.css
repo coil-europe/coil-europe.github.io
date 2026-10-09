@@ -228,3 +228,27 @@ nav a.activo { background: var(--ulysseus); color: #fff; }
 
 /* projects: empty notice spans the whole grid */
 .vacio-proyectos { grid-column: 1 / -1; }
+
+/* ---- proposed projects: photo cards ---- */
+.ejemplos { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.ejemplo { padding: 0; overflow: hidden; border-radius: 16px; display: flex; flex-direction: column;
+  box-shadow: 0 1px 2px rgba(49, 42, 99, .06), 0 8px 24px -12px rgba(49, 42, 99, .25); transition: transform .25s ease, box-shadow .25s ease; }
+.ejemplo:hover { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(49, 42, 99, .08), 0 18px 36px -14px rgba(49, 42, 99, .4); }
+.ejemplo-foto { position: relative; margin: 0; aspect-ratio: 16 / 10; overflow: hidden; background: var(--ulysseus); }
+.ejemplo-foto img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.8) contrast(1.05); transition: transform .6s ease; }
+.ejemplo:hover .ejemplo-foto img { transform: scale(1.06); }
+.ejemplo-foto::after { content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(49, 42, 99, .05) 30%, rgba(49, 42, 99, .55) 62%, rgba(33, 27, 72, .95) 100%); }
+.ejemplo-num { position: absolute; top: 12px; left: 14px; z-index: 1; font-size: .8rem; font-weight: 800; letter-spacing: .08em;
+  color: #fff; background: var(--coral); border-radius: 999px; padding: 3px 10px; }
+.ejemplo-foto h3 { position: absolute; left: 16px; right: 16px; bottom: 12px; z-index: 1; margin: 0; color: #fff;
+  font-size: 1.2rem; line-height: 1.2; text-shadow: 0 1px 8px rgba(0, 0, 0, .35); }
+.ejemplo-cuerpo { padding: 14px 16px 12px; display: flex; flex-direction: column; flex: 1; }
+.ejemplo .pregunta { font-style: normal; font-size: 1rem; font-weight: 600; color: var(--ulysseus); margin: 0 0 10px;
+  padding-left: 10px; border-left: 3px solid var(--coral); }
+.ejemplo-etq { font-size: .72rem !important; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--suave); margin: 8px 0 4px !important; }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li { font-size: .8rem; background: var(--fondo-2); color: var(--ulysseus); border-radius: 999px; padding: 3px 10px; }
+.credito { margin-top: auto !important; padding-top: 10px; font-size: .72rem !important; color: var(--suave); }
+.credito a { color: inherit; }
+@media (prefers-reduced-motion: reduce) { .ejemplo, .ejemplo-foto img { transition: none; } .ejemplo:hover { transform: none; } .ejemplo:hover .ejemplo-foto img { transform: none; } }

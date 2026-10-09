@@ -156,19 +156,26 @@ window.COIL_CONTENT = {
     ],
   },
 
-  // Example projects: ideas that work with the COIL dataset (teams may propose their own)
+  // Example projects: ideas that work with the COIL dataset (teams may propose their own).
+  // image: photo in site/img/projects (800x500); credit: author, licence and Wikimedia Commons page.
   examples: [
-    {title: 'Education and youth unemployment', question: 'Do countries with more young people in higher education have lower youth unemployment?',
+    {title: 'Education and youth unemployment', image: 'img/projects/education.jpg', credit: {author: 'Tungsten', license: 'Public domain', url: 'https://commons.wikimedia.org/wiki/File:Mathematics_lecture_at_the_Helsinki_University_of_Technology.jpg'},
+      question: 'Do countries with more young people in higher education have lower youth unemployment?',
       indicators: ['SL.UEM.1524.ZS', 'SE.TER.ENRR', 'NY.GDP.PCAP.PP.KD'], methods: 'Regression on the country panel; compare Spain, Slovakia and Montenegro with the European pattern.'},
-    {title: 'The digital divide in Europe', question: 'Which European countries are digital leaders and which are lagging behind, and does it depend on income?',
+    {title: 'The digital divide in Europe', image: 'img/projects/digital.jpg', credit: {author: 'Shixart1985', license: 'CC BY 2.0', url: 'https://commons.wikimedia.org/wiki/File:Man_working_on_laptop_while_enjoying_a_cold_beverage_in_a_cozy_cafe_setting.jpg'},
+      question: 'Which European countries are digital leaders and which are lagging behind, and does it depend on income?',
       indicators: ['IT.NET.USER.ZS', 'IT.NET.BBND.P2', 'NY.GDP.PCAP.PP.KD'], methods: 'Correlation, then clustering of countries by their digital profile.'},
-    {title: 'Ageing and public spending', question: 'Do older societies spend more on health, and do they have more public debt?',
+    {title: 'Ageing and public spending', image: 'img/projects/ageing.jpg', credit: {author: 'Jules Verne Times Two', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Elderly_women_walking_past_a_roasted_chestnuts_vendor,_Pra%C3%A7a_de_Londres,_Lisbon,_Portugal_julesvernex2.jpg'},
+      question: 'Do older societies spend more on health, and do they have more public debt?',
       indicators: ['SP.POP.65UP.TO.ZS', 'SH.XPD.CHEX.GD.ZS', 'GGXWDG_NGDP'], methods: 'Regression with time trends; discuss differences in welfare systems.'},
-    {title: 'Women in the labour market', question: 'Is higher female participation in the labour market linked to fertility and income across Europe?',
+    {title: 'Women in the labour market', image: 'img/projects/women.jpg', credit: {author: 'Smithsonian Institution', license: 'Public domain', url: 'https://commons.wikimedia.org/wiki/File:Barbara_McClintock_(1902-1992)_shown_in_her_laboratory_in_1947.jpg'},
+      question: 'Is higher female participation in the labour market linked to fertility and income across Europe?',
       indicators: ['SL.TLF.CACT.FE.ZS', 'SP.DYN.TFRT.IN', 'NY.GDP.PCAP.PP.KD'], methods: 'Regression and classification of countries into high and low participation groups.'},
-    {title: 'The green transition', question: 'Are richer countries greener? Renewable energy and income in Europe.',
+    {title: 'The green transition', image: 'img/projects/green.jpg', credit: {author: 'Cgoodwin', license: 'CC BY 3.0', url: 'https://commons.wikimedia.org/wiki/File:Wind_farm_Spain.JPG'},
+      question: 'Are richer countries greener? Renewable energy and income in Europe.',
       indicators: ['EG.FEC.RNEW.ZS', 'NY.GDP.PCAP.PP.KD', 'EN.GHG.CO2.PC.CE.AR5'], methods: 'Regression and clustering. Note: there are no CO2 data for Montenegro, so explain how you deal with it.'},
-    {title: 'Inequality and the structure of the economy', question: 'Are economies with a larger service sector more or less unequal?',
+    {title: 'Inequality and the structure of the economy', image: 'img/projects/inequality.jpg', credit: {author: 'ZheerGout', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Vue_de_plusieurs_tours_%C3%A0_La_D%C3%A9fense.jpg'},
+      question: 'Are economies with a larger service sector more or less unequal?',
       indicators: ['SI.POV.GINI', 'NV.SRV.TOTL.ZS', 'NY.GDP.MKTP.KD.ZG'], methods: 'PCA to summarise the economic structure, then clustering.'},
   ],
 

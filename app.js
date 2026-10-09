@@ -120,10 +120,16 @@
       + `<td>${esc(s.deliverable.who)}</td><td>${esc(s.deliverable.format)}</td></tr>`).join('') + '</tbody>';
   $('regla-entrega').innerHTML = `There are <strong>three deliverables</strong>. Each one is due on <strong>${esc(C.deadline)}</strong> of its week and is submitted in ${esc(C.submission)}. Click on a week in the schedule to see exactly what it must include. The other weeks are working weeks.`;
   const nombreInd = Object.fromEntries((window.COIL_DATA ? window.COIL_DATA.indicators : []).map((i) => [i.code, i.name]));
-  const fichasEjemplos = C.examples.map((x) => `<article class="ejemplo"><h3>${esc(x.title)}</h3>
-      <p class="pregunta">${esc(x.question)}</p>
-      <p><b>Indicators:</b> ${x.indicators.map((k) => `${esc(nombreInd[k] || k)} <code>${esc(k)}</code>`).join(' · ')}</p>
-      <p><b>Methods:</b> ${esc(x.methods)}</p></article>`).join('');
+  const fichasEjemplos = C.examples.map((x, i) => `<article class="ejemplo">
+      <figure class="ejemplo-foto">${x.image ? `<img src="${esc(x.image)}" alt="" loading="lazy">` : ''}
+        <span class="ejemplo-num">${String(i + 1).padStart(2, '0')}</span><h3>${esc(x.title)}</h3></figure>
+      <div class="ejemplo-cuerpo">
+        <p class="pregunta">${esc(x.question)}</p>
+        <p class="ejemplo-etq">Indicators</p>
+        <ul class="chips">${x.indicators.map((k) => `<li title="${esc(k)}">${esc(nombreInd[k] || k)}</li>`).join('')}</ul>
+        <p class="ejemplo-etq">Methods</p><p>${esc(x.methods)}</p>
+        ${x.credit ? `<p class="credito">Photo: <a href="${esc(x.credit.url)}" target="_blank" rel="noopener">${esc(x.credit.author)}</a>, ${esc(x.credit.license)}, via Wikimedia Commons</p>` : ''}
+      </div></article>`).join('');
   $('ejemplos').innerHTML = fichasEjemplos;
   $('ejemplos-proyectos').innerHTML = fichasEjemplos;
   $('plantillas').innerHTML = C.templates.map((t) => `<details class="tema"><summary>${esc(t.title)}</summary>
