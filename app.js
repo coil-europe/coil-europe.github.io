@@ -18,7 +18,7 @@
     + `<strong>${esc(u.name)}</strong><span>${esc(u.country)}</span></a>`).join('');
   $('outcomes').innerHTML = C.outcomes.map((o) => `<li>${esc(o)}</li>`).join('');
   // Teaching team: photo if available (img/team/...), otherwise initials in the colour of the university
-  const colorUni = {'Universidad de Sevilla': 'var(--esp)', 'Technical University of Košice': 'var(--svk)', 'University of Montenegro': 'var(--mne)'};
+  const colorUni = {'University of Seville': 'var(--esp)', 'Technical University of Košice': 'var(--svk)', 'University of Montenegro': 'var(--mne)'};
   // first name + first surname (with two given names, the surname is the second-to-last word)
   const iniciales = (n) => { const w = n.trim().split(/\s+/); const s = w.length >= 4 ? w[w.length - 2] : (w[1] || ''); return (w[0][0] + (s[0] || '')).toUpperCase(); };
   $('teachers').innerHTML = C.teachers.map((t) => `<article class="docente" style="--color-uni:${colorUni[t.university] || 'var(--ulysseus)'}">

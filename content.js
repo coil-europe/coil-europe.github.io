@@ -9,18 +9,18 @@ window.COIL_CONTENT = {
   provisional: true,
 
   universities: [
-    {name: 'Universidad de Sevilla', country: 'Spain', logo: 'img/us.svg', url: 'https://www.us.es'},
+    {name: 'University of Seville', country: 'Spain', logo: 'img/us.svg', url: 'https://www.us.es'},
     {name: 'Technical University of Košice', country: 'Slovakia', logo: 'img/tuke.svg', url: 'https://www.tuke.sk'},
     {name: 'University of Montenegro', country: 'Montenegro', logo: 'img/uom.svg', url: 'https://www.ucg.ac.me'},
   ],
 
   // Teaching team: {name, university, email, photo: 'img/team/file.jpg' (optional), role (optional)}
   teachers: [
-    {name: 'Daniel Ruiz Romera', university: 'Universidad de Sevilla', email: 'druiz8@us.es', photo: 'img/team/daniel-ruiz-romera.jpg'},
+    {name: 'Daniel Ruiz Romera', university: 'University of Seville', email: 'druiz8@us.es', photo: 'img/team/daniel-ruiz-romera.jpg'},
     {name: 'Alena Mojsejová', university: 'Technical University of Košice', email: 'alena.mojsejova@tuke.sk', photo: 'img/team/alena-mojsejova.jpg'},
     {name: 'Bojan Pejović', university: 'University of Montenegro', email: 'bojan.p@ucg.ac.me', photo: 'img/team/bojan-pejovic.jpg'},
     {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk', photo: 'img/team/dana-palova.jpg'},
-    {name: 'Víctor Ernesto Pérez León', university: 'Universidad de Sevilla', email: 'vpleon@us.es', photo: 'img/team/victor-perez-leon.jpg'},
+    {name: 'Víctor Ernesto Pérez León', university: 'University of Seville', email: 'vpleon@us.es', photo: 'img/team/victor-perez-leon.jpg'},
   ],
 
   outcomes: [
