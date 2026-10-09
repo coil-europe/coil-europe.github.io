@@ -17,10 +17,10 @@ window.COIL_CONTENT = {
   // Teaching team: {name, university, email, photo: 'img/team/file.jpg' (optional), role (optional)}
   teachers: [
     {name: 'Daniel Ruiz Romera', university: 'Universidad de Sevilla', email: 'druiz8@us.es', photo: 'img/team/daniel-ruiz-romera.jpg'},
-    {name: 'Víctor Ernesto Pérez León', university: 'Universidad de Sevilla', email: 'vpleon@us.es', photo: 'img/team/victor-perez-leon.jpg'},
     {name: 'Alena Mojsejová', university: 'Technical University of Košice', email: 'alena.mojsejova@tuke.sk', photo: 'img/team/alena-mojsejova.jpg'},
-    {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk', photo: 'img/team/dana-palova.jpg'},
     {name: 'Bojan Pejović', university: 'University of Montenegro', email: 'bojan.p@ucg.ac.me', photo: 'img/team/bojan-pejovic.jpg'},
+    {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk', photo: 'img/team/dana-palova.jpg'},
+    {name: 'Víctor Ernesto Pérez León', university: 'Universidad de Sevilla', email: 'vpleon@us.es', photo: 'img/team/victor-perez-leon.jpg'},
   ],
 
   outcomes: [

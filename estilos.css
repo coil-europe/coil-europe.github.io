@@ -98,3 +98,30 @@ pre { background: #1f1d2b; color: #f3f2f8; padding: 14px; border-radius: 10px; o
 .uni-docente { display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--suave); font-size: .88rem; margin: 0 0 6px; }
 .uni-docente img { height: 22px; }
 .docente a { font-size: .88rem; word-break: break-all; }
+
+/* ---- calendar ---- */
+.fase-0 { --fc: #e55a5a; } .fase-1 { --fc: #0b4ea2; } .fase-2 { --fc: #312a63; }
+.fase-3 { --fc: #c99a00; } .fase-4 { --fc: #2e8b57; } .fase-5 { --fc: #8a4fbf; }
+.leyenda-fases { display: flex; flex-wrap: wrap; gap: 14px; margin: 8px 0 14px; font-size: .9rem; }
+.leyenda-fases i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: var(--fc); margin-right: 6px; vertical-align: -1px; }
+.calendario-y-detalle { display: grid; grid-template-columns: 1fr 320px; gap: 20px; align-items: start; }
+.calendario { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.mes h3 { margin: 0 0 6px; font-size: 1rem; }
+.mes table { width: 100%; border-collapse: separate; border-spacing: 3px; table-layout: fixed; }
+.mes th { font-size: .72rem; font-weight: 600; color: var(--suave); }
+.mes td { height: 38px; vertical-align: top; padding: 3px 4px; border-radius: 6px; background: var(--fondo-2); font-size: .8rem; position: relative; }
+.mes td.fuera { background: transparent; }
+.mes td.finde { opacity: .75; }
+.mes td.coil { background: color-mix(in srgb, var(--fc) 18%, white); cursor: pointer; }
+.mes td.coil:hover, .mes td.coil.elegida { background: var(--fc); color: #fff; }
+.mes td.coil.elegida .etq, .mes td.coil:hover .etq { color: #fff; }
+.mes td.hoy { outline: 2px solid var(--tinta); }
+.mes .num { display: block; }
+.mes .etq { position: absolute; bottom: 2px; left: 4px; font-size: .66rem; font-weight: 700; color: var(--fc); }
+.detalle-semana { position: sticky; top: 76px; border: 1px solid var(--linea); border-radius: 12px; padding: 16px; background: #fff; }
+.detalle-semana .cuando { font-weight: 600; color: var(--ulysseus); margin-bottom: 6px; }
+.detalle-semana .fase { background: var(--fc); }
+.detalle-semana h3 { margin: 6px 0; }
+.nav-semana { display: flex; justify-content: space-between; margin-top: 12px; }
+.nav-semana button { font: inherit; font-size: .85rem; border: 1px solid var(--linea); background: #fff; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+@media (max-width: 900px) { .calendario-y-detalle { grid-template-columns: 1fr; } .detalle-semana { position: static; } }

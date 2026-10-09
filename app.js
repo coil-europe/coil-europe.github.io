@@ -31,17 +31,54 @@
     </article>`).join('');
 
   // ---------- Schedule ----------
-  const hoy = new Date();
+  // Month calendars (Monday first); each COIL week is coloured by phase and can be clicked to see its details.
+  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
   const fmt = (d) => d.toLocaleDateString('en-GB', {day: 'numeric', month: 'short'});
-  $('semanas').innerHTML = C.schedule.map((s) => {
+  const clave = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const fases = [...new Set(C.schedule.map((s) => s.phase))];
+  const colorFase = (f) => `fase-${fases.indexOf(f) % 6}`;
+  const semanaDe = new Map();  // 'yyyy-mm-dd' -> schedule entry
+  for (const s of C.schedule) {
     const ini = new Date(s.start + 'T00:00:00');
-    const fin = new Date(ini); fin.setDate(ini.getDate() + 6);
-    const actual = hoy >= ini && hoy <= new Date(fin.getTime() + 864e5 - 1);
-    return `<li class="semana${actual ? ' actual' : ''}">
-      <div class="cuando">Week ${s.week}<small>${fmt(ini)} – ${fmt(fin)}</small></div>
-      <div><span class="fase">${esc(s.phase)}</span><h3>${esc(s.title)}</h3><p>${esc(s.activities)}</p>
-      <p class="entregable"><b>Deliverable:</b> ${esc(s.deliverable)}</p></div></li>`;
-  }).join('');
+    for (let i = 0; i < 7; i++) { const d = new Date(ini); d.setDate(ini.getDate() + i); semanaDe.set(clave(d), s); }
+  }
+  const primero = new Date(C.schedule[0].start + 'T00:00:00');
+  const ultimo = new Date(C.schedule[C.schedule.length - 1].start + 'T00:00:00'); ultimo.setDate(ultimo.getDate() + 6);
+  $('leyenda-fases').innerHTML = fases.map((f) => `<span><i class="${colorFase(f)}"></i>${esc(f)}</span>`).join('');
+  let html = '';
+  for (let m = new Date(primero.getFullYear(), primero.getMonth(), 1); m <= ultimo; m = new Date(m.getFullYear(), m.getMonth() + 1, 1)) {
+    html += `<div class="mes"><h3>${m.toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</h3><table><thead><tr>`
+      + ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((d) => `<th>${d}</th>`).join('') + '</tr></thead><tbody><tr>';
+    const desfase = (m.getDay() + 6) % 7;  // Monday = 0
+    html += '<td class="fuera"></td>'.repeat(desfase);
+    const dias = new Date(m.getFullYear(), m.getMonth() + 1, 0).getDate();
+    for (let d = 1; d <= dias; d++) {
+      const f = new Date(m.getFullYear(), m.getMonth(), d);
+      const s = semanaDe.get(clave(f));
+      const col = (desfase + d - 1) % 7;
+      if (col === 0 && d > 1) html += '</tr><tr>';
+      const clases = [s ? `coil ${colorFase(s.phase)}` : '', col >= 5 ? 'finde' : '', +f === +hoy ? 'hoy' : ''].join(' ').trim();
+      html += `<td class="${clases}"${s ? ` data-week="${s.week}" title="Week ${s.week}: ${esc(s.title)}"` : ''}>`
+        + `<span class="num">${d}</span>${s && col === 0 ? `<span class="etq">W${s.week}</span>` : ''}</td>`;
+    }
+    html += '<td class="fuera"></td>'.repeat((7 - (desfase + dias) % 7) % 7) + '</tr></tbody></table></div>';
+  }
+  $('calendario').innerHTML = html;
+
+  function verSemana(n) {
+    const s = C.schedule.find((x) => x.week === n);
+    const ini = new Date(s.start + 'T00:00:00'); const fin = new Date(ini); fin.setDate(ini.getDate() + 6);
+    document.querySelectorAll('#calendario td.coil').forEach((td) => td.classList.toggle('elegida', +td.dataset.week === n));
+    $('detalle-semana').innerHTML = `<div class="cuando">Week ${s.week} · ${fmt(ini)} – ${fmt(fin)}</div>
+      <span class="fase ${colorFase(s.phase)}">${esc(s.phase)}</span><h3>${esc(s.title)}</h3><p>${esc(s.activities)}</p>
+      <p class="entregable"><b>Deliverable:</b> ${esc(s.deliverable)}</p>
+      <div class="nav-semana">${n > 1 ? `<button data-ir="${n - 1}">← Week ${n - 1}</button>` : '<span></span>'}
+      ${n < C.schedule.length ? `<button data-ir="${n + 1}">Week ${n + 1} →</button>` : ''}</div>`;
+  }
+  $('calendario').addEventListener('click', (e) => { const td = e.target.closest('td.coil'); if (td) verSemana(+td.dataset.week); });
+  $('detalle-semana').addEventListener('click', (e) => { const b = e.target.closest('button[data-ir]'); if (b) verSemana(+b.dataset.ir); });
+  const enCurso = semanaDe.get(clave(hoy));
+  verSemana(enCurso ? enCurso.week : (hoy < primero ? 1 : C.schedule.length));
 
   // ---------- Projects and resources ----------
   $('proyectos').innerHTML = C.projects.length
