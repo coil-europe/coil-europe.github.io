@@ -212,3 +212,16 @@ nav a.activo { background: var(--ulysseus); color: #fff; }
 .centrado { justify-content: center; margin-top: 24px; }
 @media (max-width: 900px) { .destacados { grid-template-columns: 1fr; } .beneficios { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .beneficios { grid-template-columns: 1fr; } .cifras { grid-template-columns: 1fr; } }
+
+/* ---- joint sessions ---- */
+.sesiones { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 12px; }
+.sesion { border: 1px solid var(--linea); border-radius: 12px; padding: 16px 18px; background: #fff; }
+.sesion-cab h3 { margin: 2px 0; }
+.sesion-cab .nota { margin: 0 0 8px; }
+.sesion-sem { color: var(--coral); font-weight: 600; font-size: .85rem; }
+.agenda { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 6px 0; }
+.agenda td { border-bottom: 1px solid var(--linea); padding: 5px 6px; vertical-align: top; }
+.agenda td:first-child { white-space: nowrap; color: var(--ulysseus); font-weight: 600; width: 64px; }
+.sesion ul { font-size: .9rem; margin: 2px 0 0; padding-left: 18px; }
+.sesion-aviso { background: #eef2ff; border-radius: 8px; padding: 8px 10px; font-size: .88rem; margin-top: 8px; }
+@media (max-width: 800px) { .sesiones { grid-template-columns: 1fr; } }

@@ -67,7 +67,7 @@
       if (col === 0 && d > 1) html += '</tr><tr>';
       const clases = [s ? `coil ${colorFase(s.phase)}` : '', col >= 5 ? 'finde' : '', +f === +hoy ? 'hoy' : ''].join(' ').trim();
       html += `<td class="${clases}"${s ? ` data-week="${s.week}" title="Week ${s.week}: ${esc(s.title)}"` : ''}>`
-        + `<span class="num">${d}</span>${s && col === 0 ? `<span class="etq">W${s.week}</span>` : ''}</td>`;
+        + `<span class="num">${d}</span>${s && col === 0 ? `<span class="etq">W${s.week}${(C.sessions || []).some((x) => x.week === s.week) ? ' ●' : ''}</span>` : ''}</td>`;
     }
     html += '<td class="fuera"></td>'.repeat((7 - (desfase + dias) % 7) % 7) + '</tr></tbody></table></div>';
   }
@@ -76,6 +76,10 @@
   // Deliverable due date: the Sunday of the same week
   const vence = (s) => { const d = new Date(s.start + 'T00:00:00'); d.setDate(d.getDate() + 6);
     return d.toLocaleDateString('en-GB', {weekday: 'long', day: 'numeric', month: 'long'}) + ', 23:59 CET'; };
+  function fichaSesion(semana) {
+    const x = (C.sessions || []).find((y) => y.week === semana);
+    return x ? `<div class="sesion-aviso"><b>Joint session: ${esc(x.title)}</b> · ${esc(x.duration)} · ${esc(x.when)} <a href="#sessions">Details</a></div>` : '';
+  }
   function fichaEntrega(s) {
     const e = s.deliverable;
     if (!e) {
@@ -96,7 +100,7 @@
     document.querySelectorAll('#calendario td.coil').forEach((td) => td.classList.toggle('elegida', +td.dataset.week === n));
     $('detalle-semana').innerHTML = `<div class="cuando">Week ${s.week} · ${fmt(ini)} – ${fmt(fin)}</div>
       <span class="fase ${colorFase(s.phase)}">${esc(s.phase)}</span><h3>${esc(s.title)}</h3><p>${esc(s.activities)}</p>
-      ${fichaEntrega(s)}
+      ${fichaSesion(s.week)}${fichaEntrega(s)}
       <div class="nav-semana">${n > 1 ? `<button data-ir="${n - 1}">← Week ${n - 1}</button>` : '<span></span>'}
       ${n < C.schedule.length ? `<button data-ir="${n + 1}">Week ${n + 1} →</button>` : ''}</div>`;
   }
@@ -163,6 +167,19 @@
   }
   window.addEventListener('hashchange', mostrarVista);
   mostrarVista();
+
+  // ---------- Joint sessions ----------
+  $('intro-sesiones').textContent = C.sessionsIntro || '';
+  $('reglas-sesiones').innerHTML = (C.sessionRules || []).map((r) => `<li>${esc(r)}</li>`).join('');
+  $('sesiones').innerHTML = (C.sessions || []).map((x) => {
+    const sem = C.schedule.find((s) => s.week === x.week);
+    const ini = new Date(sem.start + 'T00:00:00'); const fin = new Date(ini); fin.setDate(ini.getDate() + 6);
+    return `<article class="sesion"><div class="sesion-cab"><span class="sesion-sem">Week ${x.week} · ${fmt(ini)} – ${fmt(fin)}</span>
+      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · ${esc(x.when)}</p></div>
+      <p><b>Goal:</b> ${esc(x.goal)}</p>
+      <table class="agenda">${x.agenda.map((p) => `<tr><td>${p.min ? p.min + ' min' : ''}</td><td>${esc(p.item)}</td></tr>`).join('')}</table>
+      <p class="entrega-sub">Before the session:</p><ul>${x.prepare.map((p) => `<li>${esc(p)}</li>`).join('')}</ul></article>`;
+  }).join('');
 
   // ---------- Projects and resources ----------
   $('proyectos').innerHTML = C.projects.length

@@ -82,12 +82,59 @@ window.COIL_CONTENT = {
     {week: 9, start: '2026-12-07', phase: 'Presentation', title: 'Joint online presentation and reflection',
       activities: 'All teams present to students and teachers from the three universities. Closing discussion.',
       deliverable: {number: 3, name: 'Final dashboard, presentation and final reflection', who: 'Team (dashboard, slides and presentation) + individual (reflection)',
-        format: 'Dashboard link or PDF + slides (maximum 10 slides, 10 minutes) + one-page PDF reflection',
+        format: 'Dashboard link or PDF + slides (maximum 6 slides, 5-minute presentation) + one-page PDF reflection',
         note: 'Upload the dashboard and the slides before the joint presentation. The reflection is due on Sunday.',
         include: ['Final dashboard: your question, the data, three key findings and limitations, for a non-specialist audience.',
           'Slides and live presentation in the joint online session: every team member presents a part. This is required to receive the extra points.',
           'Final individual reflection (300–400 words): what did you learn about data analysis, about working internationally and about yourself?',
           'A short note on your use of AI tools (which tool, for what, and how you checked the result), or a sentence saying you did not use any.']}},
+  ],
+
+  // Joint online sessions (Microsoft Teams) with students and teachers of the three universities.
+  // when: day and time, to be confirmed by the teaching team.
+  sessionsIntro: 'There are four joint online sessions with all students and teachers, on Microsoft Teams, of 45 minutes at most. The rest of the time you work with your team: meet at least once a week, and ask your home teacher whenever you need help.',
+  sessionRules: [
+    'The link to each session is posted in the General channel of the COIL team on Microsoft Teams.',
+    'Join on time, with your camera on if possible, and use your real name.',
+    'The language of all sessions is English.',
+    'Break-out rooms are never recorded. Plenary parts are recorded only if announced at the start of the session.',
+    'If you cannot attend a session, tell your home teacher and your team in advance. The final presentation (week 9) is compulsory to receive the extra points.',
+  ],
+  sessions: [
+    {week: 1, title: 'Kick-off', duration: '45 minutes', when: 'Date and time to be confirmed',
+      goal: 'Meet the people you will work with, understand how the COIL works and hold your first team meeting.',
+      prepare: ['Read the student guide and the schedule.', 'Think of one surprising fact or figure about the economy or society of your country.'],
+      agenda: [
+        {min: 5, item: 'Welcome from the teachers of the three universities. What is a COIL and what is Ulysseus.'},
+        {min: 10, item: 'How the COIL works: schedule, three deliverables, the dataset, Microsoft Teams, extra points and certificate.'},
+        {min: 25, item: 'First team meeting in break-out rooms (teams announced by the teachers, with students from the three universities): introduce yourself with your fact about your country, choose a communication channel and a weekly meeting time.'},
+        {min: 5, item: 'Questions and closing.'},
+      ]},
+    {week: 3, title: 'Data workshop', duration: '45 minutes', when: 'Date and time to be confirmed',
+      goal: 'Be able to load and document the COIL data in your tool (Python, R, Gretl or Power BI) before the analysis starts.',
+      prepare: ['Download the COIL dataset from the Data section.', 'Install your tool and open the CSV once.', 'Bring your team\'s research question.'],
+      agenda: [
+        {min: 5, item: 'The dataset: indicators, sources, coverage and gaps (especially Montenegro).'},
+        {min: 20, item: 'Live demo, about 5 minutes per tool: loading the data, selecting countries and indicators and a first chart in Python, R, Gretl and Power BI.'},
+        {min: 5, item: 'How to write the data dictionary and handle missing values.'},
+        {min: 15, item: 'Questions from the teams.'},
+      ]},
+    {week: 5, title: 'Mid-point clinic', duration: '45 minutes', when: 'Date and time to be confirmed',
+      goal: 'Check how every team is doing and solve problems with the methods before deliverable 2 (week 6).',
+      prepare: ['One slide per team: question, data, first result and the main problem you have.'],
+      agenda: [
+        {min: 20, item: 'Lightning updates: each team presents its slide in 2 minutes.'},
+        {min: 20, item: 'Methods clinic in break-out rooms: regression, classification, PCA and clustering. Teachers rotate between teams.'},
+        {min: 5, item: 'Wrap-up: what to submit in deliverable 2.'},
+      ]},
+    {week: 9, title: 'Final presentations', duration: '45 minutes (a second 45-minute session the same week if there are more than five teams)', when: 'Date and time to be confirmed',
+      goal: 'Present your project to students and teachers of the three universities. Compulsory to receive the extra points.',
+      prepare: ['Upload the final dashboard and the slides to Microsoft Teams before the session.', 'Rehearse: 5 minutes per team, every member presents a part.'],
+      agenda: [
+        {min: 5, item: 'Opening by the teachers.'},
+        {min: 35, item: 'Team presentations: 5 minutes each + 2 minutes of questions and feedback (about five teams per session).'},
+        {min: 5, item: 'Closing: next steps (final reflection due on Sunday, extra points and certificates) and group photo.'},
+      ]},
   ],
 
   // Why join: intro, two highlights and a grid of benefits (icon: grade, certificate, globe, portfolio, skills, thesis, internship, network)
