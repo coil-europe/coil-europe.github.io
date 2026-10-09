@@ -76,9 +76,17 @@
   // Deliverable due date: the Sunday of the same week
   const vence = (s) => { const d = new Date(s.start + 'T00:00:00'); d.setDate(d.getDate() + 6);
     return d.toLocaleDateString('en-GB', {weekday: 'long', day: 'numeric', month: 'long'}) + ', 23:59 CET'; };
+  // Session and submission links: a button when published, a note when not yet.
+  const botonSesion = (x) => x.link
+    ? `<a class="boton-pdf boton-enlace" href="${esc(x.link)}" target="_blank" rel="noopener">Join the session</a>`
+    : x.poll ? `<a class="boton-sec boton-enlace" href="${esc(x.poll)}" target="_blank" rel="noopener">Vote for the date and time</a>`
+    : '<span class="pendiente">The link will be published here before the session</span>';
+  const botonEnvio = (e) => e.submitLink
+    ? `<a class="boton-pdf boton-enlace" href="${esc(e.submitLink)}" target="_blank" rel="noopener">Submit deliverable ${e.number}</a>`
+    : '<span class="pendiente">The submission link will be published here</span>';
   function fichaSesion(semana) {
     const x = (C.sessions || []).find((y) => y.week === semana);
-    return x ? `<div class="sesion-aviso"><b>Joint session: ${esc(x.title)}</b> · ${esc(x.duration)} · ${esc(x.when)} <a href="#sessions">Details</a></div>` : '';
+    return x ? `<div class="sesion-aviso"><b>Joint session: ${esc(x.title)}</b> · ${esc(x.duration)} · ${esc(x.when)} <a href="#sessions">Details</a> ${botonSesion(x)}</div>` : '';
   }
   function fichaEntrega(s) {
     const e = s.deliverable;
@@ -90,7 +98,7 @@
     }
     return `<div class="entrega"><p class="entrega-titulo">Deliverable ${e.number}: ${esc(e.name)}</p>${e.note ? `<p class="nota">${esc(e.note)}</p>` : ''}
       <dl><dt>Due</dt><dd><strong>${esc(vence(s))}</strong></dd><dt>Who</dt><dd>${esc(e.who)}</dd>
-      <dt>Format</dt><dd>${esc(e.format)}</dd><dt>Submit in</dt><dd>${esc(C.submission)}</dd></dl>
+      <dt>Format</dt><dd>${esc(e.format)}</dd><dt>Submit</dt><dd>${botonEnvio(e)}</dd></dl>
       <p class="entrega-sub">It must include:</p><ul>${e.include.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
   }
 
@@ -115,10 +123,10 @@
       ${(g.text || []).map((p) => `<p>${esc(p)}</p>`).join('')}
       ${g.items ? `<ul>${g.items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul>` : ''}
     </details>`).join('');
-  $('tabla-entregas').innerHTML = '<thead><tr><th>#</th><th>Week</th><th>Due</th><th>Deliverable</th><th>Who</th><th>Format</th></tr></thead><tbody>'
+  $('tabla-entregas').innerHTML = '<thead><tr><th>#</th><th>Week</th><th>Due</th><th>Deliverable</th><th>Who</th><th>Format</th><th>Submit</th></tr></thead><tbody>'
     + C.schedule.filter((s) => s.deliverable).map((s) => `<tr><td>${s.deliverable.number}</td><td>${s.week}</td><td>${esc(vence(s).replace(', 23:59 CET', ''))}</td><td><strong>${esc(s.deliverable.name)}</strong></td>`
-      + `<td>${esc(s.deliverable.who)}</td><td>${esc(s.deliverable.format)}</td></tr>`).join('') + '</tbody>';
-  $('regla-entrega').innerHTML = `There are <strong>three deliverables</strong>. Each one is due on <strong>${esc(C.deadline)}</strong> of its week and is submitted in ${esc(C.submission)}. Click on a week in the schedule to see exactly what it must include. The other weeks are working weeks.`;
+      + `<td>${esc(s.deliverable.who)}</td><td>${esc(s.deliverable.format)}</td><td>${botonEnvio(s.deliverable)}</td></tr>`).join('') + '</tbody>';
+  $('regla-entrega').innerHTML = `There are <strong>three deliverables</strong>. Each one is due on <strong>${esc(C.deadline)}</strong> of its week and is submitted on ${esc(C.submission)}. Click on a week in the schedule to see exactly what it must include. The other weeks are working weeks.`;
   const nombreInd = Object.fromEntries((window.COIL_DATA ? window.COIL_DATA.indicators : []).map((i) => [i.code, i.name]));
   const fichasEjemplos = C.examples.map((x, i) => `<article class="ejemplo">
       <figure class="ejemplo-foto">${x.image ? `<img src="${esc(x.image)}" alt="" loading="lazy">` : ''}
@@ -159,8 +167,10 @@
     const empezado = !!enCurso;
     const fin = (x) => { const d = new Date(x.start + 'T00:00:00'); d.setDate(d.getDate() + 6); d.setHours(23, 59); return d; };
     const prox = C.schedule.find((x) => x.deliverable && fin(x) >= hoy);
+    const proxSes = (C.sessions || []).find((x) => fin(C.schedule.find((y) => y.week === x.week)) >= hoy);
     $('esta-semana').innerHTML = `<p class="etiqueta">${empezado ? 'This week' : 'Coming up'} · Week ${s.week}: ${esc(s.title)}</p>
-      ${prox ? `<p class="esta-entrega">Next deliverable: <strong>${esc(prox.deliverable.name)}</strong> · ${esc(prox.deliverable.who)} · due <strong>${esc(vence(prox))}</strong></p>` : ''}
+      ${prox ? `<p class="esta-entrega">Next deliverable: <strong>${esc(prox.deliverable.name)}</strong> · ${esc(prox.deliverable.who)} · due <strong>${esc(vence(prox))}</strong> ${botonEnvio(prox.deliverable)}</p>` : ''}
+      ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}) · ${esc(proxSes.when)} ${botonSesion(proxSes)}</p>` : ''}
       <p class="accesos"><a class="boton-pdf" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
       <a class="boton-sec" href="#benefits">Why join?</a></p>`;
   }
@@ -183,7 +193,7 @@
     const sem = C.schedule.find((s) => s.week === x.week);
     const ini = new Date(sem.start + 'T00:00:00'); const fin = new Date(ini); fin.setDate(ini.getDate() + 6);
     return `<article class="sesion"><div class="sesion-cab"><span class="sesion-sem">Week ${x.week} · ${fmt(ini)} – ${fmt(fin)}</span>
-      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · ${esc(x.when)}</p></div>
+      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · ${esc(x.when)}</p><p>${botonSesion(x)}</p></div>
       <p><b>Goal:</b> ${esc(x.goal)}</p>
       <table class="agenda">${x.agenda.map((p) => `<tr><td>${p.min ? p.min + ' min' : ''}</td><td>${esc(p.item)}</td></tr>`).join('')}</table>
       <p class="entrega-sub">Before the session:</p><ul>${x.prepare.map((p) => `<li>${esc(p)}</li>`).join('')}</ul></article>`;

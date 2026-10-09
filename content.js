@@ -24,11 +24,11 @@ window.COIL_CONTENT = {
 
   // Teaching team: {name, university, email, photo: 'img/team/file.jpg', bio: one sentence (optional)}
   teachers: [
-    {name: 'Daniel Ruiz Romera', university: 'University of Seville', email: 'druiz8@us.es', bio: 'Department of Applied Economics II. Teaches econometrics; works on innovation policy, entrepreneurship and academic spin-offs, and EU funding for firms.', photo: 'img/team/daniel-ruiz-romera.jpg'},
-    {name: 'Alena Mojsejová', university: 'Technical University of Košice', email: 'alena.mojsejova@tuke.sk', bio: 'Department of Applied Mathematics and Business Informatics, Faculty of Economics. Teaches probability, statistics and social statistics; works on income inequality and gender gaps.', photo: 'img/team/alena-mojsejova.jpg'},
-    {name: 'Bojan Pejović', university: 'University of Montenegro', email: 'bojan.p@ucg.ac.me', bio: 'Faculty of Economics. Head of the Center for Statistical Analysis; teaches statistics and econometrics. PhD in Economics (University of Belgrade).', photo: 'img/team/bojan-pejovic.jpg'},
-    {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk', bio: 'Department of Applied Mathematics and Business Informatics, Faculty of Economics. Teaches data analysis and visualisation, business informatics and AI in business; works on business intelligence, digital transformation and e-learning.', photo: 'img/team/dana-palova.jpg'},
-    {name: 'Víctor Ernesto Pérez León', university: 'University of Seville', email: 'vpleon@us.es', bio: 'Department of Applied Economics II. Teaches econometrics and statistics for business; works on composite indicators, multicriteria analysis and sustainable tourism.', photo: 'img/team/victor-perez-leon.jpg'},
+    {name: 'Daniel Ruiz Romera', university: 'University of Seville', email: 'druiz8@us.es', bio: 'Department of Applied Economics II. Teaches econometrics; works on innovation policy, entrepreneurship, academic spin-offs and EU funding for firms.', photo: 'img/team/daniel-ruiz-romera.jpg'},
+    {name: 'Alena Mojsejová', university: 'Technical University of Košice', email: 'alena.mojsejova@tuke.sk', bio: 'Faculty of Economics (Applied Mathematics and Business Informatics). Teaches probability and statistics; works on income inequality and gender gaps.', photo: 'img/team/alena-mojsejova.jpg'},
+    {name: 'Bojan Pejović', university: 'University of Montenegro', email: 'bojan.p@ucg.ac.me', bio: 'Faculty of Economics. Head of the Center for Statistical Analysis; teaches statistics and econometrics. PhD in Economics, University of Belgrade.', photo: 'img/team/bojan-pejovic.jpg'},
+    {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk', bio: 'Faculty of Economics (Applied Mathematics and Business Informatics). Teaches data analysis and visualisation; works on business intelligence and digital transformation.', photo: 'img/team/dana-palova.jpg'},
+    {name: 'Víctor Ernesto Pérez León', university: 'University of Seville', email: 'vpleon@us.es', bio: 'Department of Applied Economics II. Teaches econometrics and business statistics; works on composite indicators, multicriteria analysis and sustainable tourism.', photo: 'img/team/victor-perez-leon.jpg'},
   ],
 
   outcomes: [
@@ -40,18 +40,19 @@ window.COIL_CONTENT = {
   ],
 
   // Submission rules that apply to every week
+  // submitLink (in each deliverable): upload link pasted by the teachers ('' = not published yet).
   deadline: 'Sunday, 23:59 CET',
-  submission: 'the COIL team on Microsoft Teams (one assignment per deliverable)',
+  submission: 'this website: use the Submit button of the deliverable (Home, Guide and Schedule)',
 
   // One entry per week (Monday date). Only weeks 2, 6 and 9 have a deliverable, due on the Sunday of that week.
   // Weeks without a deliverable show "goal": what the team should have ready by the end of the week.
   schedule: [
     {week: 1, start: '2026-10-12', phase: 'Orientation', title: 'Kick-off and intercultural orientation',
       activities: 'Joint online welcome session. Introductions and icebreaker in mixed groups. How the COIL works.',
-      goal: 'Join the COIL team on Microsoft Teams and introduce yourself in the general channel (who you are, what you study, what you want to learn).'},
+      goal: 'Read this website and the student guide, attend the kick-off and agree with your team on a communication channel and a weekly meeting time.'},
     {week: 2, start: '2026-10-19', phase: 'Orientation', title: 'International teams and topic selection',
       activities: 'Teams with students from the three universities. Agree on working rules, tools and meeting times. Choose a socio-economic or public-policy question.',
-      deliverable: {number: 1, name: 'Team charter and topic proposal', who: 'Team', format: 'One PDF, maximum 2 pages (use the templates in the guide)',
+      deliverable: {submitLink: '', number: 1, name: 'Team charter and topic proposal', who: 'Team', format: 'One PDF, maximum 2 pages (use the templates in the guide)',
         include: ['Team charter: team name, members and universities, roles, communication channel, weekly meeting time, how you take decisions, what you do if someone does not contribute.',
           'Topic proposal: research question, why it matters for Spain, Slovakia and Montenegro, 3–6 indicators from the COIL dataset (with their codes), countries and years, and the methods you expect to use.',
           'A short note on your use of AI tools (which tool, for what, and how you checked the result), or a sentence saying you did not use any.']}},
@@ -66,7 +67,7 @@ window.COIL_CONTENT = {
       goal: 'Your regression or classification model is estimated and interpreted.'},
     {week: 6, start: '2026-11-16', phase: 'Methods', title: 'Dimensionality reduction and clustering',
       activities: 'Principal component analysis and clustering of countries: which European countries look alike, and where do Spain, Slovakia and Montenegro fall?',
-      deliverable: {number: 2, name: 'Analysis notebook', who: 'Team', format: 'Python or R notebook (.ipynb, .Rmd or Quarto), or Gretl script (.inp) with its output, + exported HTML or PDF + your dataset (CSV or Excel)',
+      deliverable: {submitLink: '', number: 2, name: 'Analysis notebook', who: 'Team', format: 'Python or R notebook (.ipynb, .Rmd or Quarto), or Gretl script (.inp) with its output, + exported HTML or PDF + your dataset (CSV or Excel)',
         include: ['Data: the dataset you analysed and a data dictionary (name, code, definition, unit, source and years of every variable), with missing values and how you handled them.',
           'Exploratory analysis: descriptive statistics and at least three charts, one comparing Spain, Slovakia and Montenegro with the rest of Europe.',
           'Regression or classification: model specification, results table and interpretation in plain English.',
@@ -81,7 +82,7 @@ window.COIL_CONTENT = {
       goal: 'Final dashboard and slides ready; the presentation has been rehearsed.'},
     {week: 9, start: '2026-12-07', phase: 'Presentation', title: 'Joint online presentation and reflection',
       activities: 'All teams present to students and teachers from the three universities. Closing discussion.',
-      deliverable: {number: 3, name: 'Final dashboard, presentation and final reflection', who: 'Team (dashboard, slides and presentation) + individual (reflection)',
+      deliverable: {submitLink: '', number: 3, name: 'Final dashboard, presentation and final reflection', who: 'Team (dashboard, slides and presentation) + individual (reflection)',
         format: 'Dashboard link or PDF + slides (maximum 6 slides, 5-minute presentation) + one-page PDF reflection',
         note: 'Upload the dashboard and the slides before the joint presentation. The reflection is due on Sunday.',
         include: ['Final dashboard: your question, the data, three key findings and limitations, for a non-specialist audience.',
@@ -91,26 +92,28 @@ window.COIL_CONTENT = {
   ],
 
   // Joint online sessions (Microsoft Teams) with students and teachers of the three universities.
+  // poll: link to the vote on the date and time (e.g. Microsoft Forms), shown until the meeting link is published.
+  // link: the Teams meeting link, pasted here by the teachers ('' = not published yet).
   // when: day and time, to be confirmed by the teaching team.
   sessionsIntro: 'There are four joint online sessions with all students and teachers, on Microsoft Teams, of 45 minutes at most. The rest of the time you work with your team: meet at least once a week, and ask your home teacher whenever you need help.',
   sessionRules: [
-    'The link to each session is posted in the General channel of the COIL team on Microsoft Teams.',
+    'The link to each session is published on this website (Sessions section and Home page). You do not need an account of another university: open the link and join from the browser or the Teams app.',
     'Join on time, with your camera on if possible, and use your real name.',
     'The language of all sessions is English.',
     'Break-out rooms are never recorded. Plenary parts are recorded only if announced at the start of the session.',
     'If you cannot attend a session, tell your home teacher and your team in advance. The final presentation (week 9) is compulsory to receive the extra points.',
   ],
   sessions: [
-    {week: 1, title: 'Kick-off', duration: '45 minutes', when: 'Date and time to be confirmed',
+    {week: 1, title: 'Kick-off', duration: '45 minutes', when: 'Date and time to be confirmed', poll: '', link: '',
       goal: 'Meet the people you will work with, understand how the COIL works and hold your first team meeting.',
       prepare: ['Read the student guide and the schedule.', 'Think of one surprising fact or figure about the economy or society of your country.'],
       agenda: [
         {min: 5, item: 'Welcome from the teachers of the three universities. What is a COIL and what is Ulysseus.'},
-        {min: 10, item: 'How the COIL works: schedule, three deliverables, the dataset, Microsoft Teams, extra points and certificate.'},
+        {min: 10, item: 'How the COIL works: this website, the schedule, three deliverables, the dataset, extra points and certificate.'},
         {min: 25, item: 'First team meeting in break-out rooms (teams announced by the teachers, with students from the three universities): introduce yourself with your fact about your country, choose a communication channel and a weekly meeting time.'},
         {min: 5, item: 'Questions and closing.'},
       ]},
-    {week: 3, title: 'Data workshop', duration: '45 minutes', when: 'Date and time to be confirmed',
+    {week: 3, title: 'Data workshop', duration: '45 minutes', when: 'Date and time to be confirmed', poll: '', link: '',
       goal: 'Be able to load and document the COIL data in your tool (Python, R, Gretl or Power BI) before the analysis starts.',
       prepare: ['Download the COIL dataset from the Data section.', 'Install your tool and open the CSV once.', 'Bring your team\'s research question.'],
       agenda: [
@@ -119,7 +122,7 @@ window.COIL_CONTENT = {
         {min: 5, item: 'How to write the data dictionary and handle missing values.'},
         {min: 15, item: 'Questions from the teams.'},
       ]},
-    {week: 5, title: 'Mid-point clinic', duration: '45 minutes', when: 'Date and time to be confirmed',
+    {week: 5, title: 'Mid-point clinic', duration: '45 minutes', when: 'Date and time to be confirmed', poll: '', link: '',
       goal: 'Check how every team is doing and solve problems with the methods before deliverable 2 (week 6).',
       prepare: ['One slide per team: question, data, first result and the main problem you have.'],
       agenda: [
@@ -127,9 +130,9 @@ window.COIL_CONTENT = {
         {min: 20, item: 'Methods clinic in break-out rooms: regression, classification, PCA and clustering. Teachers rotate between teams.'},
         {min: 5, item: 'Wrap-up: what to submit in deliverable 2.'},
       ]},
-    {week: 9, title: 'Final presentations', duration: '45 minutes (a second 45-minute session the same week if there are more than five teams)', when: 'Date and time to be confirmed',
+    {week: 9, title: 'Final presentations', duration: '45 minutes (a second 45-minute session the same week if there are more than five teams)', when: 'Date and time to be confirmed', poll: '', link: '',
       goal: 'Present your project to students and teachers of the three universities. Compulsory to receive the extra points.',
-      prepare: ['Upload the final dashboard and the slides to Microsoft Teams before the session.', 'Rehearse: 5 minutes per team, every member presents a part.'],
+      prepare: ['Submit the final dashboard and the slides with the Submit button on this website before the session.', 'Rehearse: 5 minutes per team, every member presents a part.'],
       agenda: [
         {min: 5, item: 'Opening by the teachers.'},
         {min: 35, item: 'Team presentations: 5 minutes each + 2 minutes of questions and feedback (about five teams per session).'},
@@ -198,8 +201,8 @@ window.COIL_CONTENT = {
       items: ['Read this guide and the schedule.',
         'Make sure you can use Python, R or Gretl, and Power BI if your course uses it.',
         'Download the COIL dataset from the Data section and open it once.',
-        'Join the COIL team on Microsoft Teams (you will receive an invitation) and check that your camera and microphone work.',
-        'In week 1, introduce yourself in the general channel of the COIL team on Microsoft Teams.']},
+        'Bookmark this website: session links, submission links, data and materials are all here.',
+        'Check that your camera and microphone work in Microsoft Teams (sessions are Teams meetings).']},
     {title: 'Working in an international team',
       text: ['Spain, Slovakia and Montenegro are in the same time zone (CET), so scheduling meetings is easy. Cultural and academic habits may differ, and that is part of the learning.'],
       items: ['Agree on one main communication channel and answer messages within 48 hours on working days.',
@@ -223,7 +226,7 @@ window.COIL_CONTENT = {
     {title: 'Deliverables and assessment',
       text: ['There are three deliverables: in week 2, week 6 and week 9 (see the table above and the schedule). Each university grades its own students.',
         'The COIL gives you additional points on top of your course grade: up to 1 extra point (out of 10) at the University of Seville, and up to 10 extra points (out of 100) at the Technical University of Košice and the University of Montenegro. The extra points are awarded to students who complete the final presentation of the project in week 9.'],
-      items: ['Each deliverable is due on Sunday at 23:59 CET of its week and is submitted in the COIL team on Microsoft Teams.',
+      items: ['Each deliverable is due on Sunday at 23:59 CET of its week and is submitted with the Submit button on this website.',
         'If you cannot meet a deadline, tell your team and your teacher before the deadline, not after.',
         'Final dashboard: an interactive link, or a PDF or screenshots if Power BI publishing is not allowed in your university account.',
         'The final team projects will be shown in the Projects section of this website (team name and topic only, no personal data).']},

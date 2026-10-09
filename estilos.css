@@ -252,3 +252,8 @@ nav a.activo { background: var(--ulysseus); color: #fff; }
 .credito { margin-top: auto !important; padding-top: 10px; font-size: .72rem !important; color: var(--suave); }
 .credito a { color: inherit; }
 @media (prefers-reduced-motion: reduce) { .ejemplo, .ejemplo-foto img { transition: none; } .ejemplo:hover { transform: none; } .ejemplo:hover .ejemplo-foto img { transform: none; } }
+
+/* ---- session and submission links ---- */
+.boton-enlace { display: inline-block; padding: 5px 12px; font-size: .88rem; margin-left: 4px; }
+.pendiente { display: inline-block; font-size: .82rem; color: var(--suave); background: var(--fondo-2); border: 1px dashed var(--linea);
+  border-radius: 999px; padding: 3px 10px; margin-left: 4px; }
