@@ -53,7 +53,7 @@ window.COIL_CONTENT = {
       goal: 'Read this website and the student guide, attend the kick-off and agree with your team on a communication channel and a weekly meeting time.'},
     {week: 2, start: '2026-10-19', phase: 'Orientation', title: 'International teams and topic selection',
       activities: 'Teams with students from the three universities. Agree on working rules, tools and meeting times. Choose a socio-economic or public-policy question.',
-      deliverable: {submitLink: '', number: 1, name: 'Team charter and topic proposal', who: 'Team', format: 'One PDF, maximum 2 pages (use the templates in the guide)',
+      deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDt84DgHo2jRYZyLjhr_0IxAc4R5Qqeec3cjK04vST_gck', number: 1, name: 'Team charter and topic proposal', who: 'Team', format: 'One PDF, maximum 2 pages (use the templates in the guide)',
         include: ['Team charter: team name, members and universities, roles, communication channel, weekly meeting time, how you take decisions, what you do if someone does not contribute.',
           'Topic proposal: research question, why it matters for Spain, Slovakia and Montenegro, 3–6 indicators from the COIL dataset (with their codes), countries and years, and the methods you expect to use.',
           'A short note on your use of AI tools (which tool, for what, and how you checked the result), or a sentence saying you did not use any.']}},
