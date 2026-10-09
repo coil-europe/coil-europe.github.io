@@ -156,7 +156,7 @@
 
   // ---------- Student guide ----------
   $('guia').innerHTML = (C.guide || []).map((g, i) => `<details class="tema"${i === 0 ? ' open' : ''}>
-      <summary>${esc(g.title)}</summary>
+      <summary><span class="tema-num">${String(i + 1).padStart(2, '0')}</span>${esc(g.title)}</summary>
       ${(g.text || []).map((p) => `<p>${esc(p)}</p>`).join('')}
       ${g.items ? `<ul>${g.items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul>` : ''}
     </details>`).join('');
@@ -219,6 +219,7 @@
     const v = seccion ? seccion.dataset.vista : 'home';
     document.querySelectorAll('.vista').forEach((s) => { s.hidden = s.dataset.vista !== v; });
     document.querySelectorAll('nav a').forEach((l) => l.classList.toggle('activo', l.getAttribute('href') === '#' + v));
+    if (destino) for (let d = destino.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
     if (destino && h !== v) requestAnimationFrame(() => destino.scrollIntoView({block: 'start'}));
     else window.scrollTo(0, 0);
     abrirMenu(false);
@@ -269,6 +270,8 @@
       <header class="faq-cab"><span class="faq-ico grande">${iconoFaq(g.icon)}</span><div><h3>${esc(g.group)}</h3>${g.intro ? `<p>${esc(g.intro)}</p>` : ''}</div></header>
       ${g.items.map((f, i) => `<details class="pregunta-faq"${gi === 0 && i === 0 ? ' open' : ''}><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</section>`).join('');
   // index links scroll inside the FAQ view instead of switching views; highlight the group in view
+  const nPreguntas = (C.faq || []).reduce((n, g) => n + g.items.length, 0);
+  $('faq-resumen').textContent = `${nPreguntas} questions in ${(C.faq || []).length} topics`;
   const enlacesFaq = [...document.querySelectorAll('#faq-indice a')];
   enlacesFaq.forEach((l) => l.addEventListener('click', (e) => {
     e.preventDefault(); document.querySelector(l.getAttribute('href')).scrollIntoView({behavior: 'smooth', block: 'start'});
