@@ -17,8 +17,19 @@
     `<a class="uni" href="${esc(u.url)}" target="_blank" rel="noopener"><img src="${esc(u.logo)}" alt="${esc(u.name)}">`
     + `<strong>${esc(u.name)}</strong><span>${esc(u.country)}</span></a>`).join('');
   $('outcomes').innerHTML = C.outcomes.map((o) => `<li>${esc(o)}</li>`).join('');
-  $('teachers').innerHTML = C.teachers.map((t) =>
-    `<li><strong>${esc(t.name)}</strong> · ${esc(t.university)}${t.email ? ` · <a href="mailto:${esc(t.email)}">${esc(t.email)}</a>` : ''}</li>`).join('');
+  // Teaching team: photo if available (img/team/...), otherwise initials in the colour of the university
+  const colorUni = {'Universidad de Sevilla': 'var(--esp)', 'Technical University of Košice': 'var(--svk)', 'University of Montenegro': 'var(--mne)'};
+  // first name + first surname (with two given names, the surname is the second-to-last word)
+  const iniciales = (n) => { const w = n.trim().split(/\s+/); const s = w.length >= 4 ? w[w.length - 2] : (w[1] || ''); return (w[0][0] + (s[0] || '')).toUpperCase(); };
+  const logoUni = Object.fromEntries(C.universities.map((u) => [u.name, u.logo]));
+  $('teachers').innerHTML = C.teachers.map((t) => `<article class="docente">
+      ${t.photo ? `<img class="foto" src="${esc(t.photo)}" alt="${esc(t.name)}">`
+        : `<div class="foto iniciales" style="background:${colorUni[t.university] || 'var(--ulysseus)'}" aria-hidden="true">${esc(iniciales(t.name))}</div>`}
+      <h3>${esc(t.name)}</h3>
+      <p class="uni-docente">${logoUni[t.university] ? `<img src="${esc(logoUni[t.university])}" alt="">` : ''}${esc(t.university)}</p>
+      ${t.role ? `<p class="nota">${esc(t.role)}</p>` : ''}
+      ${t.email ? `<a href="mailto:${esc(t.email)}">${esc(t.email)}</a>` : ''}
+    </article>`).join('');
 
   // ---------- Schedule ----------
   const hoy = new Date();

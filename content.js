@@ -14,13 +14,13 @@ window.COIL_CONTENT = {
     {name: 'University of Montenegro', country: 'Montenegro', logo: 'img/uom.svg', url: 'https://www.ucg.ac.me'},
   ],
 
-  // Teaching team: {name, university, email}
+  // Teaching team: {name, university, email, photo: 'img/team/file.jpg' (optional), role (optional)}
   teachers: [
     {name: 'Daniel Ruiz Romera', university: 'Universidad de Sevilla', email: 'druiz8@us.es'},
     {name: 'Víctor Ernesto Pérez León', university: 'Universidad de Sevilla', email: 'vpleon@us.es'},
     {name: 'Alena Mojsejová', university: 'Technical University of Košice', email: 'alena.mojsejova@tuke.sk'},
     {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk'},
-    {name: 'Bojan Pejović', university: 'University of Montenegro', email: 'bojan.p@ucg.ac.me'},
+    {name: 'Bojan Pejović', university: 'University of Montenegro', email: 'bojan.p@ucg.ac.me', photo: 'img/team/bojan-pejovic.jpg'},
   ],
 
   outcomes: [
