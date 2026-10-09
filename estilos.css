@@ -137,3 +137,28 @@ pre { background: #1f1d2b; color: #f3f2f8; padding: 14px; border-radius: 10px; o
 
 .boton-pdf { display: inline-block; background: var(--ulysseus); color: #fff; text-decoration: none; padding: 8px 14px; border-radius: 8px; font-weight: 600; font-size: .92rem; }
 .boton-pdf:hover { background: var(--coral); }
+
+/* ---- deliverables, examples, benefits ---- */
+.entrega { background: var(--fondo-2); border-radius: 10px; padding: 12px 14px; margin-top: 10px; }
+.entrega-titulo { font-weight: 700; color: var(--ulysseus); margin: 0 0 6px; }
+.entrega dl { display: grid; grid-template-columns: 78px 1fr; gap: 3px 8px; margin: 0 0 8px; font-size: .9rem; }
+.entrega dt { color: var(--suave); }
+.entrega dd { margin: 0; }
+.entrega-sub { font-weight: 600; margin: 6px 0 2px; font-size: .9rem; }
+.entrega ul { margin: 0; padding-left: 18px; font-size: .9rem; }
+.regla { background: #fff3d6; border-left: 4px solid var(--mne); padding: 10px 14px; border-radius: 6px; }
+.tabla-entregas { border-collapse: collapse; width: 100%; font-size: .92rem; }
+.tabla-entregas th, .tabla-entregas td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+.tabla-entregas th { color: var(--ulysseus); border-bottom: 2px solid var(--ulysseus); }
+.ejemplos { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.ejemplo { border: 1px solid var(--linea); border-radius: 12px; padding: 14px 16px; background: #fff; }
+.ejemplo h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.ejemplo .pregunta { font-style: italic; }
+.ejemplo p { margin: 6px 0; font-size: .92rem; }
+.ejemplo code { font-size: .78rem; background: var(--fondo-2); padding: 1px 4px; border-radius: 4px; }
+.beneficios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 12px; }
+.beneficio { border-radius: 12px; padding: 18px; background: var(--fondo-2); border-top: 4px solid var(--coral); }
+.beneficio h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.beneficio p { margin: 0; }
+@media (max-width: 900px) { .beneficios { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .beneficios { grid-template-columns: 1fr; } }

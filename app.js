@@ -65,13 +65,24 @@
   }
   $('calendario').innerHTML = html;
 
+  // Deliverable due date: the Sunday of the same week
+  const vence = (s) => { const d = new Date(s.start + 'T00:00:00'); d.setDate(d.getDate() + 6);
+    return d.toLocaleDateString('en-GB', {weekday: 'long', day: 'numeric', month: 'long'}) + ', 23:59 CET'; };
+  function fichaEntrega(s) {
+    const e = s.deliverable;
+    return `<div class="entrega"><p class="entrega-titulo">Deliverable: ${esc(e.name)}</p>
+      <dl><dt>Due</dt><dd><strong>${esc(vence(s))}</strong></dd><dt>Who</dt><dd>${esc(e.who)}</dd>
+      <dt>Format</dt><dd>${esc(e.format)}</dd><dt>Submit in</dt><dd>${esc(C.submission)}</dd></dl>
+      <p class="entrega-sub">It must include:</p><ul>${e.include.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
+  }
+
   function verSemana(n) {
     const s = C.schedule.find((x) => x.week === n);
     const ini = new Date(s.start + 'T00:00:00'); const fin = new Date(ini); fin.setDate(ini.getDate() + 6);
     document.querySelectorAll('#calendario td.coil').forEach((td) => td.classList.toggle('elegida', +td.dataset.week === n));
     $('detalle-semana').innerHTML = `<div class="cuando">Week ${s.week} · ${fmt(ini)} – ${fmt(fin)}</div>
       <span class="fase ${colorFase(s.phase)}">${esc(s.phase)}</span><h3>${esc(s.title)}</h3><p>${esc(s.activities)}</p>
-      <p class="entregable"><b>Deliverable:</b> ${esc(s.deliverable)}</p>
+      ${fichaEntrega(s)}
       <div class="nav-semana">${n > 1 ? `<button data-ir="${n - 1}">← Week ${n - 1}</button>` : '<span></span>'}
       ${n < C.schedule.length ? `<button data-ir="${n + 1}">Week ${n + 1} →</button>` : ''}</div>`;
   }
@@ -86,6 +97,18 @@
       ${(g.text || []).map((p) => `<p>${esc(p)}</p>`).join('')}
       ${g.items ? `<ul>${g.items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul>` : ''}
     </details>`).join('');
+  $('tabla-entregas').innerHTML = '<thead><tr><th>Week</th><th>Due</th><th>Deliverable</th><th>Who</th><th>Format</th></tr></thead><tbody>'
+    + C.schedule.map((s) => `<tr><td>${s.week}</td><td>${esc(vence(s).replace(', 23:59 CET', ''))}</td><td><strong>${esc(s.deliverable.name)}</strong></td>`
+      + `<td>${esc(s.deliverable.who)}</td><td>${esc(s.deliverable.format)}</td></tr>`).join('') + '</tbody>';
+  $('regla-entrega').innerHTML = `Every deliverable is due on <strong>${esc(C.deadline)}</strong> of its week and is submitted in ${esc(C.submission)}. Click on a week in the schedule to see exactly what it must include.`;
+  const nombreInd = Object.fromEntries((window.COIL_DATA ? window.COIL_DATA.indicators : []).map((i) => [i.code, i.name]));
+  $('ejemplos').innerHTML = C.examples.map((x) => `<article class="ejemplo"><h3>${esc(x.title)}</h3>
+      <p class="pregunta">${esc(x.question)}</p>
+      <p><b>Indicators:</b> ${x.indicators.map((k) => `${esc(nombreInd[k] || k)} <code>${esc(k)}</code>`).join(' · ')}</p>
+      <p><b>Methods:</b> ${esc(x.methods)}</p></article>`).join('');
+  $('plantillas').innerHTML = C.templates.map((t) => `<details class="tema"><summary>${esc(t.title)}</summary>
+      <ul>${t.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></details>`).join('');
+  $('beneficios').innerHTML = C.benefits.map((b) => `<article class="beneficio"><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p></article>`).join('');
 
   // ---------- Projects and resources ----------
   $('proyectos').innerHTML = C.projects.length
