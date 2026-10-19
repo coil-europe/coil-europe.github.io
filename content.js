@@ -26,11 +26,11 @@ window.COIL_CONTENT = {
   // Teaching team: {name, university, email, photo: 'img/team/file.jpg', bio: one sentence (optional)}
   teachers: [
     {name: 'Daniel Ruiz Romera', university: 'University of Seville', email: 'druiz8@us.es', bio: 'Department of Applied Economics II. Teaches econometrics; works on innovation policy, entrepreneurship, academic spin-offs and EU funding for firms.', photo: 'img/team/daniel-ruiz-romera.jpg'},
+    {name: 'Víctor Ernesto Pérez León', university: 'University of Seville', email: 'vpleon@us.es', bio: 'Department of Applied Economics II. Teaches econometrics and business statistics; works on composite indicators, multicriteria analysis and sustainable tourism.', photo: 'img/team/victor-perez-leon.jpg'},
     {name: 'Alena Mojsejová', university: 'Technical University of Košice', email: 'alena.mojsejova@tuke.sk', bio: 'Faculty of Economics (Applied Mathematics and Business Informatics). Teaches probability and statistics; works on income inequality and gender gaps.', photo: 'img/team/alena-mojsejova.jpg'},
+    {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk', bio: 'Faculty of Economics (Applied Mathematics and Business Informatics). Teaches data analysis and visualisation; works on business intelligence and digital transformation.', photo: 'img/team/dana-palova.jpg'},
     {name: 'Bojan Pejović', university: 'University of Montenegro', email: 'bojan.p@ucg.ac.me', bio: 'Faculty of Economics. Head of the Center for Statistical Analysis; teaches statistics and econometrics. PhD in Economics, University of Belgrade.', photo: 'img/team/bojan-pejovic.jpg'},
     {name: 'Tamara Backović', university: 'University of Montenegro', email: '', bio: 'Faculty of Economics. Vice-Dean for Accreditation and Quality Management; works on capital markets, energy and economic growth, and sustainability reporting.', photo: 'img/team/tamara-backovic.jpg'},
-    {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk', bio: 'Faculty of Economics (Applied Mathematics and Business Informatics). Teaches data analysis and visualisation; works on business intelligence and digital transformation.', photo: 'img/team/dana-palova.jpg'},
-    {name: 'Víctor Ernesto Pérez León', university: 'University of Seville', email: 'vpleon@us.es', bio: 'Department of Applied Economics II. Teaches econometrics and business statistics; works on composite indicators, multicriteria analysis and sustainable tourism.', photo: 'img/team/victor-perez-leon.jpg'},
   ],
 
   outcomes: [
