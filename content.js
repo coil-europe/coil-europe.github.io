@@ -6,7 +6,7 @@ window.COIL_CONTENT = {
   subtitle: 'A Ulysseus COIL on comparative socio-economic data analysis',
   // The COIL is part of these courses (each student follows one of them at their home university)
   course: 'Econometrics · Advanced Data Analysis and Visualization',
-  period: '12 October – 13 December 2026',
+  period: '19 October – 13 December 2026',
   provisional: true,
 
   universities: [
@@ -19,7 +19,7 @@ window.COIL_CONTENT = {
   teamWork: [
     'Week 1: joint online welcome session with all teachers and students (two slots).',
     'During the COIL: your home teacher follows your progress, answers your questions and grades your deliverables.',
-    'Week 9: all teachers attend the joint online presentation and give feedback to every team.',
+    'Week 8: all teachers attend the joint online presentation and give feedback to every team.',
     'At the end: the teachers coordinate the extra points and the certificates of participation.',
   ],
 
@@ -55,29 +55,29 @@ window.COIL_CONTENT = {
     'If you cannot meet a deadline, tell your team and your home teacher before it, not after.',
   ],
 
-  // One entry per week (Monday date). Only weeks 2, 6 and 9 have a deliverable, due on the Sunday of that week.
+  // One entry per week (Monday date). Only weeks 2, 6 and 8 have a deliverable, due on the Sunday of that week.
   // Weeks without a deliverable show "goal": what the team should have ready by the end of the week.
   schedule: [
-    {week: 1, start: '2026-10-12', phase: 'Orientation', title: 'Kick-off and intercultural orientation',
+    {week: 1, start: '2026-10-19', phase: 'Orientation', title: 'Kick-off and intercultural orientation',
       activities: 'Joint online welcome session. Introductions and icebreaker in mixed groups. How the COIL works.',
       goal: 'Read this website and the student guide, attend the kick-off and agree with your team on a communication channel and a weekly meeting time.'},
-    {week: 2, start: '2026-10-19', phase: 'Orientation', title: 'International teams and topic selection',
+    {week: 2, start: '2026-10-26', phase: 'Orientation', title: 'International teams and topic selection',
       activities: 'Teams with students from the three universities. Agree on working rules, tools and meeting times. Choose a socio-economic or public-policy question.',
       deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDt84DgHo2jRYZyLjhr_0IxAc4R5Qqeec3cjK04vST_gck', number: 1, name: 'Team charter and topic proposal', who: 'Team', format: 'One PDF, maximum 2 pages (use the templates in the Submit section)',
         files: ['Team X – Deliverable 1.pdf'],
         include: ['Team charter: team name, members and universities, roles, communication channel, weekly meeting time, how you take decisions, what you do if someone does not contribute.',
           'Topic proposal: research question, why it matters for Spain, Slovakia and Montenegro, 3–6 indicators from the COIL dataset (with their codes), countries and years, and the methods you expect to use.',
           'A short note on your use of AI tools (which tool, for what, and how you checked the result), or a sentence saying you did not use any.']}},
-    {week: 3, start: '2026-10-26', phase: 'Data', title: 'Data collection and preparation',
+    {week: 3, start: '2026-11-02', phase: 'Data', title: 'Data collection and preparation',
       activities: 'Start from the COIL dataset; add national sources if needed. Document every variable.',
       goal: 'Your dataset is ready (one row per country and year) and every variable is documented in a data dictionary.'},
-    {week: 4, start: '2026-11-02', phase: 'Data', title: 'Exploratory data analysis',
+    {week: 4, start: '2026-11-09', phase: 'Data', title: 'Exploratory data analysis',
       activities: 'Descriptive statistics, distributions, missing values, first visual comparisons of Spain, Slovakia and Montenegro within Europe.',
       goal: 'Descriptive statistics and first charts are done, and the team agrees on what the data show.'},
-    {week: 5, start: '2026-11-09', phase: 'Methods', title: 'Regression and classification',
+    {week: 5, start: '2026-11-16', phase: 'Methods', title: 'Regression and classification',
       activities: 'Relationships between indicators across European countries and over time, and simple classification models. Interpreting results in different institutional contexts.',
       goal: 'Your regression or classification model is estimated and interpreted.'},
-    {week: 6, start: '2026-11-16', phase: 'Methods', title: 'Dimensionality reduction and clustering',
+    {week: 6, start: '2026-11-23', phase: 'Methods', title: 'Dimensionality reduction and clustering',
       activities: 'Principal component analysis and clustering of countries: which European countries look alike, and where do Spain, Slovakia and Montenegro fall?',
       deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDz_jaMSNu4Tb8oQCcxRwlQAeClYW5ZI3mU-MKE7u8Fc_w', number: 2, name: 'Analysis notebook', who: 'Team', format: 'Your analysis file (Python or R notebook, Gretl script or session, or Power BI file) + a PDF or HTML report with all results + your dataset (CSV or Excel)',
         files: ['Team X – Deliverable 2 – Analysis (.ipynb, .Rmd, .qmd, .inp, .gretl or .pbix)', 'Team X – Deliverable 2 – Report (.pdf or .html)', 'Team X – Deliverable 2 – Data (.csv or .xlsx)'],
@@ -87,13 +87,10 @@ window.COIL_CONTENT = {
           'PCA and clustering: variance explained, number of clusters and why, and where Spain, Slovakia and Montenegro fall.',
           'Limitations (sample size, missing data, causality) and your three main conclusions.',
           'A short note on your use of AI tools (which tool, for what, and how you checked the result), or a sentence saying you did not use any.']}},
-    {week: 7, start: '2026-11-23', phase: 'Communication', title: 'Dashboards and data storytelling',
-      activities: 'Design the dashboard for a non-specialist audience. Give and receive feedback with another team.',
-      goal: 'A first version of your dashboard, shown to another team for feedback.'},
-    {week: 8, start: '2026-11-30', phase: 'Communication', title: 'Final dashboard and rehearsal',
-      activities: 'Incorporate feedback, prepare the presentation, rehearse online.',
-      goal: 'Final dashboard and slides ready; the presentation has been rehearsed.'},
-    {week: 9, start: '2026-12-07', phase: 'Presentation', title: 'Joint online presentation and reflection',
+    {week: 7, start: '2026-11-30', phase: 'Communication', title: 'Dashboard, feedback and rehearsal',
+      activities: 'Design the dashboard for a non-specialist audience, exchange feedback with another team, prepare the presentation and rehearse online.',
+      goal: 'Final dashboard and slides ready after feedback from another team; the presentation has been rehearsed.'},
+    {week: 8, start: '2026-12-07', phase: 'Presentation', title: 'Joint online presentation and reflection',
       activities: 'All teams present to students and teachers from the three universities. Closing discussion.',
       deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDehibFuVQLTpNLiAGMQdceAQzV73bbAqfZzPBQzvZqPJ8', number: 3, name: 'Final dashboard, presentation and final reflection', who: 'Team (dashboard, slides and presentation) + individual (reflection)',
         format: 'Dashboard link or PDF + slides (maximum 6 slides, 5-minute presentation) + one-page PDF reflection',
@@ -117,7 +114,7 @@ window.COIL_CONTENT = {
     'Join on time, with your camera on if possible, and use your real name.',
     'The language of all sessions is English.',
     'The plenary parts of one of the two slots of every session are recorded, and the recording and the slides are published on this website (Sessions section) for students who could not attend. Break-out rooms are never recorded.',
-    'If you cannot attend a session, tell your home teacher and your team in advance, and watch the recording before the next team meeting. The final presentation (week 9) is the exception: it is compulsory to receive the extra points.',
+    'If you cannot attend a session, tell your home teacher and your team in advance, and watch the recording before the next team meeting. The final presentation (week 8) is the exception: it is compulsory to receive the extra points.',
   ],
   sessions: [
     {week: 1, recording: '', slides: 'docs/slides/COIL_1_kickoff.pdf', title: 'Kick-off', duration: '45 minutes', poll: '',
@@ -149,7 +146,7 @@ window.COIL_CONTENT = {
         {min: 20, item: 'Methods clinic in break-out rooms: regression, classification, PCA and clustering. Teachers rotate between teams.'},
         {min: 5, item: 'Wrap-up: what to submit in deliverable 2.'},
       ]},
-    {week: 9, recording: '', slides: 'docs/slides/COIL_4_final_presentations.pdf', title: 'Final presentations', duration: '45 minutes', poll: '',
+    {week: 8, recording: '', slides: 'docs/slides/COIL_4_final_presentations.pdf', title: 'Final presentations', duration: '45 minutes', poll: '',
       slots: [{label: 'Slot A', when: 'Date and time to be confirmed', link: ''}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
       goal: 'Present your project to students and teachers of the three universities. Compulsory to receive the extra points. The teachers tell each team in which slot it presents.',
       prepare: ['Upload the final dashboard and the slides in the Submit section before the session.', 'Rehearse: 5 minutes per team, every member presents a part.'],
@@ -162,7 +159,7 @@ window.COIL_CONTENT = {
 
   // Why join: intro, two highlights and a grid of benefits (icon: grade, certificate, globe, portfolio, skills, thesis, internship, network)
   benefits: {
-    intro: 'Nine weeks, three universities, one real data project. This is what you get.',
+    intro: 'Eight weeks, three universities, one real data project. This is what you get.',
     points: [
       {value: '+1', scale: '/ 10', where: 'University of Seville'},
       {value: '+20', scale: '/ 100', where: 'Technical University of Košice · University of Montenegro'},
@@ -170,7 +167,7 @@ window.COIL_CONTENT = {
     pointsNote: 'Extra points on your course grade for students who complete the final presentation.',
     certificate: 'Certificate of participation in a Ulysseus European University COIL, signed by three European universities: Seville, Košice and Montenegro. Add it to your CV and LinkedIn.',
     items: [
-      {icon: 'globe', title: 'International, from home', text: 'Nine weeks working with students from Spain, Slovakia and Montenegro, without travelling.'},
+      {icon: 'globe', title: 'International, from home', text: 'Eight weeks working with students from Spain, Slovakia and Montenegro, without travelling.'},
       {icon: 'portfolio', title: 'A real project for your portfolio', text: 'Real European data and a dashboard you can show to employers. Final projects are published in the Projects section.'},
       {icon: 'skills', title: 'Skills employers ask for', text: 'Data analysis with Power BI, Gretl, Python or R, dashboards, international teamwork and presenting in English.'},
       {icon: 'thesis', title: 'A head start for your thesis', text: 'Develop your COIL project further in your bachelor\'s thesis (TFG), in agreement with your supervisor.'},
@@ -215,7 +212,7 @@ window.COIL_CONTENT = {
   // Student guide: one block per topic. text = paragraphs; items = bullet points (both optional).
   guide: [
     {title: 'What is this COIL and what will you do?',
-      text: ['A COIL (Collaborative Online International Learning) connects your course with courses at two partner universities of the Ulysseus alliance. For nine weeks you will work online in an international team with students from Seville, Košice and Podgorica.',
+      text: ['A COIL (Collaborative Online International Learning) connects your course with courses at two partner universities of the Ulysseus alliance. For eight weeks you will work online in an international team with students from Seville, Košice and Podgorica.',
         'Together you will choose a socio-economic question, analyse real data from European countries with the methods of your course (Econometrics or Advanced Data Analysis and Visualization), build a dashboard and present your results to everybody in a joint online session. The COIL is part of your own course: you receive credits and are graded by your home university.']},
     {title: 'Before you start: checklist',
       items: ['Read this guide and the schedule.',
@@ -235,8 +232,8 @@ window.COIL_CONTENT = {
       items: ['Weeks 1–2: get to know each other, form teams and choose a question that can be answered with data from several countries (deliverable 1).',
         'Weeks 3–4: prepare the data and explore it. Document every variable and every change you make.',
         'Weeks 5–6: apply the methods of the course (regression, classification, dimensionality reduction and clustering) and interpret the results in each national context (deliverable 2).',
-        'Weeks 7–8: turn your results into a clear dashboard for a non-specialist audience and give feedback to another team.',
-        'Week 9: present to students and teachers of the three universities and write your final reflection (deliverable 3).']},
+        'Week 7: turn your results into a clear dashboard for a non-specialist audience, give feedback to another team and rehearse.',
+        'Week 8: present to students and teachers of the three universities and write your final reflection (deliverable 3).']},
     {title: 'Using the data',
       items: ['Start from the COIL dataset; you may add other sources if you document them.',
         'Always cite the source of each indicator (World Bank, IMF, Eurostat…).',
@@ -244,8 +241,8 @@ window.COIL_CONTENT = {
         'Check units and years before comparing countries.',
         'Correlation is not causation: be careful with your conclusions.']},
     {title: 'Deliverables and assessment',
-      text: ['There are three deliverables: in week 2, week 6 and week 9 (see the Submit section and the schedule). Each university grades its own students.',
-        'The COIL gives you additional points on top of your course grade: up to 1 extra point (out of 10) at the University of Seville, and up to 20 extra points (out of 100) at the Technical University of Košice and the University of Montenegro. The extra points are awarded to students who complete the final presentation of the project in week 9.'],
+      text: ['There are three deliverables: in week 2, week 6 and week 8 (see the Submit section and the schedule). Each university grades its own students.',
+        'The COIL gives you additional points on top of your course grade: up to 1 extra point (out of 10) at the University of Seville, and up to 20 extra points (out of 100) at the Technical University of Košice and the University of Montenegro. The extra points are awarded to students who complete the final presentation of the project in week 8.'],
       items: ['Each deliverable is due on Sunday at 23:59 CET of its week and is uploaded in the Submit section of this website.',
         'If you cannot meet a deadline, tell your team and your teacher before the deadline, not after.',
         'Final dashboard: an interactive link, or a PDF or screenshots if Power BI publishing is not allowed in your university account.',
@@ -299,7 +296,7 @@ window.COIL_CONTENT = {
       {q: 'Why are there two slots for each session?',
         a: 'So that every student can attend despite the different timetables of the three universities. The two slots are on different days and at different times, and have the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the kick-off and the final presentations the teachers assign the slot; for the data workshop and the mid-point clinic your team chooses.'},
       {q: 'Are the joint sessions compulsory?',
-        a: 'The final presentation (week 9) is required to receive the extra points. The other three are strongly recommended. If you cannot attend one, tell your home teacher and your team in advance.'},
+        a: 'The final presentation (week 8) is required to receive the extra points. The other three are strongly recommended. If you cannot attend one, tell your home teacher and your team in advance.'},
       {q: 'I cannot attend a session. Will I miss it?',
         a: 'No. One slot of every session is recorded and the recording and the slides are published in the Sessions section of this website, usually within two days. Watch it before your next team meeting. Break-out rooms are not recorded, so ask your team what they agreed.'},
       {q: 'Where do I find the session links?',
@@ -307,7 +304,7 @@ window.COIL_CONTENT = {
     ]},
     {group: 'Deliverables and grades', icon: 'check', intro: 'How and when to submit, grades, extra points and the certificate.', items: [
       {q: 'How and when do we submit?',
-        a: 'In the Submit section of this website, with the button of each deliverable. Each deliverable is due on Sunday at 23:59 CET of its week: week 2, week 6 and week 9.'},
+        a: 'In the Submit section of this website, with the button of each deliverable. Each deliverable is due on Sunday at 23:59 CET of its week: week 2, week 6 and week 8.'},
       {q: 'What if we cannot meet a deadline?',
         a: 'Tell your team and your home teacher before the deadline, not after.'},
       {q: 'Power BI does not let me publish my dashboard. What now?',
@@ -332,7 +329,7 @@ window.COIL_CONTENT = {
       {title: 'Kick-off (week 1)', files: [['PDF', 'docs/slides/COIL_1_kickoff.pdf'], ['PowerPoint', 'docs/slides/COIL_1_kickoff.pptx']]},
       {title: 'Data workshop (week 3)', files: [['PDF', 'docs/slides/COIL_2_data_workshop.pdf'], ['PowerPoint', 'docs/slides/COIL_2_data_workshop.pptx']]},
       {title: 'Mid-point clinic (week 5)', files: [['PDF', 'docs/slides/COIL_3_midpoint_clinic.pdf'], ['PowerPoint', 'docs/slides/COIL_3_midpoint_clinic.pptx']]},
-      {title: 'Final presentations (week 9)', files: [['PDF', 'docs/slides/COIL_4_final_presentations.pdf'], ['PowerPoint', 'docs/slides/COIL_4_final_presentations.pptx']]},
+      {title: 'Final presentations (week 8)', files: [['PDF', 'docs/slides/COIL_4_final_presentations.pdf'], ['PowerPoint', 'docs/slides/COIL_4_final_presentations.pptx']]},
     ]},
     {group: 'Methods module (study material)', items: [
       {title: 'Correlation, regression, panel data, classification, PCA, clustering and missing values, with COIL data. Menus first; code optional.',
@@ -341,7 +338,7 @@ window.COIL_CONTENT = {
         files: [['Python', 'docs/code/methods.py'], ['R', 'docs/code/methods.R'], ['Gretl', 'docs/code/methods.inp']]},
     ]},
     {group: 'Templates for your slides', items: [
-      {title: 'Lightning-update slide (week 5) and the six final slides (week 9)', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
+      {title: 'Lightning-update slide (week 5) and the six final slides (week 8)', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
     ]},
   ],
 
