@@ -165,7 +165,7 @@ window.COIL_CONTENT = {
     intro: 'Nine weeks, three universities, one real data project. This is what you get.',
     points: [
       {value: '+1', scale: '/ 10', where: 'University of Seville'},
-      {value: '+10', scale: '/ 100', where: 'Technical University of Košice · University of Montenegro'},
+      {value: '+20', scale: '/ 100', where: 'Technical University of Košice · University of Montenegro'},
     ],
     pointsNote: 'Extra points on your course grade for students who complete the final presentation.',
     certificate: 'Certificate of participation in a Ulysseus European University COIL, signed by three European universities: Seville, Košice and Montenegro. Add it to your CV and LinkedIn.',
@@ -245,7 +245,7 @@ window.COIL_CONTENT = {
         'Correlation is not causation: be careful with your conclusions.']},
     {title: 'Deliverables and assessment',
       text: ['There are three deliverables: in week 2, week 6 and week 9 (see the Submit section and the schedule). Each university grades its own students.',
-        'The COIL gives you additional points on top of your course grade: up to 1 extra point (out of 10) at the University of Seville, and up to 10 extra points (out of 100) at the Technical University of Košice and the University of Montenegro. The extra points are awarded to students who complete the final presentation of the project in week 9.'],
+        'The COIL gives you additional points on top of your course grade: up to 1 extra point (out of 10) at the University of Seville, and up to 20 extra points (out of 100) at the Technical University of Košice and the University of Montenegro. The extra points are awarded to students who complete the final presentation of the project in week 9.'],
       items: ['Each deliverable is due on Sunday at 23:59 CET of its week and is uploaded in the Submit section of this website.',
         'If you cannot meet a deadline, tell your team and your teacher before the deadline, not after.',
         'Final dashboard: an interactive link, or a PDF or screenshots if Power BI publishing is not allowed in your university account.',
@@ -315,7 +315,7 @@ window.COIL_CONTENT = {
       {q: 'Who grades me?',
         a: 'Your teacher at your home university, following the rules of your own course.'},
       {q: 'How do I get the extra points and the certificate?',
-        a: 'The extra points (+1 out of 10 at the University of Seville; +10 out of 100 at the Technical University of Košice and the University of Montenegro) go to students who complete the final presentation. You also receive a certificate of participation signed by the three universities.'},
+        a: 'The extra points (+1 out of 10 at the University of Seville; +20 out of 100 at the Technical University of Košice and the University of Montenegro) go to students who complete the final presentation. You also receive a certificate of participation signed by the three universities.'},
     ]},
     {group: 'AI tools and help', icon: 'help', intro: 'Using AI tools, and where to ask anything else.', items: [
       {q: 'Can I use ChatGPT or other AI tools?',
