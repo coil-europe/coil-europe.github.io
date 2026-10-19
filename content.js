@@ -30,7 +30,7 @@ window.COIL_CONTENT = {
     {name: 'Bojan Pejović', university: 'University of Montenegro', email: 'bojan.p@ucg.ac.me', bio: 'Faculty of Economics. Head of the Center for Statistical Analysis; teaches statistics and econometrics. PhD in Economics, University of Belgrade.', photo: 'img/team/bojan-pejovic.jpg'},
     {name: 'Víctor Ernesto Pérez León', university: 'University of Seville', email: 'vpleon@us.es', bio: 'Department of Applied Economics II. Teaches econometrics and business statistics; works on composite indicators, multicriteria analysis and sustainable tourism.', photo: 'img/team/victor-perez-leon.jpg'},
     {name: 'Dana Paľová', university: 'Technical University of Košice', email: 'dana.palova@tuke.sk', bio: 'Faculty of Economics (Applied Mathematics and Business Informatics). Teaches data analysis and visualisation; works on business intelligence and digital transformation.', photo: 'img/team/dana-palova.jpg'},
-    {name: 'Tamara Backović', university: 'University of Montenegro', email: 'tassabacc@ucg.ac.me', bio: 'Faculty of Economics. Teaches econometrics and operations research; works on capital markets, energy and economic growth, and sustainability reporting.', photo: 'img/team/tamara-backovic.jpg'},
+    {name: 'Tamara Backović', university: 'University of Montenegro', email: 'tassabacc@ucg.ac.me', bio: 'Faculty of Economics. Teaches econometrics and operations research; works on capital markets, energy and economic growth, and sustainability reporting.', photo: 'img/team/tamara-backovic-ucg.jpg'},
   ],
 
   outcomes: [
