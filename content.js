@@ -63,7 +63,7 @@ window.COIL_CONTENT = {
       goal: 'Read this website and the student guide, attend the kick-off and agree with your team on a communication channel and a weekly meeting time.'},
     {week: 2, start: '2026-10-26', phase: 'Orientation', title: 'International teams and topic selection',
       activities: 'Teams with students from the three universities. Agree on working rules, tools and meeting times. Choose a socio-economic or public-policy question.',
-      deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDt84DgHo2jRYZyLjhr_0IxAc4R5Qqeec3cjK04vST_gck', number: 1, name: 'Team charter and topic proposal', who: 'Team', format: 'One PDF, maximum 2 pages (use the templates in the Submit section)',
+      deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDt84DgHo2jRYZyLjhr_0IxAc4R5Qqeec3cjK04vST_gck', number: 1, name: 'Team charter and topic proposal', who: 'Team', format: 'One PDF made with the Word template (Submit section), maximum 2 pages',
         files: ['Team X – Deliverable 1.pdf'],
         include: ['Team charter: team name, members and universities, roles, communication channel, weekly meeting time, how you take decisions, what you do if someone does not contribute.',
           'Topic proposal: research question, why it matters for Spain, Slovakia and Montenegro, 3–6 indicators from the COIL dataset (with their codes), countries and years, and the methods you expect to use.',
@@ -79,8 +79,8 @@ window.COIL_CONTENT = {
       goal: 'Your regression or classification model is estimated and interpreted.'},
     {week: 6, start: '2026-11-23', phase: 'Methods', title: 'Dimensionality reduction and clustering',
       activities: 'Principal component analysis and clustering of countries: which European countries look alike, and where do Spain, Slovakia and Montenegro fall?',
-      deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDz_jaMSNu4Tb8oQCcxRwlQAeClYW5ZI3mU-MKE7u8Fc_w', number: 2, name: 'Analysis notebook', who: 'Team', format: 'Your analysis file (Python or R notebook, Gretl script or session, or Power BI file) + a PDF or HTML report with all results + your dataset (CSV or Excel)',
-        files: ['Team X – Deliverable 2 – Analysis (.ipynb, .Rmd, .qmd, .inp, .gretl or .pbix)', 'Team X – Deliverable 2 – Report (.pdf or .html)', 'Team X – Deliverable 2 – Data (.csv or .xlsx)'],
+      deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDz_jaMSNu4Tb8oQCcxRwlQAeClYW5ZI3mU-MKE7u8Fc_w', number: 2, name: 'Analysis report', who: 'Team', format: 'Report made with the Word template, saved as PDF + your analysis file (Python or R notebook, Gretl script or Power BI file). Add your dataset only if you used data from outside the COIL dataset',
+        files: ['Team X – Deliverable 2.pdf', 'Team X – Deliverable 2 – Analysis (.ipynb, .Rmd, .qmd, .inp, .gretl or .pbix)'],
         include: ['Data: the dataset you analysed and a data dictionary (name, code, definition, unit, source and years of every variable), with missing values and how you handled them.',
           'Exploratory analysis: descriptive statistics and at least three charts, one comparing Spain, Slovakia and Montenegro with the rest of Europe.',
           'Regression or classification: model specification, results table and interpretation in plain English.',
@@ -92,11 +92,11 @@ window.COIL_CONTENT = {
       goal: 'Final dashboard and slides ready after feedback from another team; the presentation has been rehearsed.'},
     {week: 8, start: '2026-12-07', phase: 'Presentation', title: 'Joint online presentation and reflection',
       activities: 'All teams present to students and teachers from the three universities. Closing discussion.',
-      deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDehibFuVQLTpNLiAGMQdceAQzV73bbAqfZzPBQzvZqPJ8', number: 3, name: 'Final dashboard, presentation and final reflection', who: 'Team (dashboard, slides and presentation) + individual (reflection)',
-        format: 'Dashboard link or PDF + slides (maximum 6 slides, 5-minute presentation) + one-page PDF reflection',
-        files: ['Team X – Dashboard (PDF, or a text file with the link)', 'Team X – Slides (.pptx or .pdf)', 'Team X – Surname (individual reflection, PDF)'],
-        note: 'Upload the dashboard and the slides before the joint presentation. The reflection is due on Sunday.',
-        include: ['Final dashboard: your question, the data, three key findings and limitations, for a non-specialist audience.',
+      deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDehibFuVQLTpNLiAGMQdceAQzV73bbAqfZzPBQzvZqPJ8', number: 3, name: 'Final presentation and reflection', who: 'Team (slides and presentation) + individual (reflection)',
+        format: 'Slides made with the PowerPoint template (maximum 6 slides, 5-minute presentation, dashboard on slide 5) + one-page individual reflection made with the Word template, saved as PDF',
+        files: ['Team X – Slides (.pptx or .pdf)', 'Team X – Surname – Reflection.pdf'],
+        note: 'Upload the slides before the joint presentation. The reflection is due on Sunday.',
+        include: ['Dashboard, on slide 5 of your slides (a screenshot, and the link if it is online): your question, the data, three key findings and limitations, for a non-specialist audience.',
           'Slides and live presentation in the joint online session: every team member presents a part. This is required to receive the extra points.',
           'Final individual reflection (300–400 words): what did you learn about data analysis, about working internationally and about yourself?',
           'A short note on your use of AI tools (which tool, for what, and how you checked the result), or a sentence saying you did not use any.']}},
@@ -149,7 +149,7 @@ window.COIL_CONTENT = {
     {week: 8, recording: '', slides: 'docs/slides/COIL_4_final_presentations.pdf', title: 'Final presentations', duration: '45 minutes', poll: '',
       slots: [{label: 'Slot A', when: 'Date and time to be confirmed', link: ''}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
       goal: 'Present your project to students and teachers of the three universities. Compulsory to receive the extra points. The teachers tell each team in which slot it presents.',
-      prepare: ['Upload the final dashboard and the slides in the Submit section before the session.', 'Rehearse: 5 minutes per team, every member presents a part.'],
+      prepare: ['Upload your slides (with the dashboard on slide 5) in the Submit section before the session.', 'Rehearse: 5 minutes per team, every member presents a part.'],
       agenda: [
         {min: 5, item: 'Opening by the teachers.'},
         {min: 35, item: 'Team presentations: 5 minutes each + 2 minutes of questions and feedback (about five teams per slot).'},
@@ -199,7 +199,13 @@ window.COIL_CONTENT = {
       indicators: ['SI.POV.GINI', 'NV.SRV.TOTL.ZS', 'NY.GDP.MKTP.KD.ZG'], methods: 'PCA to summarise the economic structure, then clustering.'},
   ],
 
-  // Templates referred to in the weekly deliverables
+  // Template files shown in the Submit section (the Word file is built by presentaciones/construir_plantilla.js)
+  templateFiles: [
+    {title: 'Word template for deliverable 1, the report of deliverable 2 and your final reflection. Keep only the part of your deliverable, replace the grey text and save it as PDF.', files: [['Word', 'docs/COIL_deliverable_template.docx']]},
+    {title: 'PowerPoint template for your slides: the lightning update (week 5) and the final presentation (week 8), with your dashboard on slide 5.', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
+  ],
+
+  // Contents of the Word template (charter, topic proposal and data dictionary)
   templates: [
     {title: 'Template: topic proposal (week 2)', items: ['Team name and members (name, university).', 'Research question (one sentence, ending with a question mark).',
       'Why it matters for Spain, Slovakia and Montenegro (3–4 sentences).', 'Indicators: name and code of 3–6 indicators from the COIL dataset.',
@@ -337,8 +343,9 @@ window.COIL_CONTENT = {
       {title: 'Code that reproduces every number in the module (put it next to coil_indicators_gretl.csv)',
         files: [['Python', 'docs/code/methods.py'], ['R', 'docs/code/methods.R'], ['Gretl', 'docs/code/methods.inp']]},
     ]},
-    {group: 'Templates for your slides', items: [
-      {title: 'Lightning-update slide (week 5) and the six final slides (week 8)', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
+    {group: 'Templates for your deliverables', items: [
+      {title: 'Word template: deliverable 1, the report of deliverable 2 and your final reflection', files: [['Word', 'docs/COIL_deliverable_template.docx']]},
+      {title: 'PowerPoint template: lightning-update slide (week 5) and the six final slides (week 8)', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
     ]},
   ],
 

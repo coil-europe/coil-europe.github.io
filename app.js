@@ -176,8 +176,8 @@
         ${x.credit ? `<p class="credito">Photo: <a href="${esc(x.credit.url)}" target="_blank" rel="noopener">${esc(x.credit.author)}</a>, ${esc(x.credit.license)}, via Wikimedia Commons</p>` : ''}
       </div></article>`).join('');
   $('ejemplos-proyectos').innerHTML = fichasEjemplos;
-  $('plantillas').innerHTML = C.templates.map((t) => `<details class="tema"><summary>${esc(t.title)}</summary>
-      <ul>${t.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></details>`).join('');
+  $('plantillas').innerHTML = (C.templateFiles || []).map((it) => `<div class="material"><p>${esc(it.title)}</p><p class="material-enlaces">${it.files.map(([l, f], i) =>
+      `<a class="${i ? 'boton-sec' : 'boton-pdf'} boton-enlace" href="${esc(f)}" ${f.endsWith('.pdf') ? 'target="_blank" rel="noopener"' : 'download'}>${esc(l)}</a>`).join(' ')}</p></div>`).join('');
   // simple line icons (24x24, stroke)
   const ICONOS = {
     certificate: '<circle cx="12" cy="9" r="5"/><path d="M9 13.5 7.5 21l4.5-2.5 4.5 2.5L15 13.5"/>',
