@@ -121,7 +121,7 @@ window.COIL_CONTENT = {
   ],
   sessions: [
     {week: 1, recording: '', slides: 'docs/slides/COIL_1_kickoff.pdf', title: 'Kick-off', duration: '45 minutes', poll: '',
-      slots: [{label: 'Slot A', when: 'Date and time to be confirmed', link: ''}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
+      slots: [{label: 'Slot A', when: 'Thursday 22 October 2026, 15:00 (Central European time)', link: ''}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
       goal: 'Meet the people you will work with, understand how the COIL works and hold your first team meeting.',
       prepare: ['Read the student guide and the schedule.', 'Check your team and your slot (sent by your home teacher before the session).', 'Think of one surprising fact or figure about the economy or society of your country.'],
       agenda: [
