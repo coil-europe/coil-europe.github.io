@@ -4,7 +4,7 @@ window.COIL_TEAMS = [
   "team": "Team 1",
   "members": [
    {
-    "name": "Yuliia R.",
+    "name": "Robert F.",
     "university": "Technical University of Košice"
    },
    {
@@ -29,7 +29,7 @@ window.COIL_TEAMS = [
   "team": "Team 2",
   "members": [
    {
-    "name": "Robert F.",
+    "name": "Yuliia R.",
     "university": "Technical University of Košice"
    },
    {
