@@ -41,7 +41,7 @@ window.COIL_TEAMS = [
     "university": "University of Seville"
    },
    {
-    "name": "Daniel P.",
+    "name": "Juan Pablo C.",
     "university": "University of Seville"
    },
    {
@@ -95,7 +95,7 @@ window.COIL_TEAMS = [
     "university": "University of Seville"
    },
    {
-    "name": "Juan Pablo C.",
+    "name": "Daniel P.",
     "university": "University of Seville"
    }
   ]
