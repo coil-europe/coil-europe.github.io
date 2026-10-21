@@ -4,23 +4,23 @@ window.COIL_TEAMS = [
   "team": "Team 1",
   "members": [
    {
-    "name": "Yuliia Romanenko",
+    "name": "Yuliia R.",
     "university": "Technical University of Košice"
    },
    {
-    "name": "Milica Knežević",
+    "name": "Milica K.",
     "university": "University of Montenegro"
    },
    {
-    "name": "Léa Adnot",
+    "name": "Léa A.",
     "university": "University of Seville"
    },
    {
-    "name": "Marta Pineda González",
+    "name": "Marta P.",
     "university": "University of Seville"
    },
    {
-    "name": "Blanca García Sánchez",
+    "name": "Blanca G.",
     "university": "University of Seville"
    }
   ]
@@ -29,23 +29,23 @@ window.COIL_TEAMS = [
   "team": "Team 2",
   "members": [
    {
-    "name": "Robert Fric",
+    "name": "Robert F.",
     "university": "Technical University of Košice"
    },
    {
-    "name": "Marija Boljević",
+    "name": "Marija B.",
     "university": "University of Montenegro"
    },
    {
-    "name": "Alicia Pérez Fernández",
+    "name": "Alicia P.",
     "university": "University of Seville"
    },
    {
-    "name": "Daniel Padilla Castrejón",
+    "name": "Daniel P.",
     "university": "University of Seville"
    },
    {
-    "name": "José Serrano Martín",
+    "name": "José S.",
     "university": "University of Seville"
    }
   ]
@@ -54,23 +54,23 @@ window.COIL_TEAMS = [
   "team": "Team 3",
   "members": [
    {
-    "name": "Pavlo Dziuba",
+    "name": "Pavlo D.",
     "university": "Technical University of Košice"
    },
    {
-    "name": "Andrija Miranović",
+    "name": "Andrija M.",
     "university": "University of Montenegro"
    },
    {
-    "name": "Rocío Sánchez Pérez",
+    "name": "Rocío S.",
     "university": "University of Seville"
    },
    {
-    "name": "Jesús Ruiz Olivares",
+    "name": "Jesús R.",
     "university": "University of Seville"
    },
    {
-    "name": "Zaira Padín Falcón",
+    "name": "Zaira P.",
     "university": "University of Seville"
    }
   ]
@@ -79,23 +79,23 @@ window.COIL_TEAMS = [
   "team": "Team 4",
   "members": [
    {
-    "name": "Anna Bozheva",
+    "name": "Anna B.",
     "university": "Technical University of Košice"
    },
    {
-    "name": "Đina Radenović",
+    "name": "Đina R.",
     "university": "University of Montenegro"
    },
    {
-    "name": "Rania Mekouar El Ouasgiri",
+    "name": "Rania M.",
     "university": "University of Seville"
    },
    {
-    "name": "Elena Vallín Plaza",
+    "name": "Elena V.",
     "university": "University of Seville"
    },
    {
-    "name": "Juan Pablo Candau Serrano",
+    "name": "Juan Pablo C.",
     "university": "University of Seville"
    }
   ]
@@ -104,23 +104,23 @@ window.COIL_TEAMS = [
   "team": "Team 5",
   "members": [
    {
-    "name": "Andrija Zvizdić",
+    "name": "Andrija Z.",
     "university": "University of Montenegro"
    },
    {
-    "name": "Vasilisa Marković",
+    "name": "Vasilisa M.",
     "university": "University of Montenegro"
    },
    {
-    "name": "Alejandro Arjona Carrasco",
+    "name": "Alejandro A.",
     "university": "University of Seville"
    },
    {
-    "name": "Carlos Javier Martín Maraver",
+    "name": "Carlos Javier M.",
     "university": "University of Seville"
    },
    {
-    "name": "Tania Isabel Aparicio Carracedo",
+    "name": "Tania Isabel A.",
     "university": "University of Seville"
    }
   ]
@@ -129,19 +129,19 @@ window.COIL_TEAMS = [
   "team": "Team 6",
   "members": [
    {
-    "name": "Tijana Bošković",
+    "name": "Tijana B.",
     "university": "University of Montenegro"
    },
    {
-    "name": "Michele Ferraro",
+    "name": "Michele F.",
     "university": "University of Seville"
    },
    {
-    "name": "Isabel Maria Simon Portero",
+    "name": "Isabel Maria S.",
     "university": "University of Seville"
    },
    {
-    "name": "Mara Alejandra Navarrete Pineda",
+    "name": "Mara Alejandra N.",
     "university": "University of Seville"
    }
   ]
@@ -150,23 +150,23 @@ window.COIL_TEAMS = [
   "team": "Team 7",
   "members": [
    {
-    "name": "Sergej Stojkovič",
+    "name": "Sergej S.",
     "university": "University of Montenegro"
    },
    {
-    "name": "Sofía del Rocío Vaquero Clavijo",
+    "name": "Sofía del Rocío V.",
     "university": "University of Seville"
    },
    {
-    "name": "Mónica Vargas Roldán",
+    "name": "Mónica V.",
     "university": "University of Seville"
    },
    {
-    "name": "Vladana Radulović",
+    "name": "Vladana R.",
     "university": "University of Montenegro"
    },
    {
-    "name": "Arantxa Jaén Guedes",
+    "name": "Arantxa J.",
     "university": "University of Seville"
    }
   ]
