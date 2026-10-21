@@ -118,7 +118,7 @@ window.COIL_CONTENT = {
   ],
   sessions: [
     {week: 1, recording: '', slides: 'docs/slides/COIL_1_kickoff.pdf', title: 'Kick-off', duration: '45 minutes', poll: '',
-      slots: [{label: 'Slot A', when: 'Thursday 22 October 2026, 15:00 (Central European time)', link: 'https://teams.microsoft.com/meet/3314969552857291?p=cxm6UTGRM5W93D8Tr2'}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
+      slots: [{label: 'Slot A', when: 'Thursday 22 October 2026, 14:00 (Central European time)', link: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZTFlYjU5MzctNzdhZC00MzQ4LWE5NjYtNTVhNjAzNDMzYTRj%40thread.v2/0?context=%7b%22Tid%22%3a%22ef4a684e-81b5-491c-a98e-c7b31be6c469%22%2c%22Oid%22%3a%22d269657e-26b2-408a-800a-80d893543b04%22%7d'}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
       goal: 'Meet the people you will work with, understand how the COIL works and hold your first team meeting.',
       prepare: ['Read the student guide and the schedule.', 'Check your team and your slot (sent by your home teacher before the session).', 'Think of one surprising fact or figure about the economy or society of your country.'],
       agenda: [
