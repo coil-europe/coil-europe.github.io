@@ -180,6 +180,13 @@ nav a.activo { background: var(--ulysseus); color: #fff; }
 
 .intro-equipo { text-align: center; max-width: 760px; margin: 0 auto; color: var(--suave); }
 .equipo-info { margin-top: 32px; }
+#student-teams { margin-top: 40px; }
+.equipos-alumnos { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 16px; }
+.equipo-alumnos { border: 1px solid var(--linea); border-radius: 12px; padding: 14px 16px; background: #fff; }
+.equipo-alumnos h3 { margin: 0 0 8px; }
+.equipo-alumnos ul { list-style: none; margin: 0; padding: 0; }
+.equipo-alumnos li { padding: 5px 0 5px 10px; border-left: 4px solid var(--color-uni); margin-bottom: 4px; font-size: .95rem; }
+.equipo-alumnos li span { display: block; font-size: .8rem; color: var(--suave); }
 .contacto { display: flex; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--linea); font-size: .92rem; }
 .contacto img { width: 64px; height: 44px; object-fit: contain; flex: none; }
 

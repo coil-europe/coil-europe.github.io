@@ -110,7 +110,7 @@ window.COIL_CONTENT = {
   sessionsIntro: 'There are four joint online sessions with students and teachers of the three universities, on Microsoft Teams, of 45 minutes at most. Each session is given twice, at two different times, with the same content, so that it fits the timetables of the three universities: each team attends one slot together. If you cannot attend, the recording and the slides of every session are published here afterwards. The rest of the time you work with your team: meet at least once a week, and ask your home teacher whenever you need help.',
   sessionRules: [
     'The link to each session is published on this website (Sessions section and Home page). You do not need an account of another university: open the link and join from the browser or the Teams app.',
-    'Each session is given in two slots (A and B), at different times, with the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the kick-off and the final presentations the teachers assign the slot of each team; for the other two sessions your team chooses.',
+    'Each session is given in two slots (A and B), at different times, with the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the final presentations the teachers assign the slot of each team; for the other three sessions your team chooses.',
     'Join on time, with your camera on if possible, and use your real name.',
     'The language of all sessions is English.',
     'The plenary parts of one of the two slots of every session are recorded, and the recording and the slides are published on this website (Sessions section) for students who could not attend. Break-out rooms are never recorded.',
@@ -300,7 +300,7 @@ window.COIL_CONTENT = {
     ]},
     {group: 'Joint sessions', icon: 'video', intro: 'The four online sessions: the two slots, attendance, links and recordings.', items: [
       {q: 'Why are there two slots for each session?',
-        a: 'So that every student can attend despite the different timetables of the three universities. The two slots are at different times, and have the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the kick-off and the final presentations the teachers assign the slot; for the data workshop and the mid-point clinic your team chooses.'},
+        a: 'So that every student can attend despite the different timetables of the three universities. The two slots are at different times, and have the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the final presentations the teachers assign the slot; for the kick-off, the data workshop and the mid-point clinic your team chooses.'},
       {q: 'Are the joint sessions compulsory?',
         a: 'The final presentation (week 8) is required to receive the extra points. The other three are strongly recommended. If you cannot attend one, tell your home teacher and your team in advance.'},
       {q: 'I cannot attend a session. Will I miss it?',
