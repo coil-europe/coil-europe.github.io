@@ -62,7 +62,7 @@ window.COIL_TEAMS = [
     "university": "University of Montenegro"
    },
    {
-    "name": "Mara Alejandra Navarrete Pineda",
+    "name": "Rocío Sánchez Pérez",
     "university": "University of Seville"
    },
    {
@@ -141,7 +141,7 @@ window.COIL_TEAMS = [
     "university": "University of Seville"
    },
    {
-    "name": "Rocío Sánchez Pérez",
+    "name": "Mara Alejandra Navarrete Pineda",
     "university": "University of Seville"
    }
   ]
