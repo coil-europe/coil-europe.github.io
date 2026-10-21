@@ -103,14 +103,14 @@ window.COIL_CONTENT = {
   ],
 
   // Joint online sessions (Microsoft Teams) with students and teachers of the three universities.
-  // Every session is given twice (slots A and B), on two different days and times, with the same content.
+  // Every session is given twice (slots A and B), at two different times, with the same content.
   // poll: link to the vote on the dates and times (e.g. Microsoft Forms), shown until the meeting links are published.
   // slots: when = day and time of each slot; link = its Teams meeting link, pasted here by the teachers ('' = not published yet).
   // recording: link to the recording, pasted after the session ('' = not yet). slides: PDF of the session slides.
-  sessionsIntro: 'There are four joint online sessions with students and teachers of the three universities, on Microsoft Teams, of 45 minutes at most. Each session is given twice, on two different days and at different times, with the same content, so that it fits the timetables of the three universities: each team attends one slot together. If you cannot attend, the recording and the slides of every session are published here afterwards. The rest of the time you work with your team: meet at least once a week, and ask your home teacher whenever you need help.',
+  sessionsIntro: 'There are four joint online sessions with students and teachers of the three universities, on Microsoft Teams, of 45 minutes at most. Each session is given twice, at two different times, with the same content, so that it fits the timetables of the three universities: each team attends one slot together. If you cannot attend, the recording and the slides of every session are published here afterwards. The rest of the time you work with your team: meet at least once a week, and ask your home teacher whenever you need help.',
   sessionRules: [
     'The link to each session is published on this website (Sessions section and Home page). You do not need an account of another university: open the link and join from the browser or the Teams app.',
-    'Each session is given in two slots (A and B), on different days and at different times, with the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the kick-off and the final presentations the teachers assign the slot of each team; for the other two sessions your team chooses.',
+    'Each session is given in two slots (A and B), at different times, with the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the kick-off and the final presentations the teachers assign the slot of each team; for the other two sessions your team chooses.',
     'Join on time, with your camera on if possible, and use your real name.',
     'The language of all sessions is English.',
     'The plenary parts of one of the two slots of every session are recorded, and the recording and the slides are published on this website (Sessions section) for students who could not attend. Break-out rooms are never recorded.',
@@ -118,7 +118,7 @@ window.COIL_CONTENT = {
   ],
   sessions: [
     {week: 1, recording: '', slides: 'docs/slides/COIL_1_kickoff.pdf', title: 'Kick-off', duration: '45 minutes', poll: '',
-      slots: [{label: 'Slot A', when: 'Thursday 22 October 2026, 14:00 (Central European time)', link: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZTFlYjU5MzctNzdhZC00MzQ4LWE5NjYtNTVhNjAzNDMzYTRj%40thread.v2/0?context=%7b%22Tid%22%3a%22ef4a684e-81b5-491c-a98e-c7b31be6c469%22%2c%22Oid%22%3a%22d269657e-26b2-408a-800a-80d893543b04%22%7d'}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
+      slots: [{label: 'Slot A', when: 'Thursday 22 October 2026, 14:00 (Central European time)', link: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZTFlYjU5MzctNzdhZC00MzQ4LWE5NjYtNTVhNjAzNDMzYTRj%40thread.v2/0?context=%7b%22Tid%22%3a%22ef4a684e-81b5-491c-a98e-c7b31be6c469%22%2c%22Oid%22%3a%22d269657e-26b2-408a-800a-80d893543b04%22%7d'}, {label: 'Slot B', when: 'Thursday 22 October 2026, 15:00 (Central European time)', link: 'https://teams.microsoft.com/meet/3314969552857291?p=cxm6UTGRM5W93D8Tr2'}],
       goal: 'Meet the people you will work with, understand how the COIL works and hold your first team meeting.',
       prepare: ['Read the student guide and the schedule.', 'Check your team and your slot (sent by your home teacher before the session).', 'Think of one surprising fact or figure about the economy or society of your country.'],
       agenda: [
@@ -300,7 +300,7 @@ window.COIL_CONTENT = {
     ]},
     {group: 'Joint sessions', icon: 'video', intro: 'The four online sessions: the two slots, attendance, links and recordings.', items: [
       {q: 'Why are there two slots for each session?',
-        a: 'So that every student can attend despite the different timetables of the three universities. The two slots are on different days and at different times, and have the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the kick-off and the final presentations the teachers assign the slot; for the data workshop and the mid-point clinic your team chooses.'},
+        a: 'So that every student can attend despite the different timetables of the three universities. The two slots are at different times, and have the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the kick-off and the final presentations the teachers assign the slot; for the data workshop and the mid-point clinic your team chooses.'},
       {q: 'Are the joint sessions compulsory?',
         a: 'The final presentation (week 8) is required to receive the extra points. The other three are strongly recommended. If you cannot attend one, tell your home teacher and your team in advance.'},
       {q: 'I cannot attend a session. Will I miss it?',

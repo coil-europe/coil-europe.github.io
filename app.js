@@ -77,7 +77,7 @@
   const vence = (s) => { const d = new Date(s.start + 'T00:00:00'); d.setDate(d.getDate() + 6);
     return d.toLocaleDateString('en-GB', {weekday: 'long', day: 'numeric', month: 'long'}) + ', 23:59 CET'; };
   // Session and submission links: a button when published, a note when not yet.
-  // Every session has two slots (different days and times), each with its own Teams link.
+  // Every session has two slots (different times), each with its own Teams link.
   const franjas = (x) => {
     const ss = x.slots || [];
     const alguno = ss.some((h) => h.link);
@@ -123,7 +123,7 @@
 
   function fichaSesion(semana) {
     const x = (C.sessions || []).find((y) => y.week === semana);
-    return x ? `<div class="sesion-aviso"><b>Joint session: ${esc(x.title)}</b> · ${esc(x.duration)}, on two different days <a href="#sessions">Details</a> ${franjas(x)}</div>` : '';
+    return x ? `<div class="sesion-aviso"><b>Joint session: ${esc(x.title)}</b> · ${esc(x.duration)}, at two different times <a href="#sessions">Details</a> ${franjas(x)}</div>` : '';
   }
   function fichaEntrega(s) {
     const e = s.deliverable;
@@ -206,7 +206,7 @@
     const proxSes = (C.sessions || []).find((x) => fin(C.schedule.find((y) => y.week === x.week)) >= hoy);
     $('esta-semana').innerHTML = `<p class="etiqueta">${empezado ? 'This week' : 'Coming up'} · Week ${s.week}: ${esc(s.title)}</p>
       ${prox ? `<p class="esta-entrega">Next deliverable: <strong>${esc(prox.deliverable.name)}</strong> · ${esc(prox.deliverable.who)} · due <strong>${esc(vence(prox))}</strong> ${botonEnvio(prox.deliverable)}</p>` : ''}
-      ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}), given twice on two different days</p>${franjas(proxSes)}` : ''}
+      ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}), given twice at two different times</p>${franjas(proxSes)}` : ''}
       <p class="accesos"><a class="boton-pdf" href="#submit">Submit your work</a> <a class="boton-sec" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
       <a class="boton-sec" href="#benefits">Extra points and certificate</a> <a class="boton-sec" href="#faq">FAQ: do I need to code?</a></p>`;
   }
@@ -243,7 +243,7 @@
     const sem = C.schedule.find((s) => s.week === x.week);
     const ini = new Date(sem.start + 'T00:00:00'); const fin = new Date(ini); fin.setDate(ini.getDate() + 6);
     return `<article class="sesion"><div class="sesion-cab"><span class="sesion-sem">Week ${x.week} · ${fmt(ini)} – ${fmt(fin)}</span>
-      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · given twice, on two different days and times, same content</p>${franjas(x)}</div>
+      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · given twice, at two different times, same content</p>${franjas(x)}</div>
       <p><b>Goal:</b> ${esc(x.goal)}</p>
       <table class="agenda">${x.agenda.map((p) => `<tr><td>${p.min ? p.min + ' min' : ''}</td><td>${esc(p.item)}</td></tr>`).join('')}</table>
       <p class="entrega-sub">Before the session:</p><ul>${x.prepare.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>${botonesDespues(x)}</article>`;
