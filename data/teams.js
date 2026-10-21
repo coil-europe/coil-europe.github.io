@@ -133,8 +133,8 @@ window.COIL_TEAMS = [
     "university": "University of Montenegro"
    },
    {
-    "name": "Vladana Radulović",
-    "university": "University of Montenegro"
+    "name": "Michele Ferraro",
+    "university": "University of Seville"
    },
    {
     "name": "Isabel Maria Simon Portero",
@@ -162,8 +162,8 @@ window.COIL_TEAMS = [
     "university": "University of Seville"
    },
    {
-    "name": "Michele Ferraro",
-    "university": "University of Seville"
+    "name": "Vladana Radulović",
+    "university": "University of Montenegro"
    },
    {
     "name": "Arantxa Jaén Guedes",
