@@ -87,7 +87,7 @@ window.COIL_TEAMS = [
     "university": "University of Montenegro"
    },
    {
-    "name": "Tania Isabel Aparicio Carracedo",
+    "name": "Rania Mekouar El Ouasgiri",
     "university": "University of Seville"
    },
    {
@@ -120,7 +120,7 @@ window.COIL_TEAMS = [
     "university": "University of Seville"
    },
    {
-    "name": "Rania Mekouar El Ouasgiri",
+    "name": "Tania Isabel Aparicio Carracedo",
     "university": "University of Seville"
    }
   ]
