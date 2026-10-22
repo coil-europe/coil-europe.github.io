@@ -23,6 +23,10 @@ window.COIL_CONTENT = {
     'At the end: the teachers coordinate the extra points and the certificates of participation.',
   ],
 
+  // Responsible teacher of each student team (name as in teachers below), agreed on 22-oct-2026
+  teamTutors: {'Team 1': 'Alena Mojsejová', 'Team 2': 'Alena Mojsejová', 'Team 3': 'Alena Mojsejová',
+    'Team 4': 'Daniel Ruiz Romera', 'Team 6': 'Daniel Ruiz Romera', 'Team 5': 'Bojan Pejović', 'Team 7': 'Bojan Pejović'},
+
   // Teaching team: {name, university, email, photo: 'img/team/file.jpg', bio: one sentence (optional)}
   teachers: [
     {name: 'Daniel Ruiz Romera', university: 'University of Seville', email: 'druiz8@us.es', bio: 'Department of Applied Economics II. Teaches econometrics; works on innovation policy, entrepreneurship, academic spin-offs and EU funding for firms.', photo: 'img/team/daniel-ruiz-romera.jpg'},
