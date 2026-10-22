@@ -111,7 +111,7 @@ window.COIL_CONTENT = {
   sessionRules: [
     'The link to each session is published on this website (Sessions section and Home page). You do not need an account of another university: open the link and join from the browser or the Teams app.',
     'Each session is given in two slots (A and B), at different times, with the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the final presentations the teachers assign the slot of each team; for the other three sessions your team chooses.',
-    'Join on time, with your camera on if possible, and use your real name.',
+    'Please turn your camera on during the sessions, and especially in the break-out rooms: your teammates need to see who they are working with. Join on time and use your real name.',
     'The language of all sessions is English.',
     'The plenary parts of one of the two slots of every session are recorded, and the recording and the slides are published on this website (Sessions section) for students who could not attend. Break-out rooms are never recorded.',
     'If you cannot attend a session, tell your home teacher and your team in advance, and watch the recording before the next team meeting. The final presentation (week 8) is the exception: it is compulsory to receive the extra points.',
@@ -130,7 +130,7 @@ window.COIL_CONTENT = {
     {week: 3, recording: '', slides: 'docs/slides/COIL_2_data_workshop.pdf', title: 'Data workshop', duration: '45 minutes', poll: '',
       slots: [{label: 'Slot A', when: 'Date and time to be confirmed', link: ''}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
       goal: 'Be able to load and document the COIL data in your tool (Python, R, Gretl or Power BI) before the analysis starts.',
-      prepare: ['Download the COIL dataset from the Data section.', 'Install your tool and open the CSV once.', 'Bring your team\'s research question.'],
+      prepare: ['Join with your camera on, especially in the break-out rooms.', 'Download the COIL dataset from the Data section.', 'Install your tool and open the CSV once.', 'Bring your team\'s research question.'],
       agenda: [
         {min: 5, item: 'The dataset: indicators, sources, coverage and gaps (especially Montenegro).'},
         {min: 20, item: 'Live demo, about 5 minutes per tool: loading the data, selecting countries and indicators and a first chart in Python, R, Gretl and Power BI.'},
@@ -140,7 +140,7 @@ window.COIL_CONTENT = {
     {week: 5, recording: '', slides: 'docs/slides/COIL_3_midpoint_clinic.pdf', title: 'Mid-point clinic', duration: '45 minutes', poll: '',
       slots: [{label: 'Slot A', when: 'Date and time to be confirmed', link: ''}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
       goal: 'Check how every team is doing and solve problems with the methods before deliverable 2 (week 6).',
-      prepare: ['One slide per team: question, data, first result and the main problem you have.'],
+      prepare: ['Join with your camera on, especially in the break-out rooms.', 'One slide per team: question, data, first result and the main problem you have.'],
       agenda: [
         {min: 20, item: 'Lightning updates: each team presents its slide in 2 minutes.'},
         {min: 20, item: 'Methods clinic in break-out rooms: regression, classification, PCA and clustering. Teachers rotate between teams.'},
@@ -149,7 +149,7 @@ window.COIL_CONTENT = {
     {week: 8, recording: '', slides: 'docs/slides/COIL_4_final_presentations.pdf', title: 'Final presentations', duration: '45 minutes', poll: '',
       slots: [{label: 'Slot A', when: 'Date and time to be confirmed', link: ''}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
       goal: 'Present your project to students and teachers of the three universities. Compulsory to receive the extra points. The teachers tell each team in which slot it presents.',
-      prepare: ['Upload your slides (with the dashboard on slide 5) in the Submit section before the session.', 'Rehearse: 5 minutes per team, every member presents a part.'],
+      prepare: ['Join with your camera on, at least while your team presents.', 'Upload your slides (with the dashboard on slide 5) in the Submit section before the session.', 'Rehearse: 5 minutes per team, every member presents a part.'],
       agenda: [
         {min: 5, item: 'Opening by the teachers.'},
         {min: 35, item: 'Team presentations: 5 minutes each + 2 minutes of questions and feedback (about five teams per slot).'},
