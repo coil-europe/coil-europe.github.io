@@ -34,7 +34,7 @@
   const T = window.COIL_TEAMS || [];
   const tutor = (team) => (C.teachers || []).find((p) => p.name === (C.teamTutors || {})[team]);
   $('equipos-alumnos').innerHTML = T.map((e) => `<article class="equipo-alumnos"><h3>${esc(e.team)}</h3>${tutor(e.team)
-    ? `<p class="nota">Responsible teacher: <a href="mailto:${esc(tutor(e.team).email)}">${esc(tutor(e.team).name)}</a></p>` : ''}<ul>
+    ? `<p class="nota">Team tutor: <a href="mailto:${esc(tutor(e.team).email)}">${esc(tutor(e.team).name)}</a></p>` : ''}<ul>
       ${e.members.map((m) => `<li style="--color-uni:${colorUni[m.university] || 'var(--ulysseus)'}">${esc(m.name)}<span>${esc(m.university)}</span></li>`).join('')}</ul></article>`).join('');
   if (!T.length) $('student-teams-bloque').hidden = true;
 

@@ -23,7 +23,7 @@ window.COIL_CONTENT = {
     'At the end: the teachers coordinate the extra points and the certificates of participation.',
   ],
 
-  // Responsible teacher of each student team (name as in teachers below), agreed on 22-oct-2026
+  // Team tutor (responsible teacher) of each student team (name as in teachers below), agreed on 22-oct-2026
   teamTutors: {'Team 1': 'Alena Mojsejová', 'Team 2': 'Alena Mojsejová', 'Team 3': 'Alena Mojsejová',
     'Team 4': 'Daniel Ruiz Romera', 'Team 6': 'Daniel Ruiz Romera', 'Team 5': 'Bojan Pejović', 'Team 7': 'Bojan Pejović'},
 
