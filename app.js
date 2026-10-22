@@ -98,9 +98,11 @@
   const botonEnvio = (e) => e.submitLink
     ? `<a class="boton-pdf boton-enlace" href="${esc(e.submitLink)}" target="_blank" rel="noopener">Submit deliverable ${e.number}</a>`
     : '<span class="pendiente">The submission link will be published here</span>';
-  // After the session: recording (when published) and slides
+  // After the session: recording (when published) and slides; recording is one link or one per slot ([{label, url}])
   const botonesDespues = (x) => `<p class="despues"><span class="despues-tit">Could not attend?</span> ${x.recording
-    ? `<a class="boton-pdf boton-enlace" href="${esc(x.recording)}" target="_blank" rel="noopener">Watch the recording</a>`
+    ? (Array.isArray(x.recording)
+      ? x.recording.map(g => `<a class="boton-pdf boton-enlace" href="${esc(g.url)}" target="_blank" rel="noopener">Recording · ${esc(g.label)}</a>`).join(' ')
+      : `<a class="boton-pdf boton-enlace" href="${esc(x.recording)}" target="_blank" rel="noopener">Watch the recording</a>`)
     : '<span class="pendiente">The recording will be published here after the session</span>'}${x.slides ? ` <a class="boton-sec boton-enlace" href="${esc(x.slides)}" target="_blank" rel="noopener">Slides (PDF)</a>` : ''}</p>`;
   // ---------- Submit section: one card per deliverable ----------
   {
