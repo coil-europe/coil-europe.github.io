@@ -76,7 +76,7 @@ window.COIL_CONTENT = {
       activities: 'Start from the COIL dataset; add national sources if needed. Document every variable.',
       goal: 'Your dataset is ready (one row per country and year) and every variable is documented in a data dictionary.'},
     {week: 4, start: '2026-11-09', phase: 'Data', title: 'Exploratory data analysis',
-      activities: 'Descriptive statistics, distributions, missing values, first visual comparisons of Spain, Slovakia and Montenegro within Europe.',
+      activities: 'Team tutorial: a short online meeting of each team with its team tutor (see the Team section). Contact your tutor to agree on a day and time, and bring your research question, your data and your doubts. Descriptive statistics, distributions, missing values, first visual comparisons of Spain, Slovakia and Montenegro within Europe.',
       goal: 'Descriptive statistics and first charts are done, and the team agrees on what the data show.'},
     {week: 5, start: '2026-11-16', phase: 'Methods', title: 'Regression and classification',
       activities: 'Relationships between indicators across European countries and over time, and simple classification models. Interpreting results in different institutional contexts.',
