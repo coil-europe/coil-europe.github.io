@@ -132,7 +132,7 @@ window.COIL_CONTENT = {
         {min: 5, item: 'Questions and closing.'},
       ]},
     {week: 3, recording: '', slides: 'docs/slides/COIL_2_data_workshop.pdf', title: 'Data workshop and feedback on proposals', duration: '45 minutes', poll: '',
-      slots: [{label: 'All teams', when: 'Friday 6 November 2026, 14:00 (Central European time)', link: ''}],
+      slots: [{label: 'All teams', when: 'Friday 6 November 2026, 14:00 (Central European time)', link: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_OGU1NmY5ZTMtYjY0Zi00M2UyLWI0NmItMzNkNDg1ZmYxNThm%40thread.v2/0?context=%7b%22Tid%22%3a%22ef4a684e-81b5-491c-a98e-c7b31be6c469%22%2c%22Oid%22%3a%22d269657e-26b2-408a-800a-80d893543b04%22%7d'}],
       goal: 'Be able to load and document the COIL data in your tool (Python, R, Gretl or Power BI) before the analysis starts.',
       prepare: ['Join with your camera on, especially in the break-out rooms.', 'Download the COIL dataset from the Data section.', 'Install your tool and open the CSV once.', 'Bring your team\'s research question.'],
       agenda: [
