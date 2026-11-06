@@ -106,7 +106,11 @@
     ? (Array.isArray(x.recording)
       ? x.recording.map(g => `<a class="boton-pdf boton-enlace" href="${esc(g.url)}" target="_blank" rel="noopener">Recording · ${esc(g.label)}</a>`).join(' ')
       : `<a class="boton-pdf boton-enlace" href="${esc(x.recording)}" target="_blank" rel="noopener">Watch the recording</a>`)
-    : '<span class="pendiente">The recording will be published here after the session</span>'}${x.slides ? ` <a class="boton-sec boton-enlace" href="${esc(x.slides)}" target="_blank" rel="noopener">Slides (PDF)</a>` : ''}</p>`;
+    : '<span class="pendiente">The recording will be published here after the session</span>'}${x.slides
+    ? (Array.isArray(x.slides)
+      ? x.slides.map(g => ` <a class="boton-sec boton-enlace" href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.label)} (PDF)</a>`).join('')
+      : ` <a class="boton-sec boton-enlace" href="${esc(x.slides)}" target="_blank" rel="noopener">Slides (PDF)</a>`)
+    : ''}</p>`;
   // ---------- Submit section: one card per deliverable ----------
   {
     const dia = 864e5;
