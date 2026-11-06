@@ -135,7 +135,7 @@ window.COIL_CONTENT = {
       ]},
     // Changed on 6-nov-2026: no live demos (teams have chosen their tools); feedback on deliverable 1 instead.
     // slides may be one path or a list of {label, url}.
-    {week: 3, recording: '', slides: [{label: 'Feedback slides', url: 'docs/slides/COIL_2_feedback_deliverable1.pdf'}, {label: 'Data workshop slides', url: 'docs/slides/COIL_2_data_workshop.pdf'}], title: 'Feedback on proposals and data questions', duration: '45 minutes', poll: '',
+    {week: 3, recording: 'https://uses0-my.sharepoint.com/:v:/g/personal/druiz8_us_es/IQD7M06hUiLbSYSiCi-u1_-MAfJACFQt-Fq1nq-9CX2AsT4?e=2IHM1c', slides: [{label: 'Feedback slides', url: 'docs/slides/COIL_2_feedback_deliverable1.pdf'}, {label: 'Data workshop slides', url: 'docs/slides/COIL_2_data_workshop.pdf'}], title: 'Feedback on proposals and data questions', duration: '45 minutes', poll: '',
       slots: [{label: 'All teams', when: 'Friday 6 November 2026, 14:00 (Central European time)', link: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_OGU1NmY5ZTMtYjY0Zi00M2UyLWI0NmItMzNkNDg1ZmYxNThm%40thread.v2/0?context=%7b%22Tid%22%3a%22ef4a684e-81b5-491c-a98e-c7b31be6c469%22%2c%22Oid%22%3a%22d269657e-26b2-408a-800a-80d893543b04%22%7d'}],
       goal: 'Know what to fix in your proposal before the analysis starts, and leave with your questions answered.',
       prepare: ['Join with your camera on, especially in the break-out rooms.', 'Download the COIL dataset from the Data section.', 'Bring your team\'s research question and your doubts.',
