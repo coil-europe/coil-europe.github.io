@@ -93,10 +93,6 @@ window.COIL_TEAMS = [
    {
     "name": "Elena V.",
     "university": "University of Seville"
-   },
-   {
-    "name": "Daniel P.",
-    "university": "University of Seville"
    }
   ]
  },
