@@ -18,7 +18,8 @@ window.COIL_CONTENT = {
   teamIntro: 'The COIL is designed and run jointly by teachers from the three universities. We share the schedule, the dataset and the final presentation, and each of us guides and grades the students of our own university.',
   teamWork: [
     'Week 1: joint online welcome session with all teachers and students (two slots).',
-    'During the COIL: your home teacher follows your progress, answers your questions and grades your deliverables.',
+    'During the COIL: your home teacher follows your progress, answers your questions and grades your deliverables. Your team tutor meets your team in week 4.',
+    'Weeks 5 and 6: joint workshops on regression in R and RStudio (Alena Mojsejová) and on clustering (Daniel Ruiz Romera).',
     'Week 8: all teachers attend the joint online presentation and give feedback to every team.',
     'At the end: the teachers coordinate the extra points and the certificates of participation.',
   ],
@@ -78,13 +79,13 @@ window.COIL_CONTENT = {
       activities: 'Start from the COIL dataset; add national sources if needed. Document every variable.',
       goal: 'Your dataset is ready (one row per country and year) and every variable is documented in a data dictionary.'},
     {week: 4, start: '2026-11-09', phase: 'Data', title: 'Exploratory data analysis',
-      activities: 'Team tutorial: a short online meeting of each team with its team tutor (see the Team section). Contact your tutor to agree on a day and time, and bring your research question, your data and your doubts. Descriptive statistics, distributions, missing values, first visual comparisons of Spain, Slovakia and Montenegro within Europe.',
+      activities: 'Team tutorial: a short online meeting of each team with its team tutor (see the Team section). Contact your tutor to agree on a day and time, and bring your research question, your data and your doubts. Descriptive statistics, distributions, missing values, first visual comparisons of Spain, Slovakia and Montenegro within Europe. Section 0 of the methods module (Resources) shows how, step by step.',
       goal: 'Descriptive statistics and first charts are done, and the team agrees on what the data show.'},
     {week: 5, start: '2026-11-16', phase: 'Methods', title: 'Regression and classification',
-      activities: 'Relationships between indicators across European countries and over time, and simple classification models. Interpreting results in different institutional contexts.',
+      activities: 'Joint regression workshop in R and RStudio, led by Alena Mojsejová (Sessions section). Relationships between indicators across European countries and over time, and simple classification models. Interpreting results in different institutional contexts.',
       goal: 'Your regression or classification model is estimated and interpreted.'},
     {week: 6, start: '2026-11-23', phase: 'Methods', title: 'Dimensionality reduction and clustering',
-      activities: 'Principal component analysis and clustering of countries: which European countries look alike, and where do Spain, Slovakia and Montenegro fall?',
+      activities: 'Joint clustering workshop, led by Daniel Ruiz Romera (Sessions section). Principal component analysis and clustering of countries: which European countries look alike, and where do Spain, Slovakia and Montenegro fall?',
       deliverable: {submitLink: 'https://uses0-my.sharepoint.com/:f:/g/personal/druiz8_us_es/IgDz_jaMSNu4Tb8oQCcxRwlQAeClYW5ZI3mU-MKE7u8Fc_w', number: 2, name: 'Analysis report', who: 'Team', format: 'Report made with the Word template, saved as PDF + your analysis file (Python or R notebook, Gretl script or Power BI file). Add your dataset only if you used data from outside the COIL dataset',
         files: ['Team X – Deliverable 2.pdf', 'Team X – Deliverable 2 – Analysis (.ipynb, .Rmd, .qmd, .inp, .gretl or .pbix)'],
         include: ['Data: the dataset you analysed and a data dictionary (name, code, definition, unit, source and years of every variable), with missing values and how you handled them.',
@@ -218,7 +219,7 @@ window.COIL_CONTENT = {
   // Template files shown in the Submit section (the Word file is built by presentaciones/construir_plantilla.js)
   templateFiles: [
     {title: 'Word template for deliverable 1, the report of deliverable 2 and your final reflection. Keep only the part of your deliverable, replace the grey text and save it as PDF.', files: [['Word', 'docs/COIL_deliverable_template.docx']]},
-    {title: 'PowerPoint template for your slides: the lightning update (week 5) and the final presentation (week 8), with your dashboard on slide 5.', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
+    {title: 'PowerPoint template for your final presentation (week 8), with your dashboard on slide 5.', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
   ],
 
   // Contents of the Word template (charter, topic proposal and data dictionary)
@@ -314,11 +315,11 @@ window.COIL_CONTENT = {
       {q: 'We are in different countries. What about time zones?',
         a: 'Spain, Slovakia and Montenegro are all in the same time zone (CET), so meetings are easy to schedule.'},
     ]},
-    {group: 'Joint sessions', icon: 'video', intro: 'The four online sessions: the two slots, attendance, links and recordings.', items: [
-      {q: 'Why are there two slots for each session?',
-        a: 'So that every student can attend despite the different timetables of the three universities. The two slots are at different times, and have the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the final presentations the teachers assign the slot; for the kick-off, the data workshop and the mid-point clinic your team chooses.'},
+    {group: 'Joint sessions', icon: 'video', intro: 'The five online sessions: slots, attendance, links and recordings.', items: [
+      {q: 'Why do some sessions have two slots?',
+        a: 'So that every student can attend despite the different timetables of the three universities. The two slots are at different times, and have the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the final presentations the teachers assign the slot. The feedback session and the two workshops (regression and clustering) are one session for all teams.'},
       {q: 'Are the joint sessions compulsory?',
-        a: 'The final presentation (week 8) is required to receive the extra points. The other three are strongly recommended. If you cannot attend one, tell your home teacher and your team in advance.'},
+        a: 'The final presentation (week 8) is required to receive the extra points. The other four are strongly recommended. If you cannot attend one, tell your home teacher and your team in advance.'},
       {q: 'I cannot attend a session. Will I miss it?',
         a: 'No. One slot of every session is recorded and the recording and the slides are published in the Sessions section of this website, usually within two days. Watch it before your next team meeting. Break-out rooms are not recorded, so ask your team what they agreed.'},
       {q: 'Where do I find the session links?',
@@ -349,19 +350,19 @@ window.COIL_CONTENT = {
   materials: [
     {group: 'Joint sessions', items: [
       {title: 'Kick-off (week 1)', files: [['PDF', 'docs/slides/COIL_1_kickoff.pdf'], ['PowerPoint', 'docs/slides/COIL_1_kickoff.pptx']]},
-      {title: 'Data workshop (week 3)', files: [['PDF', 'docs/slides/COIL_2_data_workshop.pdf'], ['PowerPoint', 'docs/slides/COIL_2_data_workshop.pptx']]},
-      {title: 'Mid-point clinic (week 5)', files: [['PDF', 'docs/slides/COIL_3_midpoint_clinic.pdf'], ['PowerPoint', 'docs/slides/COIL_3_midpoint_clinic.pptx']]},
+      {title: 'Feedback on deliverable 1 (week 3)', files: [['PDF', 'docs/slides/COIL_2_feedback_deliverable1.pdf'], ['PowerPoint', 'docs/slides/COIL_2_feedback_deliverable1.pptx']]},
+      {title: 'Data workshop: loading the data in Gretl, Power BI, Python and R', files: [['PDF', 'docs/slides/COIL_2_data_workshop.pdf'], ['PowerPoint', 'docs/slides/COIL_2_data_workshop.pptx']]},
       {title: 'Final presentations (week 8)', files: [['PDF', 'docs/slides/COIL_4_final_presentations.pdf'], ['PowerPoint', 'docs/slides/COIL_4_final_presentations.pptx']]},
     ]},
     {group: 'Methods module (study material)', items: [
-      {title: 'Correlation, regression, panel data, classification, PCA, clustering and missing values, with COIL data. Menus first; code optional.',
+      {title: 'Descriptive statistics, correlation, regression, panel data, classification, PCA, clustering and missing values, with COIL data. Menus first; code optional.',
         files: [['PDF', 'docs/slides/COIL_methods_module.pdf'], ['PowerPoint', 'docs/slides/COIL_methods_module.pptx']]},
       {title: 'Code that reproduces every number in the module (put it next to coil_indicators_gretl.csv)',
         files: [['Python', 'docs/code/methods.py'], ['R', 'docs/code/methods.R'], ['Gretl', 'docs/code/methods.inp']]},
     ]},
     {group: 'Templates for your deliverables', items: [
       {title: 'Word template: deliverable 1, the report of deliverable 2 and your final reflection', files: [['Word', 'docs/COIL_deliverable_template.docx']]},
-      {title: 'PowerPoint template: lightning-update slide (week 5) and the six final slides (week 8)', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
+      {title: 'PowerPoint template: the six slides of your final presentation (week 8)', files: [['PowerPoint', 'docs/slides/COIL_student_templates.pptx'], ['PDF', 'docs/slides/COIL_student_templates.pdf']]},
     ]},
   ],
 
