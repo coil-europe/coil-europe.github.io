@@ -221,7 +221,7 @@
     const proxSes = (C.sessions || []).find((x) => fin(C.schedule.find((y) => y.week === x.week)) >= hoy);
     $('esta-semana').innerHTML = `<p class="etiqueta">${empezado ? 'This week' : 'Coming up'} · Week ${s.week}: ${esc(s.title)}</p>
       ${prox ? `<p class="esta-entrega">Next deliverable: <strong>${esc(prox.deliverable.name)}</strong> · ${esc(prox.deliverable.who)} · due <strong>${esc(vence(prox))}</strong> ${botonEnvio(prox.deliverable)}</p>` : ''}
-      ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}), given twice at two different times</p>${franjas(proxSes)}` : ''}
+      ${proxSes ? `<p class="esta-entrega">Next joint session: <strong>${esc(proxSes.title)}</strong> (week ${proxSes.week}), ${(proxSes.slots || []).length === 1 ? 'one session for all teams' : 'given twice at two different times'}</p>${franjas(proxSes)}` : ''}
       <p class="accesos"><a class="boton-pdf" href="#submit">Submit your work</a> <a class="boton-sec" href="#schedule">See the schedule</a> <a class="boton-sec" href="#guide">Read the student guide</a>
       <a class="boton-sec" href="#benefits">Extra points and certificate</a> <a class="boton-sec" href="#faq">FAQ: do I need to code?</a></p>`;
   }
@@ -258,7 +258,7 @@
     const sem = C.schedule.find((s) => s.week === x.week);
     const ini = new Date(sem.start + 'T00:00:00'); const fin = new Date(ini); fin.setDate(ini.getDate() + 6);
     return `<article class="sesion"><div class="sesion-cab"><span class="sesion-sem">Week ${x.week} · ${fmt(ini)} – ${fmt(fin)}</span>
-      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · given twice, at two different times, same content</p>${franjas(x)}</div>
+      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · ${(x.slots || []).length === 1 ? 'one session for all teams' : 'given twice, at two different times, same content'}</p>${franjas(x)}</div>
       <p><b>Goal:</b> ${esc(x.goal)}</p>
       <table class="agenda">${x.agenda.map((p) => `<tr><td>${p.min ? p.min + ' min' : ''}</td><td>${esc(p.item)}</td></tr>`).join('')}</table>
       <p class="entrega-sub">Before the session:</p><ul>${x.prepare.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>${botonesDespues(x)}</article>`;
