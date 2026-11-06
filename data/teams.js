@@ -137,10 +137,6 @@ window.COIL_TEAMS = [
     "university": "University of Seville"
    },
    {
-    "name": "Isabel Maria S.",
-    "university": "University of Seville"
-   },
-   {
     "name": "Mara Alejandra N.",
     "university": "University of Seville"
    },
