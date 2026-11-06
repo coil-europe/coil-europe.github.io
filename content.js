@@ -113,13 +113,13 @@ window.COIL_CONTENT = {
   // poll: link to the vote on the dates and times (e.g. Microsoft Forms), shown until the meeting links are published.
   // slots: when = day and time of each slot; link = its Teams meeting link, pasted here by the teachers ('' = not published yet).
   // recording: link to the recording, pasted after the session ('' = not yet). slides: PDF of the session slides.
-  sessionsIntro: 'There are four joint online sessions with students and teachers of the three universities, on Microsoft Teams, of 45 minutes at most. Each session is given twice, at two different times, with the same content, so that it fits the timetables of the three universities: each team attends one slot together. If you cannot attend, the recording and the slides of every session are published here afterwards. The rest of the time you work with your team: meet at least once a week, and ask your home teacher whenever you need help.',
+  sessionsIntro: 'There are five joint online sessions with students and teachers of the three universities, on Microsoft Teams, of 45 minutes at most: the kick-off, feedback on your proposals, a regression workshop, a clustering workshop and the final presentations. Some sessions are given twice, at two different times, so that they fit the timetables of the three universities; others are one session for all teams. If you cannot attend, the recording and the slides of every session are published here afterwards. The rest of the time you work with your team: meet at least once a week, and ask your home teacher whenever you need help.',
   sessionRules: [
     'The link to each session is published on this website (Sessions section and Home page). You do not need an account of another university: open the link and join from the browser or the Teams app.',
-    'Each session is given in two slots (A and B), at different times, with the same content. Your team attends one slot together, because part of every session is work in team break-out rooms. For the final presentations the teachers assign the slot of each team; for the other three sessions your team chooses.',
+    'When a session is given in two slots (A and B), the content is the same and your team attends one slot together, because part of the session is work in team break-out rooms. For the final presentations the teachers assign the slot of each team.',
     'Please turn your camera on during the sessions, and especially in the break-out rooms: your teammates need to see who they are working with. Join on time and use your real name.',
     'The language of all sessions is English.',
-    'The plenary parts of one of the two slots of every session are recorded, and the recording and the slides are published on this website (Sessions section) for students who could not attend. Break-out rooms are never recorded. The recordings are shared only with the students of the COIL: when you open one, enter the e-mail address you gave your home teacher, and you will receive a code by e-mail to watch it.',
+    'The plenary parts of every session are recorded (one slot when there are two), and the recording and the slides are published on this website (Sessions section) for students who could not attend. Break-out rooms are never recorded. The recordings are shared only with the students of the COIL: when you open one, enter the e-mail address you gave your home teacher, and you will receive a code by e-mail to watch it.',
     'If you cannot attend a session, tell your home teacher and your team in advance, and watch the recording before the next team meeting. The final presentation (week 8) is the exception: it is compulsory to receive the extra points.',
   ],
   sessions: [
@@ -144,14 +144,23 @@ window.COIL_CONTENT = {
         {min: 10, item: 'General feedback on deliverable 1: indicators in the dataset, gaps for Montenegro, research question and sample.'},
         {min: 35, item: 'Break-out rooms: each team with its team tutor, on its proposal, its data and its questions. When your team has finished, you can leave.'},
       ]},
-    {week: 5, recording: '', slides: 'docs/slides/COIL_3_midpoint_clinic.pdf', title: 'Mid-point clinic', duration: '45 minutes', poll: '',
-      slots: [{label: 'Slot A', when: 'Date and time to be confirmed', link: ''}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
-      goal: 'Check how every team is doing and solve problems with the methods before deliverable 2 (week 6).',
-      prepare: ['Join with your camera on, especially in the break-out rooms.', 'One slide per team: question, data, first result and the main problem you have.'],
+    // Changed on 6-nov-2026: week 5 = regression workshop in R/RStudio (Alena), week 6 = clustering workshop (Daniel).
+    {week: 5, recording: '', slides: '', title: 'Regression workshop in R and RStudio', duration: '45 minutes', poll: '', teacher: 'Alena Mojsejová',
+      slots: [{label: 'All teams', when: 'Week of 16 November 2026, day and time to be confirmed', link: ''}],
+      goal: 'Estimate and interpret a linear regression with your own data in R and RStudio.',
+      prepare: ['Install R and RStudio (both free) and open the COIL dataset once.', 'Bring your research question and the two or three variables of your model.',
+        'Section 2 of the methods module (Resources) explains regression step by step.'],
       agenda: [
-        {min: 20, item: 'Lightning updates: each team presents its slide in 2 minutes.'},
-        {min: 20, item: 'Methods clinic in break-out rooms: regression, classification, PCA and clustering. Teachers rotate between teams.'},
-        {min: 5, item: 'Wrap-up: what to submit in deliverable 2.'},
+        {min: 0, item: 'Regression in R and RStudio with the COIL data: estimating the model and reading the results table, led by Alena Mojsejová.'},
+        {min: 0, item: 'Questions from the teams about their own models.'},
+      ]},
+    {week: 6, recording: '', slides: '', title: 'Clustering workshop', duration: '45 minutes', poll: '', teacher: 'Daniel Ruiz Romera',
+      slots: [{label: 'All teams', when: 'Week of 23 November 2026, day and time to be confirmed', link: ''}],
+      goal: 'Group European countries by their indicators and see where Spain, Slovakia and Montenegro fall.',
+      prepare: ['Bring the indicators your team wants to use to compare countries.', 'Section 6 of the methods module (Resources) explains clustering step by step.'],
+      agenda: [
+        {min: 0, item: 'Clustering of countries with the COIL data: choosing variables, standardising and the number of groups, led by Daniel Ruiz Romera.'},
+        {min: 0, item: 'Questions from the teams before deliverable 2 (Sunday 29 November).'},
       ]},
     {week: 8, recording: '', slides: 'docs/slides/COIL_4_final_presentations.pdf', title: 'Final presentations', duration: '45 minutes', poll: '',
       slots: [{label: 'Slot A', when: 'Date and time to be confirmed', link: ''}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],

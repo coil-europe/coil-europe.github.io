@@ -258,7 +258,7 @@
     const sem = C.schedule.find((s) => s.week === x.week);
     const ini = new Date(sem.start + 'T00:00:00'); const fin = new Date(ini); fin.setDate(ini.getDate() + 6);
     return `<article class="sesion"><div class="sesion-cab"><span class="sesion-sem">Week ${x.week} · ${fmt(ini)} – ${fmt(fin)}</span>
-      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · ${(x.slots || []).length === 1 ? 'one session for all teams' : 'given twice, at two different times, same content'}</p>${franjas(x)}</div>
+      <h3>${esc(x.title)}</h3><p class="nota">${esc(x.duration)} · ${(x.slots || []).length === 1 ? 'one session for all teams' : 'given twice, at two different times, same content'}${x.teacher ? ` · led by ${esc(x.teacher)}` : ''}</p>${franjas(x)}</div>
       <p><b>Goal:</b> ${esc(x.goal)}</p>
       <table class="agenda">${x.agenda.map((p) => `<tr><td>${p.min ? p.min + ' min' : ''}</td><td>${esc(p.item)}</td></tr>`).join('')}</table>
       <p class="entrega-sub">Before the session:</p><ul>${x.prepare.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>${botonesDespues(x)}</article>`;
