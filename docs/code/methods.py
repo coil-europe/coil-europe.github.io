@@ -67,3 +67,13 @@ print(s.groupby("cluster").iso3.apply(list))
 # 7. Missing values: how many per indicator in the three COIL countries
 home = d[d.iso3.isin(["ESP", "SVK", "MNE"]) & (d.year <= 2024)]
 print(home.groupby("iso3").apply(lambda g: g.isna().sum()).T)
+
+# 8. Descriptive statistics (2023): summary table, the three COIL countries, bar chart
+v = ["SL_UEM_1524_ZS", "SE_TER_ENRR", "NY_GDP_PCAP_PP_KD"]
+s = d[d.year == 2023]
+print(s[v].describe().round(1))  # n, mean, sd, min, median, max
+print(s[s.iso3.isin(["ESP", "SVK", "MNE"])].set_index("country")[v].round(1))
+s = s.sort_values("SL_UEM_1524_ZS")
+s.plot.barh(x="iso3", y="SL_UEM_1524_ZS", legend=False)
+plt.axvline(s.SL_UEM_1524_ZS.mean(), color="red")  # European mean
+plt.show()

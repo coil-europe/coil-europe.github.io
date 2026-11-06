@@ -55,3 +55,12 @@ split(s$iso3, k$cluster)
 # 7. Missing values: how many per indicator in the three COIL countries
 home <- subset(d, iso3 %in% c("ESP", "SVK", "MNE") & year <= 2024)
 sapply(split(home, home$iso3), function(g) colSums(is.na(g)))
+
+# 8. Descriptive statistics (2023): summary table, the three COIL countries, bar chart
+v <- c("SL_UEM_1524_ZS", "SE_TER_ENRR", "NY_GDP_PCAP_PP_KD")
+s <- subset(d, year == 2023)
+summary(s[v])                        # min, median, mean, max, NA
+subset(s, iso3 %in% c("ESP", "SVK", "MNE"))[c("country", v)]
+s <- s[order(s$SL_UEM_1524_ZS), ]
+barplot(s$SL_UEM_1524_ZS, names.arg = s$iso3, horiz = TRUE, las = 1)
+abline(v = mean(s$SL_UEM_1524_ZS, na.rm = TRUE), col = "red")

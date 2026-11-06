@@ -13,6 +13,14 @@ panplot SL_UEM_1524_ZS --overlay
 smpl full
 smpl iso3 != "EUU" --restrict
 
+# 8. Descriptive statistics (2023): summary table and the three COIL countries
+smpl year == 2023 --restrict
+summary SL_UEM_1524_ZS SE_TER_ENRR NY_GDP_PCAP_PP_KD
+smpl iso3 == "ESP" || iso3 == "SVK" || iso3 == "MNE" --restrict
+print country SL_UEM_1524_ZS SE_TER_ENRR NY_GDP_PCAP_PP_KD --byobs
+smpl full
+smpl iso3 != "EUU" --restrict
+
 # 1. Correlation (2023)
 smpl year == 2023 --restrict
 corr IT_NET_USER_ZS NY_GDP_PCAP_PP_KD
