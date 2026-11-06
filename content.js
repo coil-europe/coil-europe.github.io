@@ -26,6 +26,8 @@ window.COIL_CONTENT = {
   // Team tutor (responsible teacher) of each student team (name as in teachers below), agreed on 22-oct-2026
   teamTutors: {'Team 1': 'Alena Mojsejová', 'Team 2': 'Alena Mojsejová', 'Team 3': 'Alena Mojsejová',
     'Team 4': 'Daniel Ruiz Romera', 'Team 6': 'Daniel Ruiz Romera', 'Team 5': 'Bojan Pejović', 'Team 7': 'Bojan Pejović'},
+  // Name each team chose for itself in deliverable 1 (6-nov-2026); teams 1, 5 and 7 did not choose one
+  teamNames: {'Team 2': 'Global Analyzers', 'Team 3': 'Analytical Staff', 'Team 4': 'Brainstorm', 'Team 6': 'I Migliori'},
 
   // Teaching team: {name, university, email, photo: 'img/team/file.jpg', bio: one sentence (optional)}
   teachers: [
