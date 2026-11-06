@@ -142,8 +142,7 @@ window.COIL_CONTENT = {
         'For loading the data in Python, R, Gretl or Power BI, see the data workshop slides (step by step for each tool).'],
       agenda: [
         {min: 10, item: 'General feedback on deliverable 1: indicators in the dataset, gaps for Montenegro, research question and sample.'},
-        {min: 30, item: 'Break-out rooms: each team with its team tutor, on its proposal, its data and its questions.'},
-        {min: 5, item: 'Back together: next steps and closing.'},
+        {min: 35, item: 'Break-out rooms: each team with its team tutor, on its proposal, its data and its questions. When your team has finished, you can leave.'},
       ]},
     {week: 5, recording: '', slides: 'docs/slides/COIL_3_midpoint_clinic.pdf', title: 'Mid-point clinic', duration: '45 minutes', poll: '',
       slots: [{label: 'Slot A', when: 'Date and time to be confirmed', link: ''}, {label: 'Slot B', when: 'Date and time to be confirmed', link: ''}],
