@@ -9,7 +9,7 @@
 <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta name="theme-color" content="#312a63">
-<link rel="stylesheet" href="estilos.css?v=46">
+<link rel="stylesheet" href="estilos.css?v=47">
 </head>
 <body>
 <header class="cabecera">
@@ -164,24 +164,22 @@
 
     <h3>Download the data</h3>
     <ul class="descargas">
-      <li><a href="data/coil_indicators_long.csv" download>coil_indicators_long.csv</a>one row per country, year and indicator (best for Python and R)</li>
-      <li><a href="data/coil_indicators_wide.csv" download>coil_indicators_wide.csv</a>one row per country and year (best for Power BI and Excel)</li>
-      <li><a href="data/coil_indicators_gretl.csv" download>coil_indicators_gretl.csv</a>the same table ready for Gretl (dots in the codes replaced by underscores)</li>
-      <li><a href="data/coil_indicators_named.csv" download>coil_indicators_named.csv</a>the same table with readable names instead of codes (youth_unemployment, gdp_per_capita…)</li>
-      <li><a href="data/coverage.csv" download>coverage.csv</a>how many years of data each country has for each indicator</li>
+      <li><a href="data/COIL_dataset.xlsx" download>COIL_dataset.xlsx</a>recommended: one row per country and year with clear variable names (youth_unemployment, gdp_per_capita…), a sheet that explains every variable, and the EU average on its own sheet. Opens in Excel, Power BI and Gretl</li>
+      <li><a href="data/coil_indicators_named.csv" download>coil_indicators_named.csv</a>the same data as a CSV file, for Python and R (the EU average is the row with iso3 = EUU)</li>
     </ul>
+    <p class="nota">The methods module and its ready-made scripts use the same data with World Bank codes instead of names: <a href="data/coil_indicators_gretl.csv" download>coil_indicators_gretl.csv</a>. You only need it to run those scripts.</p>
 
     <h3>Open it in your tool</h3>
     <div class="arranque">
       <div class="arranque-caja">
         <p class="kicker">No code needed</p>
         <h4>Power BI or Gretl</h4>
-        <p>Power BI: <em>Get data → Text/CSV</em> and open <code>coil_indicators_wide.csv</code>. Gretl: <em>File → Open data → User file</em> and open <code>coil_indicators_gretl.csv</code>.</p>
+        <p>Power BI: <em>Get data → Excel workbook</em>, open <code>COIL_dataset.xlsx</code> and choose the sheet <em>Data</em>. Gretl: <em>File → Open data → User file</em>, open <code>COIL_dataset.xlsx</code> and choose the sheet <em>Data</em>.</p>
       </div>
       <div class="arranque-caja">
         <p class="kicker">With code, optional</p>
         <h4>Python or R</h4>
-        <p>Open <code>coil_indicators_gretl.csv</code> with pandas or <code>read.csv</code>. Ready-to-run scripts are in <a href="#resources">Resources</a>.</p>
+        <p>Open <code>coil_indicators_named.csv</code> with pandas or <code>read.csv</code>. Ready-to-run scripts are in <a href="#resources">Resources</a>.</p>
       </div>
       <div class="arranque-caja destacada">
         <p class="kicker">Step by step</p>
@@ -227,9 +225,9 @@
   </div>
 </footer>
 
-<script src="data/data.js?v=46"></script>
-<script src="data/teams.js?v=46"></script>
-<script src="content.js?v=46"></script>
-<script src="app.js?v=46"></script>
+<script src="data/data.js?v=47"></script>
+<script src="data/teams.js?v=47"></script>
+<script src="content.js?v=47"></script>
+<script src="app.js?v=47"></script>
 </body>
 </html>
