@@ -147,7 +147,7 @@ window.COIL_CONTENT = {
       ]},
     // Changed on 6-nov-2026: week 5 = regression workshop in R/RStudio (Alena), week 6 = clustering workshop (Daniel).
     {week: 5, recording: '', slides: '', title: 'Regression workshop in R and RStudio', duration: '45 minutes', poll: '', teacher: 'Alena Mojsejová',
-      slots: [{label: 'All teams', when: 'Friday 20 November 2026, 14:00 (Central European time)', link: ''}],
+      slots: [{label: 'All teams', when: 'Friday 20 November 2026, 14:00 (Central European time)', link: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTBiNjQxZTUtMWM2NC00ZWVhLWIwMGEtM2E2YzBiNDRlMWQy%40thread.v2/0?context=%7b%22Tid%22%3a%22ef4a684e-81b5-491c-a98e-c7b31be6c469%22%2c%22Oid%22%3a%22d269657e-26b2-408a-800a-80d893543b04%22%7d'}],
       goal: 'Estimate and interpret a linear regression with your own data in R and RStudio.',
       prepare: ['Install R and RStudio (both free) and open the COIL dataset once.', 'Bring your research question and the two or three variables of your model.',
         'Section 2 of the methods module (Resources) explains regression step by step.'],
