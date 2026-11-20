@@ -150,7 +150,8 @@ window.COIL_CONTENT = {
       slots: [{label: 'All teams', when: 'Friday 20 November 2026, 14:00 (Central European time)', link: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTBiNjQxZTUtMWM2NC00ZWVhLWIwMGEtM2E2YzBiNDRlMWQy%40thread.v2/0?context=%7b%22Tid%22%3a%22ef4a684e-81b5-491c-a98e-c7b31be6c469%22%2c%22Oid%22%3a%22d269657e-26b2-408a-800a-80d893543b04%22%7d'}],
       goal: 'Estimate and interpret a linear regression with your own data in R and RStudio.',
       prepare: ['Install R and RStudio (both free) and open the COIL dataset once.', 'Bring your research question and the two or three variables of your model.',
-        'Section 2 of the methods module (Resources) explains regression step by step.'],
+        'Section 2 of the methods module (Resources) explains regression step by step.',
+        'Download the workshop R script from Resources (Course materials) and save it in the same folder as COIL_dataset.xlsx.'],
       agenda: [
         {min: 0, item: 'Regression in R and RStudio with the COIL data: estimating the model and reading the results table, led by Alena Mojsejová.'},
         {min: 0, item: 'Questions from the teams about their own models.'},
@@ -352,6 +353,7 @@ window.COIL_CONTENT = {
       {title: 'Kick-off (week 1)', files: [['PDF', 'docs/slides/COIL_1_kickoff.pdf'], ['PowerPoint', 'docs/slides/COIL_1_kickoff.pptx']]},
       {title: 'Feedback on deliverable 1 (week 3)', files: [['PDF', 'docs/slides/COIL_2_feedback_deliverable1.pdf'], ['PowerPoint', 'docs/slides/COIL_2_feedback_deliverable1.pptx']]},
       {title: 'Data workshop: loading the data in Gretl, Power BI, Python and R', files: [['PDF', 'docs/slides/COIL_2_data_workshop.pdf'], ['PowerPoint', 'docs/slides/COIL_2_data_workshop.pptx']]},
+      {title: 'Regression workshop in R (week 5), by Alena Mojsejová: health spending and life expectancy in 2023. Put the script next to COIL_dataset.xlsx', files: [['R', 'docs/code/COIL_Regression_2023_Complete.R']]},
       {title: 'Final presentations (week 8)', files: [['PDF', 'docs/slides/COIL_4_final_presentations.pdf'], ['PowerPoint', 'docs/slides/COIL_4_final_presentations.pptx']]},
     ]},
     {group: 'Methods module (study material)', items: [
