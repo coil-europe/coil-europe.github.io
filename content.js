@@ -151,7 +151,7 @@ window.COIL_CONTENT = {
       goal: 'Estimate and interpret a linear regression with your own data in R and RStudio.',
       prepare: ['Install R and RStudio (both free) and open the COIL dataset once.', 'Bring your research question and the two or three variables of your model.',
         'Section 2 of the methods module (Resources) explains regression step by step.',
-        'Download the workshop R script from Resources (Course materials) and save it in the same folder as COIL_dataset.xlsx.'],
+        'After the session: the workshop R script is in Resources (Course materials). Save it in the same folder as COIL_dataset.xlsx and run it step by step.'],
       agenda: [
         {min: 0, item: 'Regression in R and RStudio with the COIL data: estimating the model and reading the results table, led by Alena Mojsejová.'},
         {min: 0, item: 'Questions from the teams about their own models.'},
